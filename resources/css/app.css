@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Danova brand colors */
+    --color-danova-royal: #2563eb;
+    --color-danova-electric: #1e40af;
+    --color-danova-bright: #3b82f6;
+    --color-danova-soft-pink: #fee2e2;
+    --color-danova-mint: #d1fae5;
+    --color-danova-soft-yellow: #fef3c7;
+
+    /* Neutrals (aligned to your palette) */
+    --color-danova-white: #ffffff;
+    --color-danova-light-gray: #f3f4f6;
+    --color-danova-medium-gray: #e5e7eb;
+    --color-danova-dark-gray: #6b7280;
+    --color-danova-charcoal: #1f2937;
+    --color-danova-black: #000000;
+
+    /* Radius system */
+    --radius-danova-sm: 8px;
+    --radius-danova-md: 16px;
+    --radius-danova-lg: 24px;
+
+    /* Shadow system */
+    --shadow-danova-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-danova-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-danova-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --shadow-danova-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+@layer base {
+    :root {
+        color-scheme: light;
+    }
+
+    html {
+        text-rendering: geometricPrecision;
+        -webkit-text-size-adjust: 100%;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background: var(--color-danova-white);
+        color: var(--color-danova-black);
+    }
+}
+
+@layer utilities {
+    .shadow-danova-card {
+        box-shadow: var(--shadow-danova-card);
+    }
+
+    .focus-danova {
+        outline: 2px solid var(--color-danova-royal);
+        outline-offset: 2px;
+    }
+}
