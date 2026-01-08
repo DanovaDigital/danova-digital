@@ -465,44 +465,85 @@
             </div>
         </section>
 
-        <section id="pricing" class="py-24 bg-white">
+        <section id="pricing" class="py-24 bg-bg-gray">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="text-center mb-16 max-w-2xl mx-auto">
-                    <h2 class="text-4xl font-bold mb-4">Pilihan Paket Harga</h2>
-                    <p class="text-medium-gray">Harga terjangkau dengan kualitas premium. Cocok untuk mulai go-digital
-                        tanpa ribet.</p>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-4 tracking-tight italic">
+                        Pilihan Paket <span class="text-primary">Hemat</span>
+                    </h2>
+                    <p class="text-medium-gray text-lg italic font-medium">
+                        Harga jujur untuk UMKM Indonesia. Tanpa biaya tersembunyi.
+                    </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
                     @forelse ($pricingPlans as $plan)
                         <article
-                            class="p-10 rounded-[3rem] border-2 {{ $plan->is_featured ? 'bg-primary text-white border-primary scale-105 shadow-2xl relative' : 'bg-white border-light-gray' }} transition-all hover:-translate-y-2">
+                            class="relative p-10 rounded-[3.5rem] transition-all duration-500 hover:-translate-y-4 shadow-2xl 
+                {{ $plan->is_featured
+                    ? 'bg-gradient-to-br from-primary to-blue-800 text-white scale-110 z-20 shadow-blue-500/40 border-0 py-16'
+                    : 'bg-white text-dark border-2 border-light-gray z-10' }}">
+
                             @if ($plan->is_featured)
                                 <div
-                                    class="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-white text-[10px] font-black uppercase px-4 py-1.5 rounded-full tracking-widest shadow-lg">
-                                    Paling Populer</div>
+                                    class="absolute -top-5 left-1/2 -translate-x-1/2 bg-secondary text-white text-[10px] font-black uppercase px-6 py-2 rounded-full tracking-[0.2em] shadow-xl animate-bounce">
+                                    Paling Populer
+                                </div>
                             @endif
-                            <div class="text-xl font-bold mb-2">{{ $plan->name }}</div>
-                            <div class="text-4xl font-black mb-1 italic">{{ $plan->price }}</div>
-                            <div class="text-xs opacity-70 mb-8">{{ $plan->subtitle }}</div>
-                            <ul class="space-y-4 mb-10">
+
+                            <div class="text-center">
+                                <div
+                                    class="text-sm font-bold mb-4 uppercase tracking-[0.2em] {{ $plan->is_featured ? 'text-white/70' : 'text-medium-gray' }}">
+                                    {{ $plan->name }}
+                                </div>
+                                <div class="text-5xl font-black mb-2 tracking-tighter italic">
+                                    {{ $plan->price }}
+                                </div>
+                                <div
+                                    class="text-xs mb-10 font-medium {{ $plan->is_featured ? 'text-white/60' : 'text-medium-gray' }}">
+                                    {{ $plan->subtitle }}
+                                </div>
+                            </div>
+
+                            <div class="space-y-5 mb-12">
                                 @foreach ($plan->features ?? [] as $feature)
-                                    <li class="flex items-start gap-3 text-sm">
+                                    <div class="flex items-center gap-4 text-sm font-semibold">
+                                        <div
+                                            class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center 
+                            {{ $plan->is_featured ? 'bg-white/20' : 'bg-primary/10' }}">
+                                            <svg class="w-3 h-3 {{ $plan->is_featured ? 'text-white' : 'text-primary' }}"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                                stroke-width="4">
+                                                <path d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </div>
                                         <span
-                                            class="font-bold {{ $plan->is_featured ? 'text-secondary' : 'text-primary' }}">✓</span>
-                                        {{ $feature }}
-                                    </li>
+                                            class="{{ $plan->is_featured ? 'text-white/90' : 'text-dark/80' }}">{{ $feature }}</span>
+                                    </div>
                                 @endforeach
-                            </ul>
-                            <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}?text=Halo%20Danova,%20saya%20ingin%20tanya%20paket%20{{ urlencode($plan->name) }}"
-                                class="block w-full py-4 rounded-2xl font-bold text-center transition-all {{ $plan->is_featured ? 'bg-white text-primary' : 'bg-primary text-white hover:bg-blue-700' }}">Pilih
-                                Paket Ini</a>
+                            </div>
+
+                            <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}?text=Halo%20Danova,%20saya%20tertarik%20dengan%20Paket%20{{ urlencode($plan->name) }}"
+                                class="block w-full py-5 rounded-2xl font-black text-center transition-all uppercase text-xs tracking-widest
+                   {{ $plan->is_featured
+                       ? 'bg-white text-primary hover:bg-secondary hover:text-white shadow-lg'
+                       : 'bg-dark text-white hover:bg-primary shadow-md' }}">
+                                Pilih Paket {{ $plan->name }}
+                            </a>
                         </article>
                     @empty
                         <div
-                            class="col-span-3 text-center p-12 bg-bg-gray border-2 border-dashed rounded-3xl text-medium-gray font-medium">
-                            Paket harga sedang disiapkan. Hubungi kami untuk penawaran khusus!</div>
+                            class="col-span-3 text-center p-12 bg-white border-2 border-dashed rounded-[3rem] text-medium-gray font-bold italic">
+                            Paket harga sedang disiapkan. Silakan hubungi kami langsung.
+                        </div>
                     @endforelse
+                </div>
+
+                <div class="mt-20 text-center">
+                    <p class="text-sm text-medium-gray font-bold uppercase tracking-widest">
+                        Butuh fitur kustom?
+                        <a href="#contact" class="text-primary hover:underline ml-2">Hubungi Kami Sekarang →</a>
+                    </p>
                 </div>
             </div>
         </section>
@@ -747,7 +788,7 @@
                 resultSection.classList.remove('hidden');
 
                 const waUrl = root.dataset.whatsappUrl + "?context=brief_builder&message=" + encodeURIComponent(
-                summary);
+                    summary);
                 document.getElementById('briefSendWhatsapp').href = waUrl;
             }
 
