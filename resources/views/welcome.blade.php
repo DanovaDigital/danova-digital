@@ -674,9 +674,12 @@
             <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-12">
                 <div>
                     <div class="text-2xl font-bold mb-4 flex items-center gap-3">
-                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white text-xs">
-                            D</div>
-                        Danova
+                        @if (!empty($siteSettings['header_logo']))
+                            <img src="{{ asset('storage/' . $siteSettings['header_logo']) }}" alt="Danova"
+                                style="max-height: 24px; display: block;" />
+                        @else
+                            <span>Danova</span>
+                        @endif
                     </div>
                     <p class="text-sm text-medium-gray max-w-sm mb-6">Creative partner untuk web & visual system
                         premium. Detail, hierarchy, dan craftsmanship yang terasa.</p>
