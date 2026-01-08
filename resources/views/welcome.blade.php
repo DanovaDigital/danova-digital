@@ -11,17 +11,9 @@
     <link rel="canonical" href="{{ url()->current() }}" />
     <meta name="robots" content="index,follow" />
 
-    <title>Danova — Kreasi Tanpa Batas</title>
-    <meta name="description" content="Danova — Kreasi Tanpa Batas. Premium visual-first web design & development." />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Danova" />
-    <meta property="og:title" content="Danova — Kreasi Tanpa Batas" />
-    <meta property="og:description"
-        content="Danova — Kreasi Tanpa Batas. Premium visual-first web design & development." />
-    <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:image" content="{{ asset('images/DanovaBlue.png') }}" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <title>Danova — Jasa Pembuatan Website UMKM Profesional</title>
+    <meta name="description"
+        content="Bikin bisnis UMKM Anda naik kelas dengan website profesional. Tampilan mewah, harga ramah, proses cepat." />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,11 +25,13 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#2F6FED',
+                        primary: '#2F6FED', // Biru Profesional
+                        secondary: '#F59E0B', // Orange/Amber Hangat (Aksen Baru)
                         dark: '#1A1A1A',
                         'medium-gray': '#444444',
                         'light-gray': '#EFEFEF',
                         'bg-gray': '#FAFAFA',
+                        'whatsapp': '#25D366',
                     },
                     fontFamily: {
                         lexend: ['Lexend', 'sans-serif'],
@@ -96,23 +90,6 @@
                 opacity: 1;
             }
         }
-
-        /* Floating Animation */
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
     </style>
 </head>
 
@@ -127,33 +104,38 @@
 
     <header id="header"
         class="fixed top-0 left-0 right-0 z-[1000] bg-white/80 backdrop-blur-md border-b border-light-gray transition-all duration-300 h-20 lg:h-24 flex items-center">
-        <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center">
+        <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center w-full">
             <a href="/" class="flex items-center gap-3 text-2xl font-bold">
                 @if ($setting('branding.header_logo'))
                     <img src="{{ asset('storage/' . $setting('branding.header_logo')) }}" alt="Danova"
                         class="h-6 lg:h-7" />
                 @else
-                    <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white">D</div>
-                    <span>Danova</span>
+                    <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-black">
+                        D</div>
+                    <span class="tracking-tight">Danova</span>
                 @endif
             </a>
 
             <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-medium-gray">
-                <a href="#about" class="hover:text-primary transition-colors">About</a>
-                <a href="#services" class="hover:text-primary transition-colors">Services</a>
-                <a href="#pricing" class="hover:text-primary transition-colors">Pricing</a>
-                <a href="#work" class="hover:text-primary transition-colors">Work</a>
-                <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+                <a href="#about" class="hover:text-primary transition-colors">Tentang Kami</a>
+                <a href="#services" class="hover:text-primary transition-colors">Layanan</a>
+                <a href="#pricing" class="hover:text-primary transition-colors">Harga</a>
+                <a href="#work" class="hover:text-primary transition-colors">Hasil Kerja</a>
+                <a href="#contact" class="hover:text-primary transition-colors">Kontak</a>
             </nav>
 
             <div class="hidden lg:block">
-                <a href="#contact"
-                    class="bg-primary text-white px-7 py-3 rounded-full font-semibold text-sm hover:bg-blue-700 shadow-lg shadow-blue-500/20 transition-all">Start
-                    a Project</a>
+                <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}"
+                    class="bg-whatsapp text-white px-7 py-3 rounded-full font-semibold text-sm hover:scale-105 transition-all flex items-center gap-2 shadow-lg shadow-green-500/20">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    Tanya via WA
+                </a>
             </div>
 
-            <button class="mobile-menu-toggle lg:hidden p-2 border border-light-gray rounded-xl"
-                aria-label="Toggle menu">
+            <button class="mobile-menu-toggle lg:hidden p-2 border border-light-gray rounded-xl">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
                     </path>
@@ -163,161 +145,167 @@
     </header>
 
     <main id="content" class="pt-24">
-        <section class="py-12 lg:py-24 relative overflow-hidden">
+        <section class="py-12 lg:py-20 relative overflow-hidden">
             <div class="container mx-auto px-6 lg:px-12 relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div class="text-center lg:text-left">
                         <div
-                            class="inline-flex items-center gap-3 bg-white border border-light-gray px-4 py-2 rounded-full shadow-sm mb-8 animate-in">
-                            <div class="flex -space-x-3">
-                                @php
-                                    $avatar1 = $setting('hero.badge_avatar1')
-                                        ? asset('storage/' . $setting('hero.badge_avatar1'))
-                                        : '/images/avatar-1.svg';
-                                    $avatar2 = $setting('hero.badge_avatar2')
-                                        ? asset('storage/' . $setting('hero.badge_avatar2'))
-                                        : '/images/avatar-2.svg';
-                                    $avatar3 = $setting('hero.badge_avatar3')
-                                        ? asset('storage/' . $setting('hero.badge_avatar3'))
-                                        : '/images/avatar-3.svg';
-                                @endphp
-                                <img src="{{ $avatar1 }}"
-                                    class="w-8 h-8 rounded-full border-2 border-white bg-gray-100" />
-                                <img src="{{ $avatar2 }}"
-                                    class="w-8 h-8 rounded-full border-2 border-white bg-gray-100" />
-                                <img src="{{ $avatar3 }}"
-                                    class="w-8 h-8 rounded-full border-2 border-white bg-gray-100" />
-                            </div>
-                            <span class="text-xs font-semibold"><strong>200+</strong> Premium Clients</span>
+                            class="inline-flex items-center gap-3 bg-white border border-light-gray px-4 py-2 rounded-full shadow-sm mb-8">
+                            <span class="flex h-2 w-2 rounded-full bg-secondary animate-ping"></span>
+                            <span class="text-xs font-bold text-medium-gray uppercase tracking-wider">Solusi Digital
+                                UMKM Indonesia</span>
                         </div>
 
                         <h1 class="text-4xl lg:text-6xl font-bold leading-[1.1] mb-6 tracking-tight">
-                            Life Feels Empty Without <br>
-                            <span class="text-primary">Beautiful Design</span>
+                            Bikin Bisnis Anda <br>
+                            <span class="text-primary">Naik Kelas & Terpercaya</span>
                         </h1>
 
                         <p class="text-medium-gray text-base lg:text-lg mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                            We create and design applications, websites, or other digital products with professionalism.
+                            Bantu usaha Anda terlihat profesional dengan website berkualitas. Tampilan mewah, mudah
+                            diakses lewat HP, dan siap bantu tingkatkan penjualan.
                         </p>
 
                         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-                            <a href="#contact"
-                                class="bg-primary text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition-all text-center">Start
-                                a Project</a>
-                            <a href="#work"
-                                class="bg-white text-dark border-2 border-light-gray px-8 py-4 rounded-2xl font-bold hover:border-primary hover:text-primary transition-all text-center">View
-                                Work</a>
+                            <a href="#brief"
+                                class="bg-primary text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition-all text-center shadow-lg shadow-blue-500/20">Mulai
+                                Konsultasi</a>
+                            <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}"
+                                class="bg-whatsapp text-white px-8 py-4 rounded-2xl font-bold hover:bg-green-600 transition-all text-center flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
+                                Chat via WhatsApp
+                            </a>
                         </div>
 
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                            <div class="bg-bg-gray p-6 rounded-3xl hover:shadow-md transition-all">
+                            <div class="bg-bg-gray p-6 rounded-3xl border border-light-gray">
                                 <div class="text-[10px] font-bold text-medium-gray uppercase tracking-widest mb-1">
-                                    Projects</div>
-                                <div class="text-3xl font-black">{{ $setting('stats.projects', '100+') }}</div>
+                                    Project Selesai</div>
+                                <div class="text-3xl font-black text-primary">{{ $setting('stats.projects', '100+') }}
+                                </div>
                             </div>
-                            <div class="bg-bg-gray p-6 rounded-3xl hover:shadow-md transition-all">
-                                <div class="text-[10px] font-bold text-medium-gray uppercase tracking-widest mb-1">Avg.
-                                    Rating</div>
-                                <div class="text-3xl font-black">{{ $setting('stats.rating', '4.9') }}</div>
-                            </div>
-                            <div
-                                class="bg-bg-gray p-6 rounded-3xl hover:shadow-md transition-all col-span-2 sm:col-span-1">
+                            <div class="bg-bg-gray p-6 rounded-3xl border border-light-gray">
                                 <div class="text-[10px] font-bold text-medium-gray uppercase tracking-widest mb-1">
-                                    On-time</div>
-                                <div class="text-3xl font-black">{{ $setting('stats.on_time', '95%') }}</div>
+                                    Rating Kepuasan</div>
+                                <div class="text-3xl font-black text-secondary">{{ $setting('stats.rating', '4.9') }}/5
+                                </div>
+                            </div>
+                            <div class="bg-bg-gray p-6 rounded-3xl border border-light-gray col-span-2 sm:col-span-1">
+                                <div class="text-[10px] font-bold text-medium-gray uppercase tracking-widest mb-1">Tepat
+                                    Waktu</div>
+                                <div class="text-3xl font-black text-primary">{{ $setting('stats.on_time', '95%') }}
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="lg:block">
-                        <div
-                            class="bg-light-gray p-6 lg:p-10 rounded-[3rem] shadow-xl hover:-translate-y-2 hover:-rotate-1 transition-all duration-500">
+                    <div class="relative">
+                        <div class="bg-light-gray p-6 lg:p-10 rounded-[3rem] shadow-2xl relative z-10">
                             <div
-                                class="bg-bg-gray aspect-video rounded-3xl mb-8 flex items-center justify-center border-2 border-light-gray overflow-hidden">
+                                class="bg-white aspect-video rounded-3xl mb-8 flex items-center justify-center border-2 border-light-gray overflow-hidden shadow-inner">
                                 @if ($setting('hero.showcase_logo'))
                                     <img src="{{ asset('storage/' . $setting('hero.showcase_logo')) }}"
                                         class="w-full h-full object-cover" />
                                 @else
-                                    <svg class="w-20 h-20 text-gray-300" fill="none" stroke="currentColor"
+                                    <div class="text-center p-8">
+                                        <svg class="w-16 h-16 text-gray-200 mx-auto mb-4" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                        <p class="text-xs text-gray-400 font-medium italic">Contoh Tampilan Website UMKM
+                                        </p>
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-white p-5 rounded-2xl border border-light-gray">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                        <div class="font-bold text-sm">Mudah Diakses HP</div>
+                                    </div>
+                                    <div class="text-[11px] text-medium-gray leading-relaxed">Website otomatis rapi
+                                        saat dibuka di smartphone pelanggan.</div>
+                                </div>
+                                <div class="bg-white p-5 rounded-2xl border border-light-gray">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="w-2 h-2 rounded-full bg-primary"></span>
+                                        <div class="font-bold text-sm">Buka Cepat (Anti Lemot)</div>
+                                    </div>
+                                    <div class="text-[11px] text-medium-gray leading-relaxed">Pelanggan nggak kabur
+                                        karena nunggu website loading lama.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary/20 rounded-full blur-2xl -z-0">
+                        </div>
+                        <div class="absolute -top-10 -right-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl -z-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-24 bg-white">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-4">Layanan Unggulan Kami</h2>
+                    <p class="text-medium-gray">Solusi tepat untuk bantu kembangkan usaha Anda di dunia digital.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    @php
+                        $services = [
+                            [
+                                'Website Profil Bisnis',
+                                'Bikin bisnis Anda terlihat bonafid dan profesional di mata calon pembeli.',
+                                'bg-blue-50',
+                            ],
+                            [
+                                'Landing Page Jualan',
+                                'Halaman khusus promosi produk dengan fokus bikin pelanggan langsung beli.',
+                                'bg-orange-50',
+                            ],
+                            [
+                                'Sistem Visual Brand',
+                                'Bikin logo dan identitas warna brand agar pelanggan selalu ingat bisnis Anda.',
+                                'bg-gray-50',
+                            ],
+                        ];
+                    @endphp
+
+                    @foreach ($services as $s)
+                        <article
+                            class="p-10 rounded-[2.5rem] {{ $s[2] }} border border-transparent hover:border-primary transition-all group">
+                            <div
+                                class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                                @if ($loop->index == 0)
+                                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                        <path
+                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                        </path>
+                                    </svg>
+                                @elseif($loop->index == 1)
+                                    <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                @else
+                                    <svg class="w-6 h-6 text-dark" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-3">
                                         </path>
                                     </svg>
                                 @endif
                             </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="bg-white p-6 rounded-2xl">
-                                    <div class="font-bold text-sm mb-2">UI/UX Design</div>
-                                    <div class="text-xs text-medium-gray leading-relaxed">
-                                        {{ $setting('hero.feature1_description', 'Interface yang clean, jelas, dan premium.') }}
-                                    </div>
-                                </div>
-                                <div class="bg-white p-6 rounded-2xl">
-                                    <div class="font-bold text-sm mb-2">Web Development</div>
-                                    <div class="text-xs text-medium-gray leading-relaxed">
-                                        {{ $setting('hero.feature2_description', 'Blade SSR + performa yang ringan.') }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 animate-pulse">
-            </div>
-        </section>
-
-        <section id="about" class="py-24 bg-bg-gray">
-            <div class="container mx-auto px-6 lg:px-12">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                    <div>
-                        <h2 class="text-3xl lg:text-5xl font-bold mb-8 leading-tight">
-                            We don't just build websites. <br>
-                            <span class="text-primary">We craft brand presence.</span>
-                        </h2>
-                        <p class="text-medium-gray text-lg leading-relaxed">
-                            Danova adalah arsitek visual: fokus pada detail, kontras yang tegas, dan struktur yang
-                            memandu perhatian—agar brand Anda terlihat lebih kuat.
-                        </p>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div
-                            class="bg-white p-8 rounded-3xl border-2 border-light-gray hover:border-primary transition-all">
-                            <div class="font-bold mb-3">High contrast hierarchy</div>
-                            <p class="text-sm text-medium-gray leading-relaxed">Headline kuat, whitespace rapi, fokus
-                                terarah.</p>
-                        </div>
-                        <div
-                            class="bg-white p-8 rounded-3xl border-2 border-light-gray hover:border-primary transition-all">
-                            <div class="font-bold mb-3">Pixel-perfect details</div>
-                            <p class="text-sm text-medium-gray leading-relaxed">Setiap komponen terasa presisi &
-                                berkelas.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="py-24">
-            <div class="container mx-auto px-6 lg:px-12">
-                <div class="flex flex-col lg:flex-row justify-between items-end gap-8 mb-16">
-                    <div class="max-w-2xl">
-                        <h2 class="text-4xl font-bold mb-4">Services that elevate your <span
-                                class="text-primary">digital aesthetic</span></h2>
-                        <p class="text-medium-gray">Paket layanan yang fokus pada visual, pengalaman, dan hasil.</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    @foreach ([['Website Design', 'Layout premium, tipografi kuat, dan interaksi yang rapi.'], ['Landing Pages', 'Fokus konversi: pesan jelas, CTA tegas, struktur meyakinkan.'], ['Brand Visual System', 'Konsistensi warna, komponen, dan gaya untuk jangka panjang.']] as $service)
-                        <article
-                            class="p-10 rounded-3xl bg-white shadow-xl hover:-translate-y-2 transition-all relative overflow-hidden group">
-                            <div
-                                class="absolute top-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left">
-                            </div>
-                            <h3 class="text-2xl font-bold mb-4">{{ $service[0] }}</h3>
-                            <p class="text-medium-gray text-sm leading-relaxed">{{ $service[1] }}</p>
+                            <h3 class="text-xl font-bold mb-4">{{ $s[0] }}</h3>
+                            <p class="text-medium-gray text-sm leading-relaxed">{{ $s[1] }}</p>
                         </article>
                     @endforeach
                 </div>
@@ -327,19 +315,21 @@
         <section id="brief" class="py-24 bg-bg-gray">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">60 detik untuk <span class="text-primary">brief yang
-                            jelas</span></h2>
-                    <p class="text-medium-gray">Pilih opsi yang paling dekat lalu kirim ringkasannya ke WhatsApp /
-                        Email.</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-4">Konsultasi & Estimasi <span
+                            class="text-primary">Biaya</span></h2>
+                    <p class="text-medium-gray">Isi form singkat ini (60 detik) untuk dapatkan perkiraan biaya sesuai
+                        kebutuhan Anda.</p>
                 </div>
 
-                <div class="max-w-4xl mx-auto bg-white rounded-[2.5rem] p-8 lg:p-12 shadow-2xl" id="briefBuilder"
-                    data-whatsapp-url="{{ route('out.whatsapp') }}" data-email-url="{{ route('out.email') }}">
+                <div class="max-w-4xl mx-auto bg-white rounded-[2.5rem] p-8 lg:p-12 shadow-2xl border border-light-gray"
+                    id="briefBuilder" data-whatsapp-url="{{ route('out.whatsapp') }}"
+                    data-email-url="{{ route('out.email') }}">
 
                     <div class="mb-12">
                         <div class="flex justify-between items-center mb-4">
                             <span id="briefStepLabel"
-                                class="text-sm font-bold text-medium-gray uppercase tracking-widest">Step 1/6</span>
+                                class="text-xs font-bold text-primary uppercase tracking-widest">Progress 1/6</span>
+                            <span class="text-xs font-medium text-medium-gray italic">Hampir Selesai...</span>
                         </div>
                         <div class="h-2 bg-light-gray rounded-full overflow-hidden">
                             <div class="h-full bg-primary transition-all duration-500" id="briefProgressFill"
@@ -350,33 +340,29 @@
                         </div>
                     </div>
 
-                    <form id="briefForm" class="min-h-[300px]">
+                    <form id="briefForm" class="min-h-[350px]">
                         <div class="brief-step is-active" data-step="1">
-                            <h3 class="text-2xl font-bold mb-8">Kebutuhan utama</h3>
+                            <h3 class="text-2xl font-bold mb-8">Apa yang ingin Anda buat?</h3>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                @foreach (['Website bisnis/UMKM', 'Landing page', 'Portfolio pribadi', 'Redesign website', 'Tugas kuliah', 'Lainnya (isi sendiri)'] as $opt)
+                                @foreach (['Website Toko / UMKM', 'Landing Page Promosi', 'Website Portfolio', 'Update Website Lama', 'Keperluan Tugas/Project', 'Lainnya'] as $opt)
                                     <label
-                                        class="flex items-center gap-4 p-5 rounded-2xl border-2 border-light-gray cursor-pointer hover:border-primary transition-all">
+                                        class="flex items-center gap-4 p-5 rounded-2xl border-2 border-light-gray cursor-pointer hover:border-primary hover:bg-blue-50/30 transition-all">
                                         <input type="radio" name="need" value="{{ $opt }}"
-                                            class="w-4 h-4 text-primary" required>
-                                        <span class="text-sm font-semibold">{{ $opt }}</span>
+                                            class="w-5 h-5 text-primary border-gray-300 focus:ring-primary" required>
+                                        <span class="text-sm font-semibold text-dark">{{ $opt }}</span>
                                     </label>
                                 @endforeach
-                            </div>
-                            <div class="brief-other mt-4 hidden" data-other-for="need">
-                                <input type="text" name="need_other" placeholder="Tuliskan kebutuhan Anda..."
-                                    class="w-full p-4 border-2 border-light-gray rounded-2xl outline-none focus:border-primary">
                             </div>
                         </div>
 
                         <div class="brief-step" data-step="2">
-                            <h3 class="text-2xl font-bold mb-8">Tujuan utama</h3>
+                            <h3 class="text-2xl font-bold mb-8">Apa tujuan utama website ini?</h3>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                @foreach (['Cari klien / leads', 'Personal branding', 'Kredibilitas', 'Sales / Pendaftaran', 'Tugas / Presentasi', 'Lainnya'] as $opt)
+                                @foreach (['Cari Pembeli Baru', 'Branding Biaya Terpercaya', 'Informasi Katalog Produk', 'Daftar Event / Promo', 'Kebutuhan Akademik'] as $opt)
                                     <label
                                         class="flex items-center gap-4 p-5 rounded-2xl border-2 border-light-gray cursor-pointer hover:border-primary transition-all">
                                         <input type="radio" name="goal" value="{{ $opt }}"
-                                            class="w-4 h-4 text-primary" required>
+                                            class="w-5 h-5 text-primary" required>
                                         <span class="text-sm font-semibold">{{ $opt }}</span>
                                     </label>
                                 @endforeach
@@ -384,13 +370,13 @@
                         </div>
 
                         <div class="brief-step" data-step="3">
-                            <h3 class="text-2xl font-bold mb-8">Budget range</h3>
+                            <h3 class="text-2xl font-bold mb-8">Perkiraan budget Anda?</h3>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                @foreach (['< 1 juta', '1–3 juta', '3–6 juta', 'Belum yakin', 'Lainnya'] as $opt)
+                                @foreach (['Dibawah 1 Juta', '1 – 3 Juta', '3 – 6 Juta', 'Diatas 6 Juta', 'Ingin Diskusi Dulu'] as $opt)
                                     <label
                                         class="flex items-center gap-4 p-5 rounded-2xl border-2 border-light-gray cursor-pointer hover:border-primary transition-all">
                                         <input type="radio" name="budget" value="{{ $opt }}"
-                                            class="w-4 h-4 text-primary" required>
+                                            class="w-5 h-5 text-primary" required>
                                         <span class="text-sm font-semibold">{{ $opt }}</span>
                                     </label>
                                 @endforeach
@@ -398,13 +384,13 @@
                         </div>
 
                         <div class="brief-step" data-step="4">
-                            <h3 class="text-2xl font-bold mb-8">Timeline target</h3>
+                            <h3 class="text-2xl font-bold mb-8">Kapan target website selesai?</h3>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                @foreach (['< 2 minggu', '3–4 minggu', '1–2 bulan', 'Flexible'] as $opt)
+                                @foreach (['Secepatnya (< 2 Minggu)', 'Santai (1 Bulan)', 'Hanya Tanya Dulu'] as $opt)
                                     <label
                                         class="flex items-center gap-4 p-5 rounded-2xl border-2 border-light-gray cursor-pointer hover:border-primary transition-all">
                                         <input type="radio" name="timeline" value="{{ $opt }}"
-                                            class="w-4 h-4 text-primary" required>
+                                            class="w-5 h-5 text-primary" required>
                                         <span class="text-sm font-semibold">{{ $opt }}</span>
                                     </label>
                                 @endforeach
@@ -412,88 +398,110 @@
                         </div>
 
                         <div class="brief-step" data-step="5">
-                            <h3 class="text-2xl font-bold mb-8">Fitur dibutuhkan (opsional)</h3>
+                            <h3 class="text-2xl font-bold mb-8">Fitur tambahan? (Bisa pilih banyak)</h3>
                             <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                                @foreach (['Portfolio', 'Pricing', 'Form Contact', 'CMS Admin', 'Blog', 'Multi-language'] as $opt)
+                                @foreach (['Galeri Foto', 'Daftar Harga', 'Formulir Kontak', 'Halaman Blog', 'Maps Lokasi', 'Chat WA Langsung'] as $opt)
                                     <label
-                                        class="flex items-center gap-4 p-5 rounded-2xl border-2 border-light-gray cursor-pointer hover:border-primary transition-all">
+                                        class="flex items-center gap-3 p-5 rounded-2xl border-2 border-light-gray cursor-pointer hover:border-primary transition-all">
                                         <input type="checkbox" name="features[]" value="{{ $opt }}"
-                                            class="w-4 h-4 text-primary rounded">
-                                        <span class="text-sm font-semibold">{{ $opt }}</span>
+                                            class="w-5 h-5 text-primary rounded border-gray-300">
+                                        <span
+                                            class="text-xs font-bold uppercase tracking-tighter">{{ $opt }}</span>
                                     </label>
                                 @endforeach
                             </div>
                         </div>
 
                         <div class="brief-step" data-step="6">
-                            <h3 class="text-2xl font-bold mb-8">Detail singkat</h3>
+                            <h3 class="text-2xl font-bold mb-8">Informasi Kontak Anda</h3>
                             <div class="space-y-4">
-                                <input type="text" name="brand" placeholder="Nama / Brand / Organisasi"
-                                    class="w-full p-5 border-2 border-light-gray rounded-2xl outline-none focus:border-primary"
-                                    required>
-                                <input type="url" name="url" placeholder="Website / Sosmed (opsional)"
-                                    class="w-full p-5 border-2 border-light-gray rounded-2xl outline-none focus:border-primary">
-                                <textarea name="notes" rows="4" placeholder="Catatan tambahan..."
-                                    class="w-full p-5 border-2 border-light-gray rounded-2xl outline-none focus:border-primary"></textarea>
+                                <div>
+                                    <label class="text-xs font-bold text-medium-gray mb-2 block uppercase">Nama atau
+                                        Nama Usaha</label>
+                                    <input type="text" name="brand"
+                                        placeholder="Contoh: Toko Berkah / Bapak Budi"
+                                        class="w-full p-5 border-2 border-light-gray rounded-2xl outline-none focus:border-primary bg-bg-gray focus:bg-white transition-all"
+                                        required>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-bold text-medium-gray mb-2 block uppercase">Catatan
+                                        Khusus (Opsional)</label>
+                                    <textarea name="notes" rows="4" placeholder="Ceritakan singkat keinginan website Anda..."
+                                        class="w-full p-5 border-2 border-light-gray rounded-2xl outline-none focus:border-primary bg-bg-gray focus:bg-white transition-all"></textarea>
+                                </div>
                             </div>
                         </div>
                     </form>
 
                     <div class="flex justify-between items-center mt-12" id="briefActions">
                         <button type="button" id="briefBack"
-                            class="px-8 py-4 border-2 border-light-gray rounded-2xl font-bold hover:bg-bg-gray disabled:opacity-30 disabled:pointer-events-none transition-all">Back</button>
+                            class="px-8 py-4 border-2 border-light-gray rounded-2xl font-bold text-medium-gray hover:bg-bg-gray disabled:opacity-30 disabled:pointer-events-none transition-all">Kembali</button>
                         <button type="button" id="briefNext"
-                            class="px-10 py-4 bg-primary text-white rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20">Next</button>
+                            class="px-10 py-4 bg-primary text-white rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20">Lanjut</button>
                     </div>
 
                     <div id="briefResult" class="hidden mt-12 pt-12 border-t-2 border-light-gray">
-                        <h3 class="text-2xl font-bold mb-6">Ringkasan Brief</h3>
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="p-2 bg-green-100 rounded-lg text-green-600">✓</span>
+                            <h3 class="text-2xl font-bold">Ringkasan Kebutuhan</h3>
+                        </div>
                         <pre id="briefSummary"
-                            class="bg-bg-gray p-6 rounded-3xl border-2 border-light-gray text-sm text-dark font-sans whitespace-pre-wrap leading-relaxed mb-8"></pre>
+                            class="bg-bg-gray p-6 rounded-3xl border-2 border-light-gray text-sm text-dark font-sans whitespace-pre-wrap leading-relaxed mb-8 shadow-inner"></pre>
                         <div class="flex flex-wrap gap-4">
                             <button id="briefEdit"
-                                class="px-6 py-4 border-2 border-light-gray rounded-2xl font-bold">Edit</button>
-                            <button id="briefCopy"
-                                class="px-6 py-4 border-2 border-light-gray rounded-2xl font-bold">Copy</button>
+                                class="px-6 py-4 border-2 border-light-gray rounded-2xl font-bold hover:bg-bg-gray">Ubah
+                                Data</button>
                             <a id="briefSendWhatsapp" href="#" target="_blank"
-                                class="px-8 py-4 bg-green-500 text-white rounded-2xl font-bold hover:bg-green-600 transition-all flex-1 text-center">Send
-                                WhatsApp</a>
+                                class="px-8 py-4 bg-whatsapp text-white rounded-2xl font-bold hover:bg-green-600 transition-all flex-1 text-center shadow-lg shadow-green-500/20 flex items-center justify-center gap-3">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
+                                Konsultasikan Lewat WA
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="pricing" class="py-24">
+        <section id="pricing" class="py-24 bg-white">
             <div class="container mx-auto px-6 lg:px-12">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">Transparent pricing for <span class="text-primary">premium
-                            results</span></h2>
-                    <p class="text-medium-gray">Pilih paket yang sesuai kebutuhan. Harga final menyesuaikan scope.</p>
+                <div class="text-center mb-16 max-w-2xl mx-auto">
+                    <h2 class="text-4xl font-bold mb-4">Pilihan Paket Harga</h2>
+                    <p class="text-medium-gray">Harga terjangkau dengan kualitas premium. Cocok untuk mulai go-digital
+                        tanpa ribet.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     @forelse ($pricingPlans as $plan)
                         <article
-                            class="p-10 rounded-[2.5rem] border-2 {{ $plan->is_featured ? 'bg-primary text-white border-primary scale-105 shadow-2xl' : 'bg-white border-light-gray' }} transition-all hover:-translate-y-2">
+                            class="p-10 rounded-[3rem] border-2 {{ $plan->is_featured ? 'bg-primary text-white border-primary scale-105 shadow-2xl relative' : 'bg-white border-light-gray' }} transition-all hover:-translate-y-2">
+                            @if ($plan->is_featured)
+                                <div
+                                    class="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-white text-[10px] font-black uppercase px-4 py-1.5 rounded-full tracking-widest shadow-lg">
+                                    Paling Populer</div>
+                            @endif
                             <div class="text-xl font-bold mb-2">{{ $plan->name }}</div>
-                            <div class="text-4xl font-black mb-1">{{ $plan->price }}</div>
+                            <div class="text-4xl font-black mb-1 italic">{{ $plan->price }}</div>
                             <div class="text-xs opacity-70 mb-8">{{ $plan->subtitle }}</div>
                             <ul class="space-y-4 mb-10">
                                 @foreach ($plan->features ?? [] as $feature)
                                     <li class="flex items-start gap-3 text-sm">
-                                        <span class="font-bold">✓</span> {{ $feature }}
+                                        <span
+                                            class="font-bold {{ $plan->is_featured ? 'text-secondary' : 'text-primary' }}">✓</span>
+                                        {{ $feature }}
                                     </li>
                                 @endforeach
                             </ul>
-                            <a href="#contact"
-                                class="block w-full py-4 rounded-2xl font-bold text-center transition-all {{ $plan->is_featured ? 'bg-white text-primary' : 'bg-primary text-white' }}">Choose
-                                {{ $plan->name }}</a>
+                            <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}?text=Halo%20Danova,%20saya%20ingin%20tanya%20paket%20{{ urlencode($plan->name) }}"
+                                class="block w-full py-4 rounded-2xl font-bold text-center transition-all {{ $plan->is_featured ? 'bg-white text-primary' : 'bg-primary text-white hover:bg-blue-700' }}">Pilih
+                                Paket Ini</a>
                         </article>
                     @empty
                         <div
-                            class="col-span-3 text-center p-12 bg-bg-gray border-2 border-dashed rounded-3xl text-medium-gray">
-                            Pricing plan belum tersedia.</div>
+                            class="col-span-3 text-center p-12 bg-bg-gray border-2 border-dashed rounded-3xl text-medium-gray font-medium">
+                            Paket harga sedang disiapkan. Hubungi kami untuk penawaran khusus!</div>
                     @endforelse
                 </div>
             </div>
@@ -501,9 +509,9 @@
 
         <section id="work" class="py-24 bg-bg-gray">
             <div class="container mx-auto px-6 lg:px-12">
-                <div class="mb-16">
-                    <h2 class="text-4xl font-bold mb-4">Visual Excellence <span class="text-primary">In Every
-                            Pixel</span></h2>
+                <div class="mb-16 text-center lg:text-left">
+                    <h2 class="text-4xl font-bold mb-4 italic">Hasil Kerja Kami</h2>
+                    <p class="text-medium-gray">Kumpulan project website yang telah kami bantu kembangkan.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -514,35 +522,39 @@
                                 : $project->hero_image_url ?? '';
                         @endphp
                         <a href="{{ route('work.detail', $project->slug) }}"
-                            class="group block bg-white p-4 rounded-[2rem] hover:shadow-2xl transition-all">
-                            <div class="aspect-video bg-gray-100 rounded-2xl mb-6 overflow-hidden relative">
+                            class="group block bg-white p-4 rounded-[2.5rem] hover:shadow-2xl transition-all border border-light-gray">
+                            <div
+                                class="aspect-video bg-gray-100 rounded-3xl mb-6 overflow-hidden relative border border-light-gray shadow-inner">
                                 <img src="{{ $workImage }}"
-                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                                 <div
                                     class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                    <span class="bg-white text-primary px-6 py-2 rounded-full font-bold">View
-                                        Detail</span>
+                                    <span
+                                        class="bg-white text-primary px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest">Detail
+                                        Project</span>
                                 </div>
                             </div>
-                            <div class="px-2 pb-2">
-                                <div class="font-bold text-lg group-hover:text-primary transition-colors">
+                            <div class="px-3 pb-3">
+                                <div class="font-bold text-lg group-hover:text-primary transition-colors mb-1">
                                     {{ $project->title }}</div>
-                                <div class="text-sm text-medium-gray">{{ $project->subtitle }}</div>
+                                <div class="text-[11px] text-medium-gray font-bold uppercase tracking-wider">
+                                    {{ $project->subtitle }}</div>
                             </div>
                         </a>
                     @empty
                         <div
                             class="col-span-3 text-center p-20 bg-white border-2 border-dashed rounded-[3rem] text-medium-gray">
-                            Portfolio masih kosong.</div>
+                            Belum ada portfolio yang ditampilkan.</div>
                     @endforelse
                 </div>
             </div>
         </section>
 
-        <section id="faq" class="py-24">
+        <section id="faq" class="py-24 bg-white">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold">Frequently Asked <span class="text-primary">Questions</span></h2>
+                    <h2 class="text-3xl lg:text-4xl font-bold">Pertanyaan <span class="text-primary italic">Sering
+                            Muncul</span></h2>
                 </div>
                 <div class="max-w-3xl mx-auto space-y-4">
                     @forelse ($faqs as $faq)
@@ -550,7 +562,7 @@
                             class="faq-item border-2 border-light-gray rounded-3xl transition-all hover:border-primary overflow-hidden">
                             <button
                                 class="faq-question w-full flex justify-between items-center p-6 text-left font-bold">
-                                <span>{{ $faq->question }}</span>
+                                <span class="pr-8">{{ $faq->question }}</span>
                                 <span class="faq-icon text-2xl text-primary transition-transform">+</span>
                             </button>
                             <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
@@ -558,53 +570,74 @@
                             </div>
                         </div>
                     @empty
-                        <p class="text-center text-medium-gray">FAQ belum tersedia.</p>
+                        <p class="text-center text-medium-gray">FAQ sedang diperbarui.</p>
                     @endforelse
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-24 px-6">
+        <section id="contact" class="py-24 px-6 bg-white">
             <div class="container mx-auto">
-                <div class="bg-dark rounded-[3rem] p-12 lg:p-24 text-center text-white relative overflow-hidden">
+                <div
+                    class="bg-dark rounded-[4rem] p-12 lg:p-24 text-center text-white relative overflow-hidden shadow-2xl">
                     <div class="relative z-10">
-                        <h2 class="text-4xl lg:text-6xl font-black mb-8">Ready to craft masterpiece?</h2>
-                        <p class="text-white/70 text-lg mb-12 max-w-2xl mx-auto">Ceritakan tujuan brand Anda—Danova
-                            akan bantu merancang estetika digital yang kuat dan premium.</p>
+                        <h2 class="text-4xl lg:text-6xl font-black mb-8 leading-tight italic">Siap Bikin Bisnis <br>
+                            Jadi Lebih Profesional?</h2>
+                        <p class="text-white/60 text-lg mb-12 max-w-2xl mx-auto">Konsultasikan kebutuhan Anda
+                            sekarang—Gratis. Tim Danova siap bantu kembangkan potensi digital bisnis Anda.</p>
                         <div class="flex flex-col sm:flex-row gap-6 justify-center">
                             <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}"
-                                class="bg-white text-dark px-10 py-5 rounded-2xl font-bold hover:scale-105 transition-all">WhatsApp
-                                Kami</a>
+                                class="bg-whatsapp text-white px-10 py-5 rounded-2xl font-bold hover:scale-105 transition-all shadow-xl shadow-green-500/20 flex items-center justify-center gap-3">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
+                                Tanya Tim via WA
+                            </a>
                             <a href="mailto:{{ $danovaGmail }}"
-                                class="border-2 border-white/20 px-10 py-5 rounded-2xl font-bold hover:bg-white/10 transition-all">Email
-                                Danova</a>
+                                class="border-2 border-white/20 px-10 py-5 rounded-2xl font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-3">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                                Kirim Email
+                            </a>
                         </div>
                     </div>
-                    <div class="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[120px] -z-0"></div>
+                    <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/20 rounded-full blur-[100px] -z-0">
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="py-12 border-t border-light-gray">
+    <footer class="py-16 border-t border-light-gray bg-white">
         <div class="container mx-auto px-6 lg:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-12">
                 <div>
-                    <div class="text-2xl font-bold mb-4">Danova</div>
-                    <p class="text-sm text-medium-gray">© {{ date('Y') }} Danova — Kreasi Tanpa Batas</p>
+                    <div class="text-2xl font-bold mb-4 flex items-center gap-3">
+                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white text-xs">
+                            D</div>
+                        Danova
+                    </div>
+                    <p class="text-sm text-medium-gray max-w-sm mb-6">Creative partner untuk web & visual system
+                        premium. Detail, hierarchy, dan craftsmanship yang terasa.</p>
+                    <p class="text-[10px] text-medium-gray font-bold uppercase tracking-widest">© {{ date('Y') }}
+                        Danova Digital — Kreasi Tanpa Batas</p>
                 </div>
-                <div class="flex gap-8 text-sm font-semibold">
-                    <a href="#about" class="hover:text-primary">About</a>
-                    <a href="#services" class="hover:text-primary">Services</a>
-                    <a href="#pricing" class="hover:text-primary">Pricing</a>
-                    <a href="#work" class="hover:text-primary">Work</a>
+                <div class="flex flex-wrap gap-x-12 gap-y-6 text-sm font-bold uppercase tracking-wider text-dark">
+                    <a href="#about" class="hover:text-primary">Tentang</a>
+                    <a href="#services" class="hover:text-primary">Layanan</a>
+                    <a href="#pricing" class="hover:text-primary">Harga</a>
+                    <a href="#work" class="hover:text-primary">Portfolio</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Header Scroll
+        // Header Scroll Effect
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             header.classList.toggle('scrolled', window.scrollY > 50);
@@ -652,9 +685,9 @@
                     step.classList.toggle('is-active', parseInt(step.dataset.step) === currentStep);
                 });
                 progressFill.style.width = `${(currentStep / totalSteps) * 100}%`;
-                stepLabel.textContent = `Step ${currentStep}/${totalSteps}`;
+                stepLabel.textContent = `Progress ${currentStep}/${totalSteps}`;
                 backBtn.disabled = currentStep === 1;
-                nextBtn.textContent = currentStep === totalSteps ? 'Generate' : 'Next';
+                nextBtn.textContent = currentStep === totalSteps ? 'Kirim Ringkasan' : 'Lanjut';
             }
 
             nextBtn.addEventListener('click', () => {
@@ -673,7 +706,7 @@
 
                 if (!valid) {
                     const error = document.getElementById('briefError');
-                    error.textContent = 'Mohon lengkapi pilihan Anda.';
+                    error.textContent = 'Mohon lengkapi pilihan di atas dulu ya!';
                     error.classList.remove('hidden');
                     return;
                 }
@@ -697,24 +730,24 @@
 
             function generateSummary() {
                 const formData = new FormData(form);
-                let summary = "Brief Builder — Danova\n\n";
-                summary += `Brand: ${formData.get('brand')}\n`;
-                summary += `Kebutuhan: ${formData.get('need')}\n`;
-                summary += `Tujuan: ${formData.get('goal')}\n`;
-                summary += `Budget: ${formData.get('budget')}\n`;
-                summary += `Timeline: ${formData.get('timeline')}\n`;
+                let summary = "*Brief Konsultasi Website — Danova Digital*\n\n";
+                summary += `*Nama Klien:* ${formData.get('brand')}\n`;
+                summary += `*Kebutuhan:* ${formData.get('need')}\n`;
+                summary += `*Tujuan Utama:* ${formData.get('goal')}\n`;
+                summary += `*Target Budget:* ${formData.get('budget')}\n`;
+                summary += `*Target Timeline:* ${formData.get('timeline')}\n`;
 
                 const features = formData.getAll('features[]');
-                summary += `Fitur: ${features.length ? features.join(', ') : '-'}\n`;
-                summary += `Catatan: ${formData.get('notes') || '-'}`;
+                summary += `*Fitur Pendukung:* ${features.length ? features.join(', ') : '-'}\n`;
+                summary += `*Catatan Tambahan:* ${formData.get('notes') || '-'}`;
 
                 summaryBox.textContent = summary;
                 form.classList.add('hidden');
                 document.getElementById('briefActions').classList.add('hidden');
                 resultSection.classList.remove('hidden');
 
-                // Update Links
-                const waUrl = root.dataset.whatsappUrl + "?message=" + encodeURIComponent(summary);
+                const waUrl = root.dataset.whatsappUrl + "?context=brief_builder&message=" + encodeURIComponent(
+                summary);
                 document.getElementById('briefSendWhatsapp').href = waUrl;
             }
 
@@ -723,13 +756,24 @@
                 form.classList.remove('hidden');
                 document.getElementById('briefActions').classList.remove('hidden');
             });
-
-            document.getElementById('briefCopy').addEventListener('click', function() {
-                navigator.clipboard.writeText(summaryBox.textContent);
-                this.textContent = 'Copied!';
-                setTimeout(() => this.textContent = 'Copy', 2000);
-            });
         })();
+
+        // Mobile Menu Toggle logic
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', () => {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('flex');
+            nav.classList.toggle('flex-col');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-20');
+            nav.classList.toggle('left-0');
+            nav.classList.toggle('w-full');
+            nav.classList.toggle('bg-white');
+            nav.classList.toggle('p-6');
+            nav.classList.toggle('border-b');
+            nav.classList.toggle('border-light-gray');
+            nav.classList.toggle('z-[1000]');
+        });
     </script>
 </body>
 
