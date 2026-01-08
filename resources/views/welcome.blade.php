@@ -468,52 +468,66 @@
         <section id="pricing" class="py-24 bg-bg-gray">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="text-center mb-16 max-w-2xl mx-auto">
+                    <div
+                        class="inline-block px-4 py-1.5 mb-4 bg-primary/10 text-primary rounded-full text-[10px] font-black uppercase tracking-[0.2em]">
+                        Daftar Harga Layanan
+                    </div>
                     <h2 class="text-4xl lg:text-5xl font-bold mb-4 tracking-tight italic">
-                        Pilihan Paket <span class="text-primary">Hemat</span>
+                        Pilih Paket <span class="text-primary">Sesuai Budget</span>
                     </h2>
                     <p class="text-medium-gray text-lg italic font-medium">
-                        Harga jujur untuk UMKM Indonesia. Tanpa biaya tersembunyi.
+                        Investasi terbaik untuk bikin bisnis Anda terlihat lebih profesional.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
                     @forelse ($pricingPlans as $plan)
                         <article
-                            class="relative p-10 rounded-[3.5rem] transition-all duration-500 hover:-translate-y-4 shadow-2xl 
+                            class="relative p-10 rounded-[3.5rem] transition-all duration-500 hover:-translate-y-4 shadow-2xl flex flex-col
                 {{ $plan->is_featured
-                    ? 'bg-gradient-to-br from-primary to-blue-800 text-white scale-110 z-20 shadow-blue-500/40 border-0 py-16'
+                    ? 'bg-gradient-to-br from-primary to-blue-900 text-white scale-110 z-20 shadow-blue-500/40 border-0 py-16'
                     : 'bg-white text-dark border-2 border-light-gray z-10' }}">
 
                             @if ($plan->is_featured)
                                 <div
                                     class="absolute -top-5 left-1/2 -translate-x-1/2 bg-secondary text-white text-[10px] font-black uppercase px-6 py-2 rounded-full tracking-[0.2em] shadow-xl animate-bounce">
-                                    Paling Populer
+                                    Paling Banyak Dipilih
                                 </div>
                             @endif
 
-                            <div class="text-center">
+                            <div class="text-center mb-10">
                                 <div
-                                    class="text-sm font-bold mb-4 uppercase tracking-[0.2em] {{ $plan->is_featured ? 'text-white/70' : 'text-medium-gray' }}">
+                                    class="text-sm font-bold mb-2 uppercase tracking-[0.2em] {{ $plan->is_featured ? 'text-white/70' : 'text-medium-gray' }}">
                                     {{ $plan->name }}
                                 </div>
-                                <div class="text-5xl font-black mb-2 tracking-tighter italic">
-                                    {{ $plan->price }}
+
+                                <div class="flex flex-col items-center">
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest mb-1 {{ $plan->is_featured ? 'text-secondary' : 'text-primary' }}">
+                                        Mulai Dari
+                                    </span>
+                                    <div class="flex items-start justify-center gap-1">
+                                        <span class="text-xl font-black mt-1">Rp</span>
+                                        <span
+                                            class="text-5xl lg:text-6xl font-black tracking-tighter italic leading-none">
+                                            {{ $plan->price }}
+                                        </span>
+                                    </div>
                                 </div>
-                                <div
-                                    class="text-xs mb-10 font-medium {{ $plan->is_featured ? 'text-white/60' : 'text-medium-gray' }}">
+
+                                <div class="text-[10px] mt-4 font-medium italic opacity-70">
                                     {{ $plan->subtitle }}
                                 </div>
                             </div>
 
-                            <div class="space-y-5 mb-12">
+                            <div class="space-y-4 mb-12 flex-grow">
                                 @foreach ($plan->features ?? [] as $feature)
-                                    <div class="flex items-center gap-4 text-sm font-semibold">
+                                    <div class="flex items-start gap-4 text-sm font-semibold leading-snug">
                                         <div
-                                            class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center 
-                            {{ $plan->is_featured ? 'bg-white/20' : 'bg-primary/10' }}">
-                                            <svg class="w-3 h-3 {{ $plan->is_featured ? 'text-white' : 'text-primary' }}"
-                                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                                stroke-width="4">
+                                            class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5
+                            {{ $plan->is_featured ? 'bg-secondary text-white' : 'bg-primary text-white' }}">
+                                            <svg class="w-3 h-3" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24" stroke-width="4">
                                                 <path d="M5 13l4 4L19 7"></path>
                                             </svg>
                                         </div>
@@ -523,12 +537,12 @@
                                 @endforeach
                             </div>
 
-                            <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}?text=Halo%20Danova,%20saya%20tertarik%20dengan%20Paket%20{{ urlencode($plan->name) }}"
-                                class="block w-full py-5 rounded-2xl font-black text-center transition-all uppercase text-xs tracking-widest
+                            <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}?text=Halo%20Danova,%20saya%20tertarik%20tanya%20Paket%20{{ urlencode($plan->name) }}"
+                                class="block w-full py-5 rounded-2xl font-black text-center transition-all uppercase text-xs tracking-[0.2em]
                    {{ $plan->is_featured
                        ? 'bg-white text-primary hover:bg-secondary hover:text-white shadow-lg'
                        : 'bg-dark text-white hover:bg-primary shadow-md' }}">
-                                Pilih Paket {{ $plan->name }}
+                                Ambil Paket Ini
                             </a>
                         </article>
                     @empty
@@ -540,9 +554,11 @@
                 </div>
 
                 <div class="mt-20 text-center">
-                    <p class="text-sm text-medium-gray font-bold uppercase tracking-widest">
-                        Butuh fitur kustom?
-                        <a href="#contact" class="text-primary hover:underline ml-2">Hubungi Kami Sekarang →</a>
+                    <p class="text-xs text-medium-gray font-bold uppercase tracking-[0.2em]">
+                        Ingin paket custom?
+                        <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}"
+                            class="text-primary hover:text-secondary transition-colors ml-2 underline decoration-2 underline-offset-4">Konsultasi
+                            Sekarang →</a>
                     </p>
                 </div>
             </div>
