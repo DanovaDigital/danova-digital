@@ -482,17 +482,17 @@
 
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-0 items-center max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-8 items-center max-w-7xl mx-auto">
                     @forelse ($pricingPlans as $plan)
                         <article
                             class="relative flex flex-col transition-all duration-500 
-                    {{ $plan->is_featured
-                        ? 'bg-slate-900 text-white rounded-[2.5rem] lg:rounded-[3rem] p-10 lg:p-14 z-20 shadow-xl shadow-slate-900/20 lg:scale-105 border-4 border-primary'
-                        : 'bg-white text-slate-900 rounded-[2.5rem] p-10 lg:p-12 z-10 border border-slate-100 shadow-sm hover:border-primary/30' }}">
+            {{ $plan->is_featured
+                ? 'bg-slate-900 text-white rounded-[2.5rem] lg:rounded-[3rem] p-10 lg:p-14 z-20 shadow-[0_20px_50px_rgba(0,0,0,0.2)] lg:scale-105 border-4 border-primary'
+                : 'bg-white text-slate-900 rounded-[2.5rem] p-10 lg:p-12 z-10 border border-slate-100 shadow-xl shadow-slate-200/60 hover:shadow-2xl hover:shadow-slate-300/50 hover:-translate-y-2' }}">
 
                             @if ($plan->is_featured)
                                 <div
-                                    class="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black uppercase px-6 py-2.5 rounded-full tracking-[0.2em] shadow-lg">
+                                    class="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black uppercase px-6 py-2.5 rounded-full tracking-[0.2em] shadow-lg shadow-primary/30">
                                     REKOMENDASI UMKM
                                 </div>
                             @endif
@@ -509,7 +509,7 @@
                             </div>
 
                             <div
-                                class="mb-10 pb-8 border-b {{ $plan->is_featured ? 'border-slate-800' : 'border-slate-50' }}">
+                                class="mb-10 pb-8 border-b {{ $plan->is_featured ? 'border-slate-800' : 'border-slate-100' }}">
                                 <span
                                     class="text-[10px] font-black uppercase tracking-widest block mb-2 {{ $plan->is_featured ? 'text-slate-500' : 'text-primary/60' }}">
                                     Mulai Dari
@@ -542,10 +542,10 @@
 
                             <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}?text=Halo%20Danova,%20saya%20tertarik%20tanya%20Paket%20{{ urlencode($plan->name) }}"
                                 class="group relative block w-full py-5 rounded-2xl font-black text-center transition-all uppercase text-xs tracking-[0.2em] overflow-hidden
-                        {{ $plan->is_featured
-                            ? 'bg-primary text-white hover:bg-white hover:text-primary shadow-lg shadow-primary/20'
-                            : 'bg-slate-50 text-slate-900 hover:bg-primary hover:text-white' }}">
-                                <span class="relative z-10">Ambil Paket Ini</span>
+                {{ $plan->is_featured
+                    ? 'bg-primary text-white hover:bg-white hover:text-primary shadow-lg shadow-primary/20'
+                    : 'bg-slate-900 text-white hover:bg-primary shadow-md' }}">
+                                <span class="relative z-10">{{ $plan->cta_label ?? 'Ambil Paket Ini' }}</span>
                             </a>
                         </article>
                     @empty
