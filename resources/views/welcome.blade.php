@@ -318,153 +318,137 @@
             </div>
         </section>
 
-        <section id="brief" class="py-24 bg-bg-gray">
-            <div class="container mx-auto px-6 lg:px-12">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-4xl font-bold mb-4">Konsultasi & Estimasi <span
-                            class="text-primary">Biaya</span></h2>
-                    <p class="text-medium-gray">Isi form singkat ini (60 detik) untuk dapatkan perkiraan biaya sesuai
-                        kebutuhan Anda.</p>
+        <section id="brief" class="py-24 bg-white relative overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-40 pointer-events-none">
+                <div class="absolute top-10 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-10 right-10 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="container mx-auto px-6 lg:px-12 relative z-10">
+                <div class="max-w-2xl mx-auto text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-black mb-4 tracking-tight">
+                        Konsultasi & <span class="text-primary italic">Estimasi Biaya</span>
+                    </h2>
+                    <p class="text-medium-gray font-medium">
+                        Bingung soal biaya? Isi form 60 detik ini untuk dapatkan penawaran yang pas buat budget bisnis
+                        Anda.
+                    </p>
                 </div>
 
-                <div class="max-w-4xl mx-auto bg-white rounded-[2.5rem] p-8 lg:p-12 shadow-2xl border border-light-gray"
+                <div class="max-w-3xl mx-auto bg-white rounded-[2rem] border border-slate-100 shadow-sm p-6 lg:p-10"
                     id="briefBuilder" data-whatsapp-url="{{ route('out.whatsapp') }}"
                     data-email-url="{{ route('out.email') }}">
 
-                    <div class="mb-12">
-                        <div class="flex justify-between items-center mb-4">
-                            <span id="briefStepLabel"
-                                class="text-xs font-bold text-primary uppercase tracking-widest">Progress 1/6</span>
-                            <span class="text-xs font-medium text-medium-gray italic">Hampir Selesai...</span>
+                    <div class="mb-10">
+                        <div class="flex justify-between items-end mb-3">
+                            <div>
+                                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Progress
+                                    Kerja</span>
+                                <h4 id="briefStepLabel" class="text-lg font-bold text-dark">Langkah 1/6</h4>
+                            </div>
+                            <span class="text-[11px] font-bold text-medium-gray/60 italic">Hampir Selesai...</span>
                         </div>
-                        <div class="h-2 bg-light-gray rounded-full overflow-hidden">
-                            <div class="h-full bg-primary transition-all duration-500" id="briefProgressFill"
+                        <div class="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-primary transition-all duration-700 ease-out" id="briefProgressFill"
                                 style="width: 16.6%"></div>
                         </div>
+
                         <div id="briefError"
-                            class="hidden mt-4 p-4 bg-red-50 text-red-500 text-sm rounded-xl border border-red-100">
+                            class="hidden mt-4 p-4 bg-red-50 text-red-600 text-xs font-bold rounded-xl border border-red-100 animate-pulse">
                         </div>
                     </div>
 
-                    <form id="briefForm" class="min-h-[350px]">
-                        <div class="brief-step is-active" data-step="1">
-                            <h3 class="text-2xl font-bold mb-8">Apa yang ingin Anda buat?</h3>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <form id="briefForm" class="min-h-[320px]">
+                        <div class="brief-step is-active animate-in" data-step="1">
+                            <h3 class="text-xl font-bold mb-6 text-dark flex items-center gap-2">
+                                <span
+                                    class="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center text-sm">01</span>
+                                Apa yang ingin Anda buat?
+                            </h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 @foreach (['Website Toko / UMKM', 'Landing Page Promosi', 'Website Portfolio', 'Update Website Lama', 'Keperluan Tugas/Project', 'Lainnya'] as $opt)
                                     <label
-                                        class="flex items-center gap-4 p-5 rounded-2xl border-2 border-light-gray cursor-pointer hover:border-primary hover:bg-blue-50/30 transition-all">
+                                        class="group relative flex items-center gap-4 p-4 rounded-2xl border border-slate-200 cursor-pointer hover:border-primary hover:bg-blue-50/30 transition-all active:scale-[0.98]">
                                         <input type="radio" name="need" value="{{ $opt }}"
-                                            class="w-5 h-5 text-primary border-gray-300 focus:ring-primary" required>
-                                        <span class="text-sm font-semibold text-dark">{{ $opt }}</span>
-                                    </label>
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div class="brief-step" data-step="2">
-                            <h3 class="text-2xl font-bold mb-8">Apa tujuan utama website ini?</h3>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                @foreach (['Cari Pembeli Baru', 'Branding Biaya Terpercaya', 'Informasi Katalog Produk', 'Daftar Event / Promo', 'Kebutuhan Akademik'] as $opt)
-                                    <label
-                                        class="flex items-center gap-4 p-5 rounded-2xl border-2 border-light-gray cursor-pointer hover:border-primary transition-all">
-                                        <input type="radio" name="goal" value="{{ $opt }}"
-                                            class="w-5 h-5 text-primary" required>
-                                        <span class="text-sm font-semibold">{{ $opt }}</span>
-                                    </label>
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div class="brief-step" data-step="3">
-                            <h3 class="text-2xl font-bold mb-8">Perkiraan budget Anda?</h3>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                @foreach (['Dibawah 1 Juta', '1 – 3 Juta', '3 – 6 Juta', 'Diatas 6 Juta', 'Ingin Diskusi Dulu'] as $opt)
-                                    <label
-                                        class="flex items-center gap-4 p-5 rounded-2xl border-2 border-light-gray cursor-pointer hover:border-primary transition-all">
-                                        <input type="radio" name="budget" value="{{ $opt }}"
-                                            class="w-5 h-5 text-primary" required>
-                                        <span class="text-sm font-semibold">{{ $opt }}</span>
-                                    </label>
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div class="brief-step" data-step="4">
-                            <h3 class="text-2xl font-bold mb-8">Kapan target website selesai?</h3>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                @foreach (['Secepatnya (< 2 Minggu)', 'Santai (1 Bulan)', 'Hanya Tanya Dulu'] as $opt)
-                                    <label
-                                        class="flex items-center gap-4 p-5 rounded-2xl border-2 border-light-gray cursor-pointer hover:border-primary transition-all">
-                                        <input type="radio" name="timeline" value="{{ $opt }}"
-                                            class="w-5 h-5 text-primary" required>
-                                        <span class="text-sm font-semibold">{{ $opt }}</span>
-                                    </label>
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div class="brief-step" data-step="5">
-                            <h3 class="text-2xl font-bold mb-8">Fitur tambahan? (Bisa pilih banyak)</h3>
-                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                                @foreach (['Galeri Foto', 'Daftar Harga', 'Formulir Kontak', 'Halaman Blog', 'Maps Lokasi', 'Chat WA Langsung'] as $opt)
-                                    <label
-                                        class="flex items-center gap-3 p-5 rounded-2xl border-2 border-light-gray cursor-pointer hover:border-primary transition-all">
-                                        <input type="checkbox" name="features[]" value="{{ $opt }}"
-                                            class="w-5 h-5 text-primary rounded border-gray-300">
+                                            class="peer hidden" required>
+                                        <div
+                                            class="w-5 h-5 rounded-full border-2 border-slate-300 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+                                            <div
+                                                class="w-2 h-2 bg-white rounded-full scale-0 peer-checked:scale-100 transition-transform">
+                                            </div>
+                                        </div>
                                         <span
-                                            class="text-xs font-bold uppercase tracking-tighter">{{ $opt }}</span>
+                                            class="text-sm font-bold text-slate-600 peer-checked:text-primary transition-colors">{{ $opt }}</span>
                                     </label>
                                 @endforeach
                             </div>
                         </div>
 
                         <div class="brief-step" data-step="6">
-                            <h3 class="text-2xl font-bold mb-8">Informasi Kontak Anda</h3>
+                            <h3 class="text-xl font-bold mb-6 text-dark flex items-center gap-2">
+                                <span
+                                    class="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center text-sm">06</span>
+                                Informasi Kontak Anda
+                            </h3>
                             <div class="space-y-4">
-                                <div>
-                                    <label class="text-xs font-bold text-medium-gray mb-2 block uppercase">Nama atau
-                                        Nama Usaha</label>
+                                <div class="group">
+                                    <label
+                                        class="text-[10px] font-black text-slate-400 mb-2 block uppercase tracking-widest group-focus-within:text-primary transition-colors">Nama
+                                        / Nama Usaha</label>
                                     <input type="text" name="brand"
                                         placeholder="Contoh: Toko Berkah / Bapak Budi"
-                                        class="w-full p-5 border-2 border-light-gray rounded-2xl outline-none focus:border-primary bg-bg-gray focus:bg-white transition-all"
+                                        class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-primary focus:bg-white transition-all text-sm font-medium"
                                         required>
                                 </div>
-                                <div>
-                                    <label class="text-xs font-bold text-medium-gray mb-2 block uppercase">Catatan
-                                        Khusus (Opsional)</label>
-                                    <textarea name="notes" rows="4" placeholder="Ceritakan singkat keinginan website Anda..."
-                                        class="w-full p-5 border-2 border-light-gray rounded-2xl outline-none focus:border-primary bg-bg-gray focus:bg-white transition-all"></textarea>
+                                <div class="group">
+                                    <label
+                                        class="text-[10px] font-black text-slate-400 mb-2 block uppercase tracking-widest group-focus-within:text-primary transition-colors">Catatan
+                                        Khusus</label>
+                                    <textarea name="notes" rows="3" placeholder="Ceritakan singkat keinginan Anda..."
+                                        class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-primary focus:bg-white transition-all text-sm font-medium"></textarea>
                                 </div>
                             </div>
                         </div>
                     </form>
 
-                    <div class="flex justify-between items-center mt-12" id="briefActions">
+                    <div class="flex justify-between items-center mt-10" id="briefActions">
                         <button type="button" id="briefBack"
-                            class="px-8 py-4 border-2 border-light-gray rounded-2xl font-bold text-medium-gray hover:bg-bg-gray disabled:opacity-30 disabled:pointer-events-none transition-all">Kembali</button>
+                            class="text-xs font-black uppercase tracking-widest text-slate-400 hover:text-dark disabled:opacity-0 transition-all flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                            Kembali
+                        </button>
                         <button type="button" id="briefNext"
-                            class="px-10 py-4 bg-primary text-white rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20">Lanjut</button>
+                            class="px-10 py-4 bg-dark text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-primary transition-all active:scale-95 shadow-lg shadow-dark/5">
+                            Lanjut
+                        </button>
                     </div>
 
-                    <div id="briefResult" class="hidden mt-12 pt-12 border-t-2 border-light-gray">
-                        <div class="flex items-center gap-3 mb-6">
-                            <span class="p-2 bg-green-100 rounded-lg text-green-600">✓</span>
-                            <h3 class="text-2xl font-bold">Ringkasan Kebutuhan</h3>
-                        </div>
-                        <pre id="briefSummary"
-                            class="bg-bg-gray p-6 rounded-3xl border-2 border-light-gray text-sm text-dark font-sans whitespace-pre-wrap leading-relaxed mb-8 shadow-inner"></pre>
-                        <div class="flex flex-wrap gap-4">
-                            <button id="briefEdit"
-                                class="px-6 py-4 border-2 border-light-gray rounded-2xl font-bold hover:bg-bg-gray">Ubah
-                                Data</button>
-                            <a id="briefSendWhatsapp" href="#" target="_blank"
-                                class="px-8 py-4 bg-whatsapp text-white rounded-2xl font-bold hover:bg-green-600 transition-all flex-1 text-center shadow-lg shadow-green-500/20 flex items-center justify-center gap-3">
-                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                                    <path
-                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                                </svg>
-                                Konsultasikan Lewat WA
-                            </a>
+                    <div id="briefResult" class="hidden mt-8 pt-8 border-t border-slate-100 animate-in">
+                        <div class="bg-blue-50/50 rounded-2xl p-6 border border-blue-100/50">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-xs">
+                                    ✓</div>
+                                <h3 class="font-bold text-dark">Brief Anda Telah Siap!</h3>
+                            </div>
+                            <pre id="briefSummary" class="text-[13px] text-slate-600 font-sans whitespace-pre-wrap leading-relaxed mb-6 italic"></pre>
+
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <button id="briefEdit"
+                                    class="px-6 py-4 text-xs font-black uppercase tracking-widest text-slate-400 hover:text-dark transition-all">Ubah
+                                    Data</button>
+                                <a id="briefSendWhatsapp" href="#" target="_blank"
+                                    class="px-8 py-4 bg-whatsapp text-white rounded-xl font-black text-xs uppercase tracking-widest text-center flex-1 flex items-center justify-center gap-3 hover:bg-green-600 transition-all shadow-xl shadow-green-500/10">
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                        <path
+                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                    </svg>
+                                    Kirim ke WhatsApp
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
