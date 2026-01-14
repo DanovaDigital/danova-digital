@@ -87,6 +87,52 @@ return optional($settings->firstWhere('key', $key))->value ?? $default;
             <p class="muted" style="font-size: 13px;">Upload images untuk hero, badge, dan branding</p>
         </div>
         <div style="padding: 24px; display: grid; gap: 24px;">
+            <!-- Hero Main Image -->
+            <div class="form-group" style="margin-bottom: 0;">
+                <label>Hero Main Image</label>
+                <small class="muted" style="font-size: 12px; display: block; margin-bottom: 8px;">Gambar utama card hero (recommended: portrait, min 800px)</small>
+
+                <div class="upload-zone" id="heroMainImageZone">
+                    <input type="file" name="hero_main_image" id="heroMainImageInput" accept="image/*" style="display: none;" />
+                    <div class="upload-placeholder" @if($getValue('hero.main_image')) style="display: none;" @endif>
+                        <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <div class="upload-text">
+                            <strong>Click to upload</strong> or drag and drop
+                        </div>
+                        <div class="upload-hint">PNG, JPG up to 10MB</div>
+                    </div>
+                    <div class="upload-preview" @if($getValue('hero.main_image')) style="display: block;" @else style="display: none;" @endif>
+                        <img src="@if($getValue('hero.main_image')){{ asset('storage/' . $getValue('hero.main_image')) }}@endif" alt="Preview" />
+                        <button type="button" class="upload-remove">×</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Mobile Image -->
+            <div class="form-group" style="margin-bottom: 0;">
+                <label>Hero Mobile Image</label>
+                <small class="muted" style="font-size: 12px; display: block; margin-bottom: 8px;">Gambar kecil mockup mobile di hero (recommended: portrait 9:16, min 600px)</small>
+
+                <div class="upload-zone" id="heroMobileImageZone">
+                    <input type="file" name="hero_mobile_image" id="heroMobileImageInput" accept="image/*" style="display: none;" />
+                    <div class="upload-placeholder" @if($getValue('hero.mobile_image')) style="display: none;" @endif>
+                        <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <div class="upload-text">
+                            <strong>Click to upload</strong> or drag and drop
+                        </div>
+                        <div class="upload-hint">PNG, JPG up to 10MB</div>
+                    </div>
+                    <div class="upload-preview" @if($getValue('hero.mobile_image')) style="display: block;" @else style="display: none;" @endif>
+                        <img src="@if($getValue('hero.mobile_image')){{ asset('storage/' . $getValue('hero.mobile_image')) }}@endif" alt="Preview" />
+                        <button type="button" class="upload-remove">×</button>
+                    </div>
+                </div>
+            </div>
+
             <!-- Hero Showcase Logo -->
             <div class="form-group" style="margin-bottom: 0;">
                 <label>Hero Showcase Logo</label>
@@ -229,7 +275,7 @@ return optional($settings->firstWhere('key', $key))->value ?? $default;
             </thead>
             <tbody>
                 @php
-                $excludedKeys = ['stats.projects', 'stats.rating', 'stats.on_time', 'hero.feature1_title', 'hero.feature1_description', 'hero.feature2_title', 'hero.feature2_description', 'hero.showcase_logo', 'hero.badge_avatar1', 'hero.badge_avatar2', 'hero.badge_avatar3', 'branding.header_logo', 'contact.whatsapp_label', 'contact.email_label', 'contact.whatsapp', 'contact.whatsapp_prefill', 'contact.email', 'contact.email_subject', 'contact.email_body'];
+                $excludedKeys = ['stats.projects', 'stats.rating', 'stats.on_time', 'hero.feature1_title', 'hero.feature1_description', 'hero.feature2_title', 'hero.feature2_description', 'hero.main_image', 'hero.mobile_image', 'hero.showcase_logo', 'hero.badge_avatar1', 'hero.badge_avatar2', 'hero.badge_avatar3', 'branding.header_logo', 'contact.whatsapp_label', 'contact.email_label', 'contact.whatsapp', 'contact.whatsapp_prefill', 'contact.email', 'contact.email_subject', 'contact.email_body'];
                 $customSettings = $settings->whereNotIn('key', $excludedKeys);
                 @endphp
                 @forelse ($customSettings as $s)
@@ -436,6 +482,14 @@ return optional($settings->firstWhere('key', $key))->value ?? $default;
     document.addEventListener('DOMContentLoaded', function() {
         // Initialize upload zones
         const uploadZones = [{
+                zoneId: 'heroMainImageZone',
+                inputId: 'heroMainImageInput'
+            },
+            {
+                zoneId: 'heroMobileImageZone',
+                inputId: 'heroMobileImageInput'
+            },
+            {
                 zoneId: 'heroShowcaseLogoZone',
                 inputId: 'heroShowcaseLogoInput'
             },

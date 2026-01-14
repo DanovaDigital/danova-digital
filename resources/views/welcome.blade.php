@@ -95,11 +95,11 @@
 
 <body class="font-lexend bg-white text-dark antialiased overflow-x-hidden">
     @php
-        $setting = fn(string $key, $default = null) => optional($settings->get($key))->value ?? $default;
+    $setting = fn(string $key, $default = null) => optional($settings->get($key))->value ?? $default;
 
-        $danovaGmail = $setting('contact.email', 'danovaagency@gmail.com');
-        $danovaWhatsappNumber = $setting('contact.whatsapp', '6281234567890');
-        $danovaWhatsappNumberDigits = preg_replace('/\D+/', '', (string) $danovaWhatsappNumber);
+    $danovaGmail = $setting('contact.email', 'danovaagency@gmail.com');
+    $danovaWhatsappNumber = $setting('contact.whatsapp', '6281234567890');
+    $danovaWhatsappNumberDigits = preg_replace('/\D+/', '', (string) $danovaWhatsappNumber);
     @endphp
 
     <header id="header"
@@ -107,12 +107,12 @@
         <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center w-full">
             <a href="/" class="flex items-center gap-3 text-2xl font-bold">
                 @if ($setting('branding.header_logo'))
-                    <img src="{{ asset('storage/' . $setting('branding.header_logo')) }}" alt="Danova"
-                        class="h-6 lg:h-7" />
+                <img src="{{ asset('storage/' . $setting('branding.header_logo')) }}" alt="Danova"
+                    class="h-6 lg:h-7" />
                 @else
-                    <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-black">
-                        D</div>
-                    <span class="tracking-tight">Danova</span>
+                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-black">
+                    D</div>
+                <span class="tracking-tight">Danova</span>
                 @endif
             </a>
 
@@ -246,7 +246,7 @@
                         <div
                             class="absolute -bottom-10 -right-6 lg:-right-12 w-32 lg:w-48 bg-dark p-2 rounded-[2rem] shadow-2xl hidden sm:block border-4 border-white transform rotate-6 transition-transform group-hover:rotate-0 duration-500">
                             <div class="bg-bg-gray rounded-[1.8rem] overflow-hidden aspect-[9/16]">
-                                <img src="https://images.unsplash.com/photo-1512428559083-a401c338e45e?auto=format&fit=crop&q=80"
+                                <img src="{{ $setting('hero.mobile_image') ? asset('storage/' . $setting('hero.mobile_image')) : 'https://images.unsplash.com/photo-1512428559083-a401c338e45e?auto=format&fit=crop&q=80' }}"
                                     alt="Tampilan Mobile" class="w-full h-full object-cover">
                             </div>
                         </div>
@@ -265,54 +265,54 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     @php
-                        $services = [
-                            [
-                                'Website Profil Bisnis',
-                                'Bikin bisnis Anda terlihat bonafid dan profesional di mata calon pembeli.',
-                                'bg-blue-50',
-                            ],
-                            [
-                                'Landing Page Jualan',
-                                'Halaman khusus promosi produk dengan fokus bikin pelanggan langsung beli.',
-                                'bg-orange-50',
-                            ],
-                            [
-                                'Sistem Visual Brand',
-                                'Bikin logo dan identitas warna brand agar pelanggan selalu ingat bisnis Anda.',
-                                'bg-gray-50',
-                            ],
-                        ];
+                    $services = [
+                    [
+                    'Website Profil Bisnis',
+                    'Bikin bisnis Anda terlihat bonafid dan profesional di mata calon pembeli.',
+                    'bg-blue-50',
+                    ],
+                    [
+                    'Landing Page Jualan',
+                    'Halaman khusus promosi produk dengan fokus bikin pelanggan langsung beli.',
+                    'bg-orange-50',
+                    ],
+                    [
+                    'Sistem Visual Brand',
+                    'Bikin logo dan identitas warna brand agar pelanggan selalu ingat bisnis Anda.',
+                    'bg-gray-50',
+                    ],
+                    ];
                     @endphp
 
                     @foreach ($services as $s)
-                        <article
-                            class="p-10 rounded-[2.5rem] {{ $s[2] }} border border-transparent hover:border-primary transition-all group">
-                            <div
-                                class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
-                                @if ($loop->index == 0)
-                                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                                        </path>
-                                    </svg>
-                                @elseif($loop->index == 1)
-                                    <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                    </svg>
-                                @else
-                                    <svg class="w-6 h-6 text-dark" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-3">
-                                        </path>
-                                    </svg>
-                                @endif
-                            </div>
-                            <h3 class="text-xl font-bold mb-4">{{ $s[0] }}</h3>
-                            <p class="text-medium-gray text-sm leading-relaxed">{{ $s[1] }}</p>
-                        </article>
+                    <article
+                        class="p-10 rounded-[2.5rem] {{ $s[2] }} border border-transparent hover:border-primary transition-all group">
+                        <div
+                            class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                            @if ($loop->index == 0)
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                </path>
+                            </svg>
+                            @elseif($loop->index == 1)
+                            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            @else
+                            <svg class="w-6 h-6 text-dark" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-3">
+                                </path>
+                            </svg>
+                            @endif
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">{{ $s[0] }}</h3>
+                        <p class="text-medium-gray text-sm leading-relaxed">{{ $s[1] }}</p>
+                    </article>
                     @endforeach
                 </div>
             </div>
@@ -367,19 +367,19 @@
                             </h3>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 @foreach (['Website Toko / UMKM', 'Landing Page Promosi', 'Website Portfolio', 'Update Website Lama', 'Keperluan Tugas/Project', 'Lainnya'] as $opt)
-                                    <label
-                                        class="group relative flex items-center gap-4 p-4 rounded-2xl border border-slate-200 cursor-pointer hover:border-primary hover:bg-blue-50/30 transition-all active:scale-[0.98]">
-                                        <input type="radio" name="need" value="{{ $opt }}"
-                                            class="peer hidden" required>
+                                <label
+                                    class="group relative flex items-center gap-4 p-4 rounded-2xl border border-slate-200 cursor-pointer hover:border-primary hover:bg-blue-50/30 transition-all active:scale-[0.98]">
+                                    <input type="radio" name="need" value="{{ $opt }}"
+                                        class="peer hidden" required>
+                                    <div
+                                        class="w-5 h-5 rounded-full border-2 border-slate-300 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
                                         <div
-                                            class="w-5 h-5 rounded-full border-2 border-slate-300 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
-                                            <div
-                                                class="w-2 h-2 bg-white rounded-full scale-0 peer-checked:scale-100 transition-transform">
-                                            </div>
+                                            class="w-2 h-2 bg-white rounded-full scale-0 peer-checked:scale-100 transition-transform">
                                         </div>
-                                        <span
-                                            class="text-sm font-bold text-slate-600 peer-checked:text-primary transition-colors">{{ $opt }}</span>
-                                    </label>
+                                    </div>
+                                    <span
+                                        class="text-sm font-bold text-slate-600 peer-checked:text-primary transition-colors">{{ $opt }}</span>
+                                </label>
                                 @endforeach
                             </div>
                         </div>
@@ -484,70 +484,70 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-8 items-center max-w-7xl mx-auto">
                     @forelse ($pricingPlans as $plan)
-                        <article
-                            class="relative flex flex-col transition-all duration-500 
+                    <article
+                        class="relative flex flex-col transition-all duration-500 
             {{ $plan->is_featured
                 ? 'bg-slate-900 text-white rounded-[2.5rem] lg:rounded-[3rem] p-10 lg:p-14 z-20 shadow-[0_20px_50px_rgba(0,0,0,0.2)] lg:scale-105 border-4 border-primary'
                 : 'bg-white text-slate-900 rounded-[2.5rem] p-10 lg:p-12 z-10 border border-slate-100 shadow-xl shadow-slate-200/60 hover:shadow-2xl hover:shadow-slate-300/50 hover:-translate-y-2' }}">
 
-                            @if ($plan->is_featured)
-                                <div
-                                    class="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black uppercase px-6 py-2.5 rounded-full tracking-[0.2em] shadow-lg shadow-primary/30">
-                                    REKOMENDASI UMKM
-                                </div>
-                            @endif
+                        @if ($plan->is_featured)
+                        <div
+                            class="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black uppercase px-6 py-2.5 rounded-full tracking-[0.2em] shadow-lg shadow-primary/30">
+                            REKOMENDASI UMKM
+                        </div>
+                        @endif
 
-                            <div class="mb-8">
-                                <h3
-                                    class="text-sm font-black uppercase tracking-[0.2em] mb-2 {{ $plan->is_featured ? 'text-primary' : 'text-slate-400' }}">
-                                    {{ $plan->name }}
-                                </h3>
-                                <p
-                                    class="text-xs font-medium italic {{ $plan->is_featured ? 'text-slate-400' : 'text-slate-500' }}">
-                                    {{ $plan->subtitle }}
-                                </p>
-                            </div>
+                        <div class="mb-8">
+                            <h3
+                                class="text-sm font-black uppercase tracking-[0.2em] mb-2 {{ $plan->is_featured ? 'text-primary' : 'text-slate-400' }}">
+                                {{ $plan->name }}
+                            </h3>
+                            <p
+                                class="text-xs font-medium italic {{ $plan->is_featured ? 'text-slate-400' : 'text-slate-500' }}">
+                                {{ $plan->subtitle }}
+                            </p>
+                        </div>
 
-                            <div
-                                class="mb-10 pb-8 border-b {{ $plan->is_featured ? 'border-slate-800' : 'border-slate-100' }}">
-                                <span
-                                    class="text-[10px] font-black uppercase tracking-widest block mb-2 {{ $plan->is_featured ? 'text-slate-500' : 'text-primary/60' }}">
-                                    Mulai Dari
+                        <div
+                            class="mb-10 pb-8 border-b {{ $plan->is_featured ? 'border-slate-800' : 'border-slate-100' }}">
+                            <span
+                                class="text-[10px] font-black uppercase tracking-widest block mb-2 {{ $plan->is_featured ? 'text-slate-500' : 'text-primary/60' }}">
+                                Mulai Dari
+                            </span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-xl font-bold">Rp</span>
+                                <span class="text-5xl lg:text-6xl font-black tracking-tighter leading-none">
+                                    {{ $plan->price }}
                                 </span>
-                                <div class="flex items-baseline gap-1">
-                                    <span class="text-xl font-bold">Rp</span>
-                                    <span class="text-5xl lg:text-6xl font-black tracking-tighter leading-none">
-                                        {{ $plan->price }}
-                                    </span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-5 mb-12 flex-grow">
+                            @foreach ($plan->features ?? [] as $feature)
+                            <div class="flex items-start gap-4 text-sm">
+                                <div
+                                    class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 {{ $plan->is_featured ? 'bg-primary/20 text-primary' : 'bg-slate-100 text-slate-400' }}">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24" stroke-width="4">
+                                        <path d="M5 13l4 4L19 7"></path>
+                                    </svg>
                                 </div>
+                                <span
+                                    class="font-medium {{ $plan->is_featured ? 'text-slate-300' : 'text-slate-600' }}">
+                                    {{ $feature }}
+                                </span>
                             </div>
+                            @endforeach
+                        </div>
 
-                            <div class="space-y-5 mb-12 flex-grow">
-                                @foreach ($plan->features ?? [] as $feature)
-                                    <div class="flex items-start gap-4 text-sm">
-                                        <div
-                                            class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 {{ $plan->is_featured ? 'bg-primary/20 text-primary' : 'bg-slate-100 text-slate-400' }}">
-                                            <svg class="w-3 h-3" fill="none" stroke="currentColor"
-                                                viewBox="0 0 24 24" stroke-width="4">
-                                                <path d="M5 13l4 4L19 7"></path>
-                                            </svg>
-                                        </div>
-                                        <span
-                                            class="font-medium {{ $plan->is_featured ? 'text-slate-300' : 'text-slate-600' }}">
-                                            {{ $feature }}
-                                        </span>
-                                    </div>
-                                @endforeach
-                            </div>
-
-                            <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}?text=Halo%20Danova,%20saya%20tertarik%20tanya%20Paket%20{{ urlencode($plan->name) }}"
-                                class="group relative block w-full py-5 rounded-2xl font-black text-center transition-all uppercase text-xs tracking-[0.2em] overflow-hidden
+                        <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}?text=Halo%20Danova,%20saya%20tertarik%20tanya%20Paket%20{{ urlencode($plan->name) }}"
+                            class="group relative block w-full py-5 rounded-2xl font-black text-center transition-all uppercase text-xs tracking-[0.2em] overflow-hidden
                 {{ $plan->is_featured
                     ? 'bg-primary text-white hover:bg-white hover:text-primary shadow-lg shadow-primary/20'
                     : 'bg-slate-900 text-white hover:bg-primary shadow-md' }}">
-                                <span class="relative z-10">{{ $plan->cta_label ?? 'Ambil Paket Ini' }}</span>
-                            </a>
-                        </article>
+                            <span class="relative z-10">{{ $plan->cta_label ?? 'Ambil Paket Ini' }}</span>
+                        </a>
+                    </article>
                     @empty
                     @endforelse
                 </div>
@@ -576,35 +576,37 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     @forelse ($projects as $project)
-                        @php
-                            $workImage = $project->hero_image
-                                ? asset('storage/' . $project->hero_image)
-                                : $project->hero_image_url ?? '';
-                        @endphp
-                        <a href="{{ route('work.detail', $project->slug) }}"
-                            class="group block bg-white p-4 rounded-[2.5rem] hover:shadow-2xl transition-all border border-light-gray">
-                            <div
-                                class="aspect-video bg-gray-100 rounded-3xl mb-6 overflow-hidden relative border border-light-gray shadow-inner">
-                                <img src="{{ $workImage }}"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                                <div
-                                    class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                    <span
-                                        class="bg-white text-primary px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest">Detail
-                                        Project</span>
-                                </div>
-                            </div>
-                            <div class="px-3 pb-3">
-                                <div class="font-bold text-lg group-hover:text-primary transition-colors mb-1">
-                                    {{ $project->title }}</div>
-                                <div class="text-[11px] text-medium-gray font-bold uppercase tracking-wider">
-                                    {{ $project->subtitle }}</div>
-                            </div>
-                        </a>
-                    @empty
+                    @php
+                    $workImage = $project->hero_image
+                    ? asset('storage/' . $project->hero_image)
+                    : $project->hero_image_url ?? '';
+                    @endphp
+                    <a href="{{ route('work.detail', $project->slug) }}"
+                        class="group block bg-white p-4 rounded-[2.5rem] hover:shadow-2xl transition-all border border-light-gray">
                         <div
-                            class="col-span-3 text-center p-20 bg-white border-2 border-dashed rounded-[3rem] text-medium-gray">
-                            Belum ada portfolio yang ditampilkan.</div>
+                            class="aspect-video bg-gray-100 rounded-3xl mb-6 overflow-hidden relative border border-light-gray shadow-inner">
+                            <img src="{{ $workImage }}"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <div
+                                class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span
+                                    class="bg-white text-primary px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest">Detail
+                                    Project</span>
+                            </div>
+                        </div>
+                        <div class="px-3 pb-3">
+                            <div class="font-bold text-lg group-hover:text-primary transition-colors mb-1">
+                                {{ $project->title }}
+                            </div>
+                            <div class="text-[11px] text-medium-gray font-bold uppercase tracking-wider">
+                                {{ $project->subtitle }}
+                            </div>
+                        </div>
+                    </a>
+                    @empty
+                    <div
+                        class="col-span-3 text-center p-20 bg-white border-2 border-dashed rounded-[3rem] text-medium-gray">
+                        Belum ada portfolio yang ditampilkan.</div>
                     @endforelse
                 </div>
             </div>
@@ -618,19 +620,19 @@
                 </div>
                 <div class="max-w-3xl mx-auto space-y-4">
                     @forelse ($faqs as $faq)
-                        <div
-                            class="faq-item border-2 border-light-gray rounded-3xl transition-all hover:border-primary overflow-hidden">
-                            <button
-                                class="faq-question w-full flex justify-between items-center p-6 text-left font-bold">
-                                <span class="pr-8">{{ $faq->question }}</span>
-                                <span class="faq-icon text-2xl text-primary transition-transform">+</span>
-                            </button>
-                            <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
-                                <div class="px-6 text-medium-gray text-sm leading-relaxed">{{ $faq->answer }}</div>
-                            </div>
+                    <div
+                        class="faq-item border-2 border-light-gray rounded-3xl transition-all hover:border-primary overflow-hidden">
+                        <button
+                            class="faq-question w-full flex justify-between items-center p-6 text-left font-bold">
+                            <span class="pr-8">{{ $faq->question }}</span>
+                            <span class="faq-icon text-2xl text-primary transition-transform">+</span>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                            <div class="px-6 text-medium-gray text-sm leading-relaxed">{{ $faq->answer }}</div>
                         </div>
+                    </div>
                     @empty
-                        <p class="text-center text-medium-gray">FAQ sedang diperbarui.</p>
+                    <p class="text-center text-medium-gray">FAQ sedang diperbarui.</p>
                     @endforelse
                 </div>
             </div>
@@ -678,10 +680,10 @@
                 <div>
                     <div class="text-2xl font-bold mb-4 flex items-center gap-3">
                         @if (!empty($siteSettings['header_logo']))
-                            <img src="{{ asset('storage/' . $siteSettings['header_logo']) }}" alt="Danova"
-                                style="max-height: 24px; display: block;" />
+                        <img src="{{ asset('storage/' . $siteSettings['header_logo']) }}" alt="Danova"
+                            style="max-height: 24px; display: block;" />
                         @else
-                            <span>Danova</span>
+                        <span>Danova</span>
                         @endif
                     </div>
                     <p class="text-sm text-medium-gray max-w-sm mb-6">Creative partner untuk web & visual system
