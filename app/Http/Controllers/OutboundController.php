@@ -17,7 +17,7 @@ class OutboundController extends Controller
         $setting = fn(string $key, $default = null) => optional($settings->get($key))->value ?? $default;
 
         $whatsappNumber = (string) $setting('contact.whatsapp', '6281234567890');
-        $whatsappNumberDigits = preg_replace('/\D+/', '', $whatsappNumber);
+        $whatsappNumberDigits = SiteSetting::normalizeWhatsappNumber($whatsappNumber);
 
         $projectTitle = $request->query('project_title');
         $customMessage = $request->query('message');
@@ -77,7 +77,7 @@ class OutboundController extends Controller
         $setting = fn(string $key, $default = null) => optional($settings->get($key))->value ?? $default;
 
         $whatsappNumber = (string) $setting('contact.whatsapp', '6281234567890');
-        $whatsappNumberDigits = preg_replace('/\D+/', '', $whatsappNumber);
+        $whatsappNumberDigits = SiteSetting::normalizeWhatsappNumber($whatsappNumber);
 
         $packageName = (string) $request->query('package', '');
         $packagePrice = (string) $request->query('price', '');

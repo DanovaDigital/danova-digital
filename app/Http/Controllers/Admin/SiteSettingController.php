@@ -76,6 +76,10 @@ class SiteSettingController extends Controller
 
         // Handle text settings
         foreach ($settings as $key => $value) {
+            if ($key === 'contact.whatsapp') {
+                $value = SiteSetting::normalizeWhatsappNumber($value);
+            }
+
             SiteSetting::updateOrCreate(
                 ['key' => $key],
                 [
@@ -88,6 +92,8 @@ class SiteSettingController extends Controller
 
         // Handle file uploads
         $imageFields = [
+            'hero_main_image' => 'hero.main_image',
+            'hero_mobile_image' => 'hero.mobile_image',
             'hero_showcase_logo' => 'hero.showcase_logo',
             'hero_badge_avatar1' => 'hero.badge_avatar1',
             'hero_badge_avatar2' => 'hero.badge_avatar2',
