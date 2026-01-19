@@ -5,6 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <link rel="icon" type="image/png" href="/images/DanovaFavicon.png" />
+    <link rel="apple-touch-icon" href="/images/DanovaFavicon.png" />
+
     <title>Admin Login — Danova</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
