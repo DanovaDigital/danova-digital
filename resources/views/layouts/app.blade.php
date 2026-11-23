@@ -62,12 +62,12 @@
     <style>
         :root {
             /* Colors */
-            --primary: #2F6FED;
-            --black: #1E293B;
+            --primary: #4361EE;
+            --black: #1E2538;
             --dark-gray: #334155;
             --medium-gray: #64748B;
-            --light-gray: #E2E8F0;
-            --bg-gray: #F8FAFC;
+            --light-gray: #E8EDF5;
+            --bg-gray: #FAFCFF;
             --white: #FFFFFF;
 
             /* Typography */
