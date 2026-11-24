@@ -29,7 +29,7 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#436EE8', // Authentic Pastel Studio Blue
+                        primary: '#436EE8',
                         'primary-dark': '#3258CA',
                         'primary-soft': '#EBF2FE',
                         'pastel-sky': {
@@ -44,7 +44,7 @@
                         'pastel-peach': '#FFF3EB',
                         'pastel-butter': '#FEFBE8',
                         'pastel-lavender': '#F4F2FF',
-                        dark: '#1C2436', // Rich twilight slate (softer than harsh black)
+                        dark: '#1C2436',
                         'slate-subtle': '#5E708E',
                         'light-border': '#DFE8F4',
                         'whatsapp': '#22C55E',
@@ -68,11 +68,10 @@
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
-        /* Subtle mesh background for pastel depth */
         .pastel-mesh-bg {
             background-color: #FAFCFF;
             background-image: 
-                radial-gradient(at 15% 10%, rgba(213, 229, 248, 0.45) 0px, transparent 55%),
+                radial-gradient(at 15% 10%, rgba(213, 229, 248, 0.5) 0px, transparent 55%),
                 radial-gradient(at 85% 15%, rgba(232, 242, 252, 0.6) 0px, transparent 50%),
                 radial-gradient(at 50% 90%, rgba(244, 242, 255, 0.4) 0px, transparent 60%);
         }
@@ -84,7 +83,6 @@
             border-bottom-color: #DFE8F4;
         }
 
-        /* Apple Tactile Spring Interaction */
         .apple-spring {
             transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, background-color 0.2s ease;
             will-change: transform;
@@ -108,7 +106,6 @@
             transform: translateY(-5px) scale(1.012);
         }
 
-        /* Accordion transition helper */
         .faq-answer-inner {
             overflow: hidden;
             display: none;
@@ -118,13 +115,17 @@
             display: block;
         }
 
-        /* Brief steps */
         .brief-step {
             display: none;
         }
 
         .brief-step.is-active {
             display: block;
+        }
+
+        /* 3D Perspective container for Hero Canvas */
+        .hero-perspective {
+            perspective: 1200px;
         }
     </style>
 </head>
@@ -193,12 +194,12 @@
 
     <main id="content" class="pt-24 lg:pt-28">
 
-        <!-- BESPOKE STUDIO HERO SECTION -->
+        <!-- BESPOKE STUDIO HERO SECTION WITH INTERACTIVE VECTOR ARTBOARD -->
         <section class="relative py-16 lg:py-24 overflow-hidden">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
 
-                    <!-- Left: Studio Manifesto & Story -->
+                    <!-- Left: Studio Story & Value -->
                     <div class="lg:col-span-7 text-center lg:text-left hero-text-col">
                         <div class="hero-badge inline-flex items-center gap-2.5 bg-[#EBF3FC] border border-[#D5E5F8] px-4 py-2 rounded-full mb-6">
                             <span class="w-2.5 h-2.5 rounded-full bg-primary inline-block"></span>
@@ -213,7 +214,7 @@
                             Bukan sekadar template siap pakai yang generik. Danova merancang setiap halaman secara spesifik untuk meningkatkan kredibilitas, memikat calon pembeli, dan mempercepat pertumbuhan penjualan bisnis Anda.
                         </p>
 
-                        <!-- Studio Tag Chips (Human, Artisanal Touch) -->
+                        <!-- Studio Tag Chips -->
                         <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-10">
                             <span class="px-3.5 py-1.5 rounded-xl bg-white border border-[#DFE8F4] text-xs font-medium text-slate-600 shadow-2xs">#WebsiteUMKM</span>
                             <span class="px-3.5 py-1.5 rounded-xl bg-white border border-[#DFE8F4] text-xs font-medium text-slate-600 shadow-2xs">#LandingPageIklan</span>
@@ -254,59 +255,150 @@
                         </div>
                     </div>
 
-                    <!-- Right: Polished Studio Desktop Showcase & Floating Badges -->
-                    <div class="lg:col-span-5 relative hero-visual-col">
-                        <div class="hero-mockup relative bg-white rounded-3xl shadow-2xl shadow-indigo-950/10 border border-[#D5E5F8] overflow-hidden">
-                            <!-- macOS Browser Top Bar with Pastel Accents -->
-                            <div class="bg-[#F4F8FD] px-5 py-3.5 border-b border-[#DFE8F4] flex items-center justify-between">
-                                <div class="flex items-center gap-2">
-                                    <span class="w-3 h-3 rounded-full bg-rose-400/90 inline-block"></span>
-                                    <span class="w-3 h-3 rounded-full bg-amber-400/90 inline-block"></span>
-                                    <span class="w-3 h-3 rounded-full bg-emerald-400/90 inline-block"></span>
-                                </div>
-                                <div class="bg-white border border-[#DFE8F4] rounded-xl px-4 py-1 text-xs text-slate-500 font-medium flex items-center gap-2 shadow-2xs">
-                                    <svg class="w-3.5 h-3.5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                                    </svg>
-                                    <span class="text-slate-700">danovadigital.id</span>
-                                    <span class="text-emerald-600 font-semibold text-[10px] bg-emerald-50 px-1.5 py-0.5 rounded">SSL</span>
-                                </div>
-                                <div class="w-10"></div>
-                            </div>
+                    <!-- Right: BESPOKE STUDIO INTERACTIVE CANVAS ILLUSTRATION -->
+                    <div class="lg:col-span-5 relative hero-visual-col hero-perspective">
+                        <div class="hero-canvas-wrapper relative" id="heroCanvas">
+                            
+                            <!-- Ambient Pastel Aura Glows -->
+                            <div class="absolute -top-10 -right-10 w-72 h-72 bg-gradient-to-br from-blue-200/45 via-indigo-100/30 to-purple-100/20 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+                            <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-gradient-to-tr from-emerald-100/40 via-amber-100/30 to-transparent rounded-full blur-3xl -z-10 pointer-events-none"></div>
 
-                            <!-- Showcase Viewport -->
-                            <div class="relative bg-slate-50 aspect-[4/3] lg:aspect-square overflow-hidden">
-                                <img src="{{ $setting('hero.main_image') ? asset('storage/' . $setting('hero.main_image')) : 'https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80' }}"
-                                    alt="Contoh Website Bisnis Profesional" class="w-full h-full object-cover">
+                            <!-- Main Desktop Browser Artboard (Vector Illustrated Canvas) -->
+                            <div class="hero-artboard relative bg-white rounded-3xl shadow-2xl shadow-indigo-950/12 border-2 border-[#D5E5F8] overflow-hidden">
+                                <!-- Safari Mac Header -->
+                                <div class="bg-[#F4F8FD] px-5 py-3.5 border-b border-[#DFE8F4] flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="w-3 h-3 rounded-full bg-rose-400 inline-block"></span>
+                                        <span class="w-3 h-3 rounded-full bg-amber-400 inline-block"></span>
+                                        <span class="w-3 h-3 rounded-full bg-emerald-400 inline-block"></span>
+                                    </div>
+                                    <div class="bg-white border border-[#DFE8F4] rounded-xl px-4 py-1 text-xs text-slate-600 font-medium flex items-center gap-2 shadow-2xs">
+                                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                        <span class="text-slate-800 font-semibold">kedaikopi.id</span>
+                                        <span class="text-slate-400 text-[10px]">/katalog</span>
+                                    </div>
+                                    <div class="text-[10px] text-slate-400 font-medium">Danova Studio</div>
+                                </div>
 
-                                <!-- Studio Badge: Live Order Notification -->
-                                <div class="floating-badge absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-[#DFE8F4]">
-                                    <div class="flex items-center gap-3.5">
-                                        <div class="w-11 h-11 bg-[#E8F8F2] border border-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 shrink-0">
-                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                <!-- Inside Illustrated Storefront Canvas -->
+                                <div class="p-6 bg-gradient-to-b from-[#FAFCFF] to-white relative min-h-[380px] flex flex-col justify-between">
+                                    <!-- Mini Store Header -->
+                                    <div class="flex items-center justify-between pb-3.5 border-b border-slate-100">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-7 h-7 rounded-xl bg-primary text-white flex items-center justify-center text-xs font-bold shadow-xs">K</div>
+                                            <span class="text-sm font-bold text-slate-900">Kopi Kencana</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <span class="px-3 py-1 rounded-full bg-[#EBF3FC] text-primary text-[11px] font-semibold border border-[#D5E5F8]">Pesan WhatsApp</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Illustrated Store Banner -->
+                                    <div class="my-4 p-5 rounded-2xl bg-gradient-to-r from-[#EBF3FC] via-[#F4F8FD] to-[#FFF5ED] border border-[#D5E5F8] relative overflow-hidden">
+                                        <div class="max-w-[210px] sm:max-w-[240px]">
+                                            <span class="inline-block px-2.5 py-0.5 rounded-md bg-white/95 text-primary text-[10px] font-bold uppercase tracking-wider mb-2 border border-blue-100">UMKM Binaan</span>
+                                            <h4 class="text-base font-bold text-slate-900 leading-snug mb-1">Kopi Pilihan, Sangrai Segar Tiap Hari</h4>
+                                            <p class="text-xs text-slate-500 mb-3">Pesan langsung ke WhatsApp tanpa ribet.</p>
+                                            <button class="px-3.5 py-1.5 rounded-xl bg-primary text-white text-xs font-semibold shadow-xs">Pesan Sekarang →</button>
+                                        </div>
+                                        
+                                        <!-- Custom Pastel Vector Coffee Illustration -->
+                                        <div class="absolute right-2 bottom-1 w-28 h-28 pointer-events-none opacity-90">
+                                            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="60" cy="60" r="48" fill="#DCEBFA" />
+                                                <rect x="36" y="46" width="46" height="40" rx="10" fill="#436EE8" />
+                                                <path d="M82 54C88 54 92 58 92 64C92 70 88 74 82 74" stroke="#436EE8" stroke-width="5" stroke-linecap="round" />
+                                                <path d="M48 30C48 35 44 38 44 43" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" />
+                                                <path d="M58 28C58 33 54 36 54 41" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" />
+                                                <ellipse cx="59" cy="88" rx="30" ry="5" fill="#CADDF3" />
                                             </svg>
                                         </div>
-                                        <div>
-                                            <div class="text-xs font-semibold text-emerald-700 uppercase tracking-wide">
-                                                ● Penjualan Otomatis
+                                    </div>
+
+                                    <!-- Illustrated Product Catalog Mini Cards -->
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <div class="p-3 rounded-2xl bg-white border border-[#DFE8F4] shadow-2xs flex items-center justify-between">
+                                            <div>
+                                                <div class="text-xs font-bold text-slate-800">Cold Brew Latte</div>
+                                                <div class="text-[11px] font-semibold text-primary">Rp 25.000</div>
                                             </div>
-                                            <div class="text-sm font-semibold text-slate-900">
-                                                Website bantu konversi pelanggan 24/7
+                                            <span class="w-6 h-6 rounded-full bg-[#EBF3FC] text-primary flex items-center justify-center text-xs font-bold">+</span>
+                                        </div>
+                                        <div class="p-3 rounded-2xl bg-white border border-[#DFE8F4] shadow-2xs flex items-center justify-between">
+                                            <div>
+                                                <div class="text-xs font-bold text-slate-800">Butter Croissant</div>
+                                                <div class="text-[11px] font-semibold text-primary">Rp 22.000</div>
                                             </div>
+                                            <span class="w-6 h-6 rounded-full bg-[#EBF3FC] text-primary flex items-center justify-center text-xs font-bold">+</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Secondary Mobile Frame with Soft Pastel Tilt -->
-                        <div class="hero-mobile-frame absolute -bottom-6 -right-4 lg:-right-6 w-36 lg:w-44 bg-white p-2 rounded-3xl shadow-2xl hidden sm:block border-2 border-[#D5E5F8] transform rotate-3">
-                            <div class="bg-slate-50 rounded-2xl overflow-hidden aspect-[9/16] border border-slate-100">
-                                <img src="{{ $setting('hero.mobile_image') ? asset('storage/' . $setting('hero.mobile_image')) : 'https://images.unsplash.com/photo-1512428559083-a401c338e45e?auto=format&fit=crop&q=80' }}"
-                                    alt="Tampilan Mobile" class="w-full h-full object-cover">
+                            <!-- Floating Element 1: Google SEO Traffic Graph (Top Right) -->
+                            <div class="floating-layer floating-google absolute -top-6 -right-5 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-[#D5E5F8] max-w-[210px] z-20">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <div class="w-7 h-7 rounded-xl bg-[#EBF3FC] flex items-center justify-center text-primary font-bold text-xs border border-blue-100">
+                                        G
+                                    </div>
+                                    <div>
+                                        <div class="text-[11px] font-bold text-slate-800 leading-tight">Posisi #1 Google</div>
+                                        <div class="text-[9px] text-emerald-600 font-semibold">● Terindeks Otomatis</div>
+                                    </div>
+                                </div>
+                                <svg class="w-full h-8" viewBox="0 0 160 36" fill="none">
+                                    <path d="M0 30 Q 30 25, 60 18 T 110 12 T 160 4" stroke="#436EE8" stroke-width="3" stroke-linecap="round" />
+                                    <path d="M0 30 Q 30 25, 60 18 T 110 12 T 160 4 L 160 36 L 0 36 Z" fill="url(#heroBlueGlow)" opacity="0.2" />
+                                    <defs>
+                                        <linearGradient id="heroBlueGlow" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#436EE8" />
+                                            <stop offset="100%" stop-color="#FFFFFF" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <div class="flex justify-between items-center text-[10px] font-semibold text-slate-500 mt-1">
+                                    <span>Pengunjung</span>
+                                    <span class="text-emerald-600 font-bold">+280% Naik</span>
+                                </div>
                             </div>
+
+                            <!-- Floating Element 2: WhatsApp Live Order (Bottom Left) -->
+                            <div class="floating-layer floating-wa absolute -bottom-6 -left-5 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-[#D5E5F8] max-w-[250px] z-20">
+                                <div class="flex items-center gap-2.5 mb-2">
+                                    <div class="relative">
+                                        <img src="/images/avatar-1.svg" class="w-8 h-8 rounded-full border border-slate-200">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-white absolute -bottom-0.5 -right-0.5"></span>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-slate-900 leading-tight">Pelanggan Baru</div>
+                                        <div class="text-[10px] text-slate-400">Via Tombol WhatsApp Web</div>
+                                    </div>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-[#E8F8F2] text-slate-800 text-xs leading-snug border border-emerald-100">
+                                    "Halo kak, mau pesan 2 box paket kopi dari katalog website ya! ☕"
+                                </div>
+                                <div class="text-right text-[9px] text-slate-400 font-medium mt-1">08:42 • Berhasil Masuk ✓✓</div>
+                            </div>
+
+                            <!-- Floating Element 3: Speed Gauge Sticker (Top Left) -->
+                            <div class="floating-layer floating-speed absolute -top-5 -left-5 bg-white p-2.5 rounded-2xl shadow-lg border border-[#D5E5F8] flex items-center gap-2.5 z-20">
+                                <div class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">
+                                    ⚡
+                                </div>
+                                <div>
+                                    <div class="text-[10px] font-bold text-slate-800">Skor 99/100</div>
+                                    <div class="text-[9px] text-slate-500">Google PageSpeed</div>
+                                </div>
+                            </div>
+
+                            <!-- Floating Studio Designer Cursor -->
+                            <div class="floating-layer floating-cursor absolute top-28 -right-4 z-30 pointer-events-none hidden sm:flex items-center gap-1.5 bg-primary text-white text-[11px] font-semibold px-3 py-1.5 rounded-full shadow-lg shadow-primary/30">
+                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                                    <path d="M4 2l16 11.5-7.5 1.5-4 7-2-1 3.5-6.5-6-1.5z" />
+                                </svg>
+                                <span>Danova Studio</span>
+                            </div>
+
                         </div>
                     </div>
 
@@ -338,7 +430,7 @@
             </div>
         </section>
 
-        <!-- EDITORIAL SERVICES BENTO SHOWCASE (BREAKING THE 3-CARD MONOTONY) -->
+        <!-- SERVICES BENTO SHOWCASE (WITH BESPOKE SVG ILLUSTRATIONS) -->
         <section id="services" class="py-20 lg:py-28 bg-[#F4F8FD]/70">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="max-w-2xl mb-16 section-header">
@@ -347,15 +439,29 @@
                     <p class="text-slate-600 text-base lg:text-lg">Setiap solusi disesuaikan dengan tujuan bisnis Anda, bukan sekadar menempelkan teks ke dalam template.</p>
                 </div>
 
-                <!-- Bento Grid Layout: 2 col wide card + 2 compact cards -->
+                <!-- Bento Grid Layout with Bespoke Vector Visuals -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 
-                    <!-- Flagship Service (Span 7 col) -->
+                    <!-- Flagship Service: Website Profil Bisnis (7 Col) -->
                     <article class="service-card lg:col-span-7 bg-white p-8 lg:p-12 rounded-3xl border border-[#D5E5F8] shadow-sm flex flex-col justify-between apple-card-hover">
                         <div>
-                            <div class="inline-flex items-center gap-2 bg-[#EBF3FC] text-primary px-4 py-1.5 rounded-full text-xs font-semibold mb-6 border border-[#D5E5F8]">
-                                <span>Paling Diminati</span>
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="inline-flex items-center gap-2 bg-[#EBF3FC] text-primary px-4 py-1.5 rounded-full text-xs font-semibold border border-[#D5E5F8]">
+                                    <span>Paling Diminati</span>
+                                </div>
+                                <!-- Bespoke SVG Icon Illustration -->
+                                <div class="w-14 h-14 rounded-2xl bg-[#EBF3FC] border border-[#D5E5F8] flex items-center justify-center text-primary">
+                                    <svg class="w-8 h-8" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="6" y="8" width="36" height="26" rx="5" fill="#E0ECFF" stroke="#436EE8" stroke-width="2.5" />
+                                        <line x1="6" y1="16" x2="42" y2="16" stroke="#436EE8" stroke-width="2" />
+                                        <circle cx="12" cy="12" r="1.5" fill="#436EE8" />
+                                        <circle cx="16" cy="12" r="1.5" fill="#436EE8" />
+                                        <path d="M18 34L24 40L30 34" stroke="#436EE8" stroke-width="2.5" stroke-linecap="round" />
+                                        <rect x="26" y="20" width="12" height="10" rx="3" fill="#436EE8" />
+                                    </svg>
+                                </div>
                             </div>
+
                             <h3 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">Website Profil Bisnis & UMKM</h3>
                             <p class="text-slate-600 text-base leading-relaxed mb-8 max-w-xl">
                                 Halaman representasi resmi usaha Anda di internet. Memperkenalkan layanan, menampilkan katalog produk, membangun reputasi terpercaya, dan memudahkan calon pelanggan menghubungi Anda melalui WhatsApp sekali klik.
@@ -390,13 +496,19 @@
                         </div>
                     </article>
 
-                    <!-- Supporting Services Stack (Span 5 col) -->
+                    <!-- Supporting Bento Stack (5 Col) -->
                     <div class="lg:col-span-5 flex flex-col gap-8">
-                        <!-- Bento Item 2: Landing Page Iklan -->
+                        <!-- Bento 2: Landing Page Iklan (Peach Pastel) -->
                         <article class="service-card bg-[#FFF5ED] p-8 rounded-3xl border border-[#FDE5D2] shadow-sm flex flex-col justify-between apple-card-hover flex-1">
                             <div>
-                                <div class="w-12 h-12 rounded-2xl bg-[#FEEAD9] text-[#EA580C] flex items-center justify-center font-bold text-lg mb-5 border border-[#FCD8BE]">
-                                    ⚡
+                                <div class="flex justify-between items-start mb-5">
+                                    <div class="w-12 h-12 rounded-2xl bg-[#FEEAD9] text-[#EA580C] flex items-center justify-center font-bold text-lg border border-[#FCD8BE]">
+                                        <!-- Funnel Vector Icon -->
+                                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                                        </svg>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full bg-white/80 text-[#EA580C] text-[11px] font-bold border border-[#FDE5D2]">Iklan Ads</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-slate-900 mb-2">Landing Page Promosi & Iklan</h3>
                                 <p class="text-slate-600 text-sm leading-relaxed mb-6">
@@ -409,11 +521,21 @@
                             </div>
                         </article>
 
-                        <!-- Bento Item 3: Sistem Visual & Branding -->
+                        <!-- Bento 3: Sistem Visual & Branding (Lavender Pastel) -->
                         <article class="service-card bg-[#F5F2FF] p-8 rounded-3xl border border-[#E7E0FF] shadow-sm flex flex-col justify-between apple-card-hover flex-1">
                             <div>
-                                <div class="w-12 h-12 rounded-2xl bg-[#EFE8FF] text-[#7C3AED] flex items-center justify-center font-bold text-lg mb-5 border border-[#DECFFF]">
-                                    🎨
+                                <div class="flex justify-between items-start mb-5">
+                                    <div class="w-12 h-12 rounded-2xl bg-[#EFE8FF] text-[#7C3AED] flex items-center justify-center font-bold text-lg border border-[#DECFFF]">
+                                        <!-- Palette Vector Icon -->
+                                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <circle cx="12" cy="7" r="1" fill="currentColor"></circle>
+                                            <circle cx="17" cy="11" r="1" fill="currentColor"></circle>
+                                            <circle cx="15" cy="16" r="1" fill="currentColor"></circle>
+                                            <circle cx="9" cy="15" r="1" fill="currentColor"></circle>
+                                        </svg>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full bg-white/80 text-[#7C3AED] text-[11px] font-bold border border-[#E7E0FF]">Identitas Unik</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-slate-900 mb-2">Identitas Visual & Branding</h3>
                                 <p class="text-slate-600 text-sm leading-relaxed mb-6">
@@ -499,7 +621,7 @@
             </div>
         </section>
 
-        <!-- PORTFOLIO / WORK SHOWCASE (WITH OUTCOME METRICS) -->
+        <!-- PORTFOLIO / WORK SHOWCASE -->
         <section id="work" class="py-20 lg:py-28 bg-[#FAFCFF]">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 section-header">
@@ -560,7 +682,7 @@
             </div>
         </section>
 
-        <!-- WORKFLOW JOURNEY SECTION -->
+        <!-- WORKFLOW JOURNEY SECTION (WITH STEP ILLUSTRATIONS) -->
         <section id="workflow" class="py-20 lg:py-28 bg-[#F4F8FD]/60 border-y border-[#DFE8F4]">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="text-center max-w-2xl mx-auto mb-16 section-header">
@@ -571,36 +693,65 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
                     <!-- Step 1 -->
-                    <div class="bg-white p-8 lg:p-10 rounded-3xl border border-[#DFE8F4] shadow-xs relative">
-                        <div class="w-12 h-12 rounded-2xl bg-[#EBF3FC] text-primary flex items-center justify-center text-lg font-bold mb-6 border border-[#D5E5F8]">
-                            01
+                    <div class="bg-white p-8 lg:p-10 rounded-3xl border border-[#DFE8F4] shadow-xs relative flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-12 h-12 rounded-2xl bg-[#EBF3FC] text-primary flex items-center justify-center text-lg font-bold border border-[#D5E5F8]">
+                                    01
+                                </div>
+                                <svg class="w-8 h-8 text-primary/60" viewBox="0 0 32 32" fill="none">
+                                    <rect x="6" y="4" width="20" height="24" rx="4" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="10" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="10" y1="16" x2="18" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <circle cx="21" cy="22" r="3" fill="#EBF3FC" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">Konsultasi & Skema Kebutuhan</h3>
+                            <p class="text-slate-600 text-base leading-relaxed">
+                                Kami menggali profil bisnis Anda, menentukan halaman kunci, dan menyusun penawaran biaya yang pas dengan target Anda.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Konsultasi & Skema Kebutuhan</h3>
-                        <p class="text-slate-600 text-base leading-relaxed">
-                            Kami menggali profil bisnis Anda, menentukan halaman kunci, dan menyusun penawaran biaya yang pas dengan target Anda.
-                        </p>
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="bg-white p-8 lg:p-10 rounded-3xl border border-[#DFE8F4] shadow-xs relative">
-                        <div class="w-12 h-12 rounded-2xl bg-[#FFF3EB] text-[#EA580C] flex items-center justify-center text-lg font-bold mb-6 border border-[#FDE5D2]">
-                            02
+                    <div class="bg-white p-8 lg:p-10 rounded-3xl border border-[#DFE8F4] shadow-xs relative flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-12 h-12 rounded-2xl bg-[#FFF3EB] text-[#EA580C] flex items-center justify-center text-lg font-bold border border-[#FDE5D2]">
+                                    02
+                                </div>
+                                <svg class="w-8 h-8 text-[#EA580C]/60" viewBox="0 0 32 32" fill="none">
+                                    <rect x="4" y="6" width="24" height="18" rx="3" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M11 12L8 15L11 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M21 12L24 15L21 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="14" y1="20" x2="18" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">Desain & Live Preview</h3>
+                            <p class="text-slate-600 text-base leading-relaxed">
+                                Proses pembuatan langsung dikerjakan. Anda mendapatkan link live preview untuk mencoba tampilan dan memberikan masukan revisi.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Desain & Live Preview</h3>
-                        <p class="text-slate-600 text-base leading-relaxed">
-                            Proses pembuatan langsung dikerjakan. Anda mendapatkan link live preview untuk mencoba tampilan dan memberikan masukan revisi.
-                        </p>
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="bg-white p-8 lg:p-10 rounded-3xl border border-[#DFE8F4] shadow-xs relative">
-                        <div class="w-12 h-12 rounded-2xl bg-[#E8F8F2] text-emerald-600 flex items-center justify-center text-lg font-bold mb-6 border border-emerald-100">
-                            03
+                    <div class="bg-white p-8 lg:p-10 rounded-3xl border border-[#DFE8F4] shadow-xs relative flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-12 h-12 rounded-2xl bg-[#E8F8F2] text-emerald-600 flex items-center justify-center text-lg font-bold border border-emerald-100">
+                                    03
+                                </div>
+                                <svg class="w-8 h-8 text-emerald-500/60" viewBox="0 0 32 32" fill="none">
+                                    <path d="M16 4C16 4 23 8 23 17L19 21L16 19L13 21L9 17C9 8 16 4 16 4Z" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="16" cy="12" r="2.5" fill="currentColor"/>
+                                    <path d="M13 25L16 28L19 25" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">Peluncuran & Pelatihan</h3>
+                            <p class="text-slate-600 text-base leading-relaxed">
+                                Website diaktifkan di domain resmi bisnis Anda, terhubung ke Google & WhatsApp, plus video panduan mudah mengelola konten secara mandiri.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Peluncuran & Pelatihan</h3>
-                        <p class="text-slate-600 text-base leading-relaxed">
-                            Website diaktifkan di domain resmi bisnis Anda, terhubung ke Google & WhatsApp, plus video panduan mudah mengelola konten secara mandiri.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -761,7 +912,7 @@
                     <div class="mb-8">
                         <div class="flex justify-between items-center mb-3">
                             <div>
-                                <span class="text-xs font-semibold text-primary uppercase tracking-wider">Langkah Konsultasi</span>
+                                <span class="text-xs font-semibold text-primary uppercase tracking-wider">Konsultasi Terpandu</span>
                                 <h4 id="briefStepLabel" class="text-lg font-bold text-slate-900">Langkah 1 dari 2</h4>
                             </div>
                             <span class="text-xs font-medium text-slate-500">Estimasi 60 Detik</span>
@@ -962,7 +1113,7 @@
         </div>
     </footer>
 
-    <!-- GSAP ANIMATION & INTERACTION SCRIPT -->
+    <!-- GSAP ANIMATION & INTERACTIVE 3D PARALLAX SCRIPT -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             gsap.registerPlugin(ScrollTrigger);
@@ -1003,32 +1154,100 @@
                     duration: 0.65,
                     ease: "back.out(1.8)"
                 }, "-=0.4")
-                .from('.hero-mockup', {
+                .from('.hero-artboard', {
                     scale: 0.9,
                     y: 40,
                     opacity: 0,
                     duration: 0.9,
                     ease: "back.out(1.4)"
                 }, "-=0.8")
-                .from('.hero-mobile-frame', {
-                    scale: 0.8,
-                    rotation: -10,
+                .from('.floating-layer', {
+                    scale: 0.7,
                     y: 30,
                     opacity: 0,
-                    duration: 0.8,
-                    ease: "back.out(1.7)"
-                }, "-=0.6");
+                    stagger: 0.12,
+                    duration: 0.75,
+                    ease: "back.out(1.8)"
+                }, "-=0.5");
 
-            // 3. Gentle floating animation on the "Penjualan Otomatis" badge
-            gsap.to('.floating-badge', {
-                y: -8,
-                duration: 2.2,
+            // 3. Gentle floating physics on individual badges
+            gsap.to('.floating-google', {
+                y: -10,
+                duration: 2.6,
                 repeat: -1,
                 yoyo: true,
                 ease: "sine.inOut"
             });
+            gsap.to('.floating-wa', {
+                y: -8,
+                duration: 2.2,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: 0.4
+            });
+            gsap.to('.floating-speed', {
+                y: -6,
+                duration: 2.0,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: 0.8
+            });
+            gsap.to('.floating-cursor', {
+                y: -12,
+                x: 4,
+                duration: 2.8,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: 0.2
+            });
 
-            // 4. ScrollTrigger section header animations
+            // 4. Interactive 3D Mouse Parallax on Hero Canvas
+            const heroCanvas = document.getElementById('heroCanvas');
+            if (heroCanvas) {
+                const artboard = heroCanvas.querySelector('.hero-artboard');
+                const floatingGoogle = heroCanvas.querySelector('.floating-google');
+                const floatingWa = heroCanvas.querySelector('.floating-wa');
+                const floatingSpeed = heroCanvas.querySelector('.floating-speed');
+
+                window.addEventListener('mousemove', (e) => {
+                    const rect = heroCanvas.getBoundingClientRect();
+                    const x = e.clientX - (rect.left + rect.width / 2);
+                    const y = e.clientY - (rect.top + rect.height / 2);
+
+                    // Only animate when near viewport
+                    if (Math.abs(x) < 800 && Math.abs(y) < 600) {
+                        gsap.to(artboard, {
+                            rotateY: x * 0.02,
+                            rotateX: -y * 0.02,
+                            duration: 0.6,
+                            ease: "power2.out"
+                        });
+                        gsap.to(floatingGoogle, {
+                            x: -x * 0.035,
+                            y: -y * 0.035,
+                            duration: 0.7,
+                            ease: "power2.out"
+                        });
+                        gsap.to(floatingWa, {
+                            x: x * 0.04,
+                            y: y * 0.04,
+                            duration: 0.7,
+                            ease: "power2.out"
+                        });
+                        gsap.to(floatingSpeed, {
+                            x: -x * 0.025,
+                            y: y * 0.025,
+                            duration: 0.7,
+                            ease: "power2.out"
+                        });
+                    }
+                });
+            }
+
+            // 5. ScrollTrigger section header animations
             gsap.utils.toArray('.section-header').forEach(header => {
                 gsap.from(header, {
                     scrollTrigger: {
@@ -1043,7 +1262,7 @@
                 });
             });
 
-            // 5. Staggered Service Bento Cards
+            // 6. Staggered Service Bento Cards
             gsap.from('.service-card', {
                 scrollTrigger: {
                     trigger: '#services',
@@ -1058,7 +1277,7 @@
                 ease: "back.out(1.4)"
             });
 
-            // 6. Staggered Work Cards
+            // 7. Staggered Work Cards
             gsap.from('.work-card', {
                 scrollTrigger: {
                     trigger: '#work',
@@ -1073,7 +1292,7 @@
                 ease: "back.out(1.3)"
             });
 
-            // 7. Staggered Pricing Cards
+            // 8. Staggered Pricing Cards
             gsap.from('.pricing-card', {
                 scrollTrigger: {
                     trigger: '#pricing',
@@ -1088,7 +1307,7 @@
                 ease: "back.out(1.4)"
             });
 
-            // 8. CTA Banner spring scale
+            // 9. CTA Banner spring scale
             gsap.from('.cta-banner', {
                 scrollTrigger: {
                     trigger: '#contact',
@@ -1102,7 +1321,7 @@
                 ease: "back.out(1.3)"
             });
 
-            // 9. Interactive Apple Bouncy Spring on Buttons (.apple-spring)
+            // 10. Interactive Apple Bouncy Spring on Buttons (.apple-spring)
             document.querySelectorAll('.apple-spring').forEach(btn => {
                 btn.addEventListener('mouseenter', () => {
                     gsap.to(btn, { scale: 1.04, y: -2, duration: 0.3, ease: "back.out(2.2)" });
@@ -1118,7 +1337,7 @@
                 });
             });
 
-            // 10. FAQ Accordion with GSAP spring animations
+            // 11. FAQ Accordion with GSAP spring animations
             document.querySelectorAll('.faq-item').forEach(item => {
                 const questionBtn = item.querySelector('.faq-question');
                 const answer = item.querySelector('.faq-answer-inner');
@@ -1127,7 +1346,6 @@
                 questionBtn.addEventListener('click', () => {
                     const isOpen = item.classList.contains('is-open');
 
-                    // Close any other open items
                     document.querySelectorAll('.faq-item.is-open').forEach(other => {
                         if (other !== item) {
                             other.classList.remove('is-open');
@@ -1172,7 +1390,7 @@
                 });
             });
 
-            // 11. Brief Builder Wizard Logic
+            // 12. Brief Builder Wizard Logic
             (function() {
                 const root = document.getElementById('briefBuilder');
                 if (!root) return;
@@ -1273,7 +1491,7 @@
                 });
             })();
 
-            // 12. Mobile Menu Toggle
+            // 13. Mobile Menu Toggle
             const mobileBtn = document.querySelector('.mobile-menu-toggle');
             if (mobileBtn) {
                 mobileBtn.addEventListener('click', () => {
