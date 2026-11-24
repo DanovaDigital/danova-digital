@@ -3,18 +3,21 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\LeadController as AdminLeadController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\PricingPlanController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\SiteSettingController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\LeadController;
 use App\Http\Controllers\OutboundController;
 use App\Http\Controllers\WorkController;
 use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingPageController::class, 'show'])->name('landing');
+Route::post('/brief', [LeadController::class, 'store'])->middleware('throttle:12,1')->name('brief.store');
 
 Route::get('/work/{slug}', [WorkController::class, 'show'])->name('work.detail');
 
@@ -57,6 +60,7 @@ Route::prefix('admin')
 
         Route::middleware('admin.auth')->group(function () {
             Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+            Route::get('/leads', [AdminLeadController::class, 'index'])->name('leads.index');
             Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
             Route::resource('pricing-plans', PricingPlanController::class);

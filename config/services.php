@@ -14,6 +14,11 @@ return [
     |
     */
 
+    'admin' => [
+        'username' => env('ADMIN_USER', ''),
+        'password' => env('ADMIN_PASSWORD', ''),
+    ],
+
     'postmark' => [
         'key' => env('POSTMARK_API_KEY'),
     ],
@@ -33,6 +38,12 @@ return [
             'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
+    ],
+
+    'admin' => [
+        'username' => env('ADMIN_USER', ''),
+        'user' => env('ADMIN_USER', ''),
+        'password' => env('ADMIN_PASSWORD', ''),
     ],
 
 ];

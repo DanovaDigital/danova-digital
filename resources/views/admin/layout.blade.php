@@ -474,6 +474,7 @@
                             </svg>
                             Dashboard
                         </a>
+                        <a href="{{ route('admin.leads.index') }}" class="nav-link {{ request()->routeIs('admin.leads.index') ? 'active' : '' }}">Brief masuk</a>
                     </div>
                 </div>
 

@@ -10,8 +10,8 @@ class AuthController extends Controller
 {
     public function showLogin(Request $request)
     {
-        $expectedUser = (string) env('ADMIN_USER', '');
-        $expectedPassword = (string) env('ADMIN_PASSWORD', '');
+        $expectedUser = (string) config('services.admin.username');
+        $expectedPassword = (string) config('services.admin.password');
 
         $isConfigured = $expectedUser !== '' && $expectedPassword !== '';
 
@@ -22,8 +22,8 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $expectedUser = (string) env('ADMIN_USER', '');
-        $expectedPassword = (string) env('ADMIN_PASSWORD', '');
+        $expectedUser = (string) config('services.admin.username');
+        $expectedPassword = (string) config('services.admin.password');
 
         if ($expectedUser === '' || $expectedPassword === '') {
             return back()->withErrors([

@@ -1,144 +1,114 @@
-<section id="brief" class="border-b border-brand-border/60">
+<section id="brief" class="border-b border-brand-border/60" aria-labelledby="briefHeading">
     <div class="container mx-auto px-6 lg:px-12">
-        <div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[.75fr_1.25fr] lg:gap-16">
-            <div class="section-header">
-                <span class="text-xs font-bold text-brand-primary uppercase tracking-wider block mb-2">Kalkulator Biaya & Brief Proyek</span>
-                <h2 id="briefHeading" tabindex="-1" class="font-extrabold text-slate-900">Hitung estimasi & mulai brief Anda.</h2>
-                <p class="mt-4 max-w-md leading-relaxed text-slate-600">Pilih layanan dan fitur yang Anda butuhkan untuk melihat perkiraan investasi langsung secara transparan sebelum konsultasi.</p>
+        <div class="section-header mb-8">
+            <h2 id="briefHeading" tabindex="-1" class="font-extrabold text-slate-900">Hitung estimasi &amp; mulai brief Anda.</h2>
+        </div>
 
-                <!-- Reassurance Micro-List -->
-                <ul class="mt-6 space-y-2.5 text-xs text-slate-600 border-t border-brand-border/80 pt-5">
-                    <li class="flex items-center gap-2">
-                        <span class="text-emerald-600 font-bold">✓</span>
-                        <span>Domain & Cloud Hosting 1 Thn Gratis</span>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <span class="text-emerald-600 font-bold">✓</span>
-                        <span>Skema 50% DP, 50% Pasca Approval Staging</span>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <span class="text-emerald-600 font-bold">✓</span>
-                        <span>Garansi Anti-Gaptek & Video Panduan Singkat</span>
-                    </li>
-                </ul>
-
-                <a href="{{ route('out.whatsapp', ['context' => 'brief_direct']) }}" class="service-action mt-6">Tanya langsung via WhatsApp <span aria-hidden="true">→</span></a>
-            </div>
-            <div id="briefBuilder" data-whatsapp-url="https://wa.me/{{ $danovaWhatsappNumberDigits }}" class="min-w-0 rounded-3xl border border-brand-border bg-white p-5 shadow-apple-card sm:p-8">
-                <form id="briefForm" class="grid gap-5">
-                    <div class="grid gap-5 sm:grid-cols-2">
-                        <label class="brief-field">
-                            <span>Nama atau nama usaha</span>
-                            <input name="brand" placeholder="Contoh: Kedai Kopi Aruna" maxlength="100" required>
-                        </label>
-                        <label class="brief-field">
-                            <span>Layanan</span>
-                            <select name="service" required>
-                                <option value="">Pilih layanan</option>
-                                @foreach ($serviceOptions as $key => $label)
-                                    <option value="{{ $key }}">{{ $label }}</option>
-                                @endforeach
-                            </select>
-                        </label>
-                    </div>
-                    @if ($pricingPlans->isNotEmpty())
-                        <label class="brief-field">
-                            <span>Paket Pilihan <small>Opsional</small></span>
-                            <select name="plan">
-                                <option value="">Belum memilih paket</option>
-                                @foreach ($pricingPlans as $plan)
-                                    <option value="{{ $plan->id }}">{{ $plan->name }} ({{ $plan->price }})</option>
-                                @endforeach
-                            </select>
-                        </label>
-                    @endif
-
-                    <!-- KALKULATOR FITUR TAMBAHAN (ADD-ONS) -->
-                    <div class="brief-field">
-                        <span class="flex items-center justify-between">
-                            <span>Pilihan Fitur & Kebutuhan</span>
-                            <small class="text-slate-500 font-normal">Pilih sesuai kebutuhan</small>
-                        </span>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
-                            <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:border-brand-primary transition-colors text-xs text-slate-800">
-                                <input type="checkbox" name="addons[]" value="hosting" data-price="0" data-label="Domain & Cloud Hosting 1 Tahun" checked class="w-4 h-4 text-brand-primary rounded focus:ring-brand-primary">
-                                <span class="font-medium">Domain & Hosting 1 Thn <strong class="text-emerald-700 block font-bold text-[11px]">(Gratis Termasuk)</strong></span>
+        <div id="briefBuilder" data-whatsapp-url="https://wa.me/{{ $danovaWhatsappNumberDigits }}">
+            <form id="briefForm" class="brief-calculator" method="post" action="{{ route('brief.store', [], false) }}">
+                @csrf
+                <input type="hidden" name="draft_id" value="{{ Illuminate\Support\Str::uuid() }}">
+                <div class="brief-config">
+                    <fieldset>
+                        <legend>Proyek Anda</legend>
+                        <div class="brief-field-grid">
+                            <label class="brief-field">
+                                <span>Nama atau nama usaha</span>
+                                <input name="brand" placeholder="Contoh: Kedai Kopi Aruna" maxlength="100" required>
                             </label>
-
-                            <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:border-brand-primary transition-colors text-xs text-slate-800">
-                                <input type="checkbox" name="addons[]" value="cms" data-price="500000" data-label="Panel Admin CMS Kelola Mandiri" checked class="w-4 h-4 text-brand-primary rounded focus:ring-brand-primary">
-                                <span class="font-medium">Panel Admin CMS Mandiri <strong class="text-brand-primary block font-bold text-[11px]">+Rp 500.000</strong></span>
+                            <label class="brief-field">
+                                <span>Nomor WhatsApp</span>
+                                <input type="tel" name="phone" autocomplete="tel" maxlength="32" placeholder="Contoh: 0812 3456 7890" required>
                             </label>
-
-                            <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:border-brand-primary transition-colors text-xs text-slate-800">
-                                <input type="checkbox" name="addons[]" value="wa_rotator" data-price="300000" data-label="Integrasi Multi-Admin WA Rotator" class="w-4 h-4 text-brand-primary rounded focus:ring-brand-primary">
-                                <span class="font-medium">Multi-Admin WA Rotator <strong class="text-brand-primary block font-bold text-[11px]">+Rp 300.000</strong></span>
+                            <label class="brief-field">
+                                <span>Layanan</span>
+                                <select name="service" required>
+                                    <option value="">Pilih layanan</option>
+                                    @foreach ($serviceOptions as $key => $label)
+                                        <option value="{{ $key }}">{{ $label }}</option>
+                                    @endforeach
+                                </select>
                             </label>
+                            @if ($pricingPlans->isNotEmpty())
+                                <label class="brief-field">
+                                    <span>Paket pilihan <small>Opsional</small></span>
+                                    <select name="plan">
+                                        <option value="">Belum memilih paket</option>
+                                        @foreach ($pricingPlans as $plan)
+                                            <option value="{{ $plan->id }}">{{ $plan->name }} ({{ $plan->price }})</option>
+                                        @endforeach
+                                    </select>
+                                </label>
+                            @endif
+                        </div>
+                    </fieldset>
 
-                            <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:border-brand-primary transition-colors text-xs text-slate-800">
-                                <input type="checkbox" name="addons[]" value="tracking" data-price="350000" data-label="Setup Pixel Meta Ads & GA4" class="w-4 h-4 text-brand-primary rounded focus:ring-brand-primary">
-                                <span class="font-medium">Setup Pixel Meta & GA4 <strong class="text-brand-primary block font-bold text-[11px]">+Rp 350.000</strong></span>
+                    <details class="brief-disclosure">
+                        <summary>Atur fitur <span id="briefAddonCount" class="brief-disclosure-count"></span></summary>
+                        <div class="brief-addon-grid">
+                            @foreach (config('brief.addons') as $key => [$title, $price, $selected])
+                                <label class="brief-addon">
+                                    <input type="checkbox" name="addons[]" value="{{ $key }}" data-price="{{ $price }}" data-label="{{ $title }}" @checked($selected)>
+                                    <span>{{ $title }}</span>
+                                    <span class="brief-addon-price">{{ $price ? '+Rp ' . number_format($price, 0, ',', '.') : 'Rp 0' }}</span>
+                                </label>
+                            @endforeach
+                        </div>
+                    </details>
+
+                    <details class="brief-disclosure">
+                        <summary>Detail tambahan <small>Opsional</small></summary>
+                        <div class="brief-field-grid">
+                            <label class="brief-field">
+                                <span>Anggaran</span>
+                                <input name="budget" placeholder="Contoh: Rp3–6 juta" maxlength="80">
                             </label>
-
-                            <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:border-brand-primary transition-colors text-xs text-slate-800">
-                                <input type="checkbox" name="addons[]" value="copywriting" data-price="450000" data-label="Copywriting Penjualan & Konten" class="w-4 h-4 text-brand-primary rounded focus:ring-brand-primary">
-                                <span class="font-medium">Copywriting Penjualan <strong class="text-brand-primary block font-bold text-[11px]">+Rp 450.000</strong></span>
+                            <label class="brief-field">
+                                <span>Target peluncuran</span>
+                                <input name="timeline" placeholder="Contoh: Akhir Januari" maxlength="80">
                             </label>
-
-                            <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:border-brand-primary transition-colors text-xs text-slate-800">
-                                <input type="checkbox" name="addons[]" value="multilingual" data-price="600000" data-label="Fitur Multibahasa (ID / EN)" class="w-4 h-4 text-brand-primary rounded focus:ring-brand-primary">
-                                <span class="font-medium">Fitur Multibahasa (ID/EN) <strong class="text-brand-primary block font-bold text-[11px]">+Rp 600.000</strong></span>
+                            <label class="brief-field brief-wide-field">
+                                <span>Tujuan proyek</span>
+                                <textarea name="notes" rows="3" maxlength="600" placeholder="Ceritakan tujuan bisnis atau sertakan tautan referensi."></textarea>
                             </label>
                         </div>
-                    </div>
+                    </details>
+                </div>
 
-                    <div class="grid gap-5 sm:grid-cols-2">
-                        <label class="brief-field">
-                            <span>Anggaran Klien <small>Opsional</small></span>
-                            <input name="budget" placeholder="Contoh: Rp3–6 juta" maxlength="80">
-                        </label>
-                        <label class="brief-field">
-                            <span>Target Peluncuran <small>Opsional</small></span>
-                            <input name="timeline" placeholder="Contoh: 1–2 minggu lagi" maxlength="80">
-                        </label>
-                    </div>
-
-                    <label class="brief-field">
-                        <span>Tujuan Proyek / Catatan Tambahan <small>Opsional</small></span>
-                        <textarea name="notes" rows="3" maxlength="600" placeholder="Ceritakan tujuan bisnis Anda atau sertakan link website referensi yang disukai."></textarea>
-                    </label>
-
-                    <!-- LIVE ESTIMASI INVESTASI WIDGET -->
-                    <div class="rounded-2xl border-2 border-brand-border bg-brand-surface p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                        <div>
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-brand-primary block mb-1">Perkiraan Investasi Transparan</span>
-                            <div id="costEstimateDisplay" class="text-2xl font-extrabold text-slate-900 tracking-tight">
-                                Rp 3.500.000 – Rp 4.000.000
-                            </div>
-                            <span class="text-[11px] text-slate-500 block mt-0.5">*Estimasi otomatis. Angka pasti disesuaikan dengan detail kebutuhan Anda.</span>
-                        </div>
-                        <div class="sm:text-right shrink-0">
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold border border-emerald-200">
-                                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                                <span>DP 50% Saat Mulai</span>
-                            </span>
-                        </div>
-                    </div>
-
-                    <button id="briefPreview" type="submit" disabled class="apple-spring min-h-12 justify-self-start rounded-xl bg-brand-primary px-6 py-3 text-sm font-bold text-white hover:bg-brand-dark flex items-center gap-2">
-                        <span>Tinjau Ringkasan Brief</span>
-                        <span aria-hidden="true">→</span>
+                <aside class="brief-estimate" aria-label="Ringkasan estimasi">
+                    <p>Perkiraan biaya proyek</p>
+                    <output id="costEstimateDisplay" aria-live="polite">Rp 3.500.000 – Rp 4.000.000</output>
+                    <p class="brief-estimate-note">Harga final dikonfirmasi setelah brief ditinjau.</p>
+                    <p id="briefSaveNotice" class="brief-save-notice">Kami menyimpan brief dan nomor WhatsApp Anda saat ditinjau, agar tim Danova bisa menindaklanjuti proyek ini.</p>
+                    <button id="briefPreview" type="submit" disabled>
+                        Tinjau ringkasan brief <span aria-hidden="true">→</span>
                     </button>
-                </form>
-                <div id="briefResult" hidden>
-                    <h3 id="briefResultHeading" tabindex="-1" class="mb-3 text-xl font-bold text-slate-900">Pratinjau brief Anda</h3>
-                    <pre id="briefSummary" class="mb-4 whitespace-pre-wrap rounded-xl bg-brand-surface p-4 font-sans text-sm leading-relaxed text-slate-700 border border-brand-border"></pre>
-                    <p class="mb-5 text-sm text-slate-600">Periksa ringkasannya, lalu klik tombol di bawah untuk langsung terhubung dengan tim Danova di WhatsApp.</p>
-                    <div class="flex flex-col gap-3 sm:flex-row">
-                        <button id="briefEdit" type="button" class="min-h-12 rounded-xl border border-brand-border px-5 py-3 text-sm font-bold text-brand-dark hover:bg-slate-50">Ubah brief</button>
-                        <a id="briefSendWhatsapp" target="_blank" rel="noopener noreferrer" class="apple-spring min-h-12 rounded-xl bg-brand-primary px-6 py-3 text-center text-sm font-bold text-white hover:bg-brand-dark flex items-center justify-center gap-2">
-                            <span>Kirim ke WhatsApp Danova</span>
-                            <span aria-hidden="true">↗</span>
+                    <p id="briefSaveStatus" class="brief-save-status" role="status" hidden></p>
+                    <a href="{{ route('out.whatsapp', ['context' => 'brief_direct']) }}">Tanya via WhatsApp <span aria-hidden="true">↗</span></a>
+                </aside>
+            </form>
+
+            <div id="briefResult" class="brief-result" hidden>
+                <div class="brief-review-header">
+                    <h3 id="briefResultHeading" tabindex="-1">Pratinjau brief</h3>
+                    <div class="brief-review-estimate">
+                        <span>Perkiraan biaya proyek</span>
+                        <strong id="briefReviewEstimate"></strong>
+                    </div>
+                </div>
+                <div class="brief-review-body">
+                    <dl id="briefSummary" class="brief-review-details"></dl>
+                    <div id="briefReviewFeatures" class="brief-review-features" hidden>
+                        <h4>Fitur yang dipilih</h4>
+                        <ul id="briefReviewFeatureList"></ul>
+                    </div>
+                </div>
+                <div class="brief-review-footer">
+                    <p>Brief tersimpan. Buka WhatsApp untuk melanjutkan diskusi.</p>
+                    <div class="brief-review-actions">
+                        <button id="briefEdit" type="button">Ubah brief</button>
+                        <a id="briefSendWhatsapp" target="_blank" rel="noopener noreferrer">
+                            Buka WhatsApp <span aria-hidden="true">↗</span>
                         </a>
                     </div>
                 </div>

@@ -10,8 +10,8 @@ class AdminBasicAuth
 {
     public function handle(Request $request, Closure $next): Response
     {
-        $expectedUser = (string) env('ADMIN_USER', '');
-        $expectedPassword = (string) env('ADMIN_PASSWORD', '');
+        $expectedUser = (string) config('services.admin.username');
+        $expectedPassword = (string) config('services.admin.password');
 
         if ($expectedUser === '' || $expectedPassword === '') {
             return response('Admin credentials not configured. Set ADMIN_USER and ADMIN_PASSWORD in .env', 401, [

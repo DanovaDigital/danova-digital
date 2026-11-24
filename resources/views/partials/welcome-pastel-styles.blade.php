@@ -43,7 +43,6 @@
             font-weight: 700;
         }
         .service-action:hover { text-decoration: underline; text-underline-offset: .2em; }
-        #brief { background: var(--studio-sky); }
         #briefForm[hidden], #briefResult[hidden] { display: none; }
         .brief-field {
             display: grid;
@@ -246,10 +245,20 @@
             50% { translate: 12% -12%; scale: 1.08; }
         }
         @media (prefers-reduced-motion: no-preference) {
-            .studio-art .studio-phone { animation: studio-phone-bob 4.8s ease-in-out .9s infinite paused; }
-            .studio-art .studio-badge { animation: studio-badge-bob 4.8s ease-in-out .9s infinite paused; }
-            .studio-art .studio-shapes i:nth-child(3) { animation: studio-shape-drift 5.6s ease-in-out .9s infinite paused; }
-            .studio-art.is-moving :is(.studio-phone, .studio-badge, .studio-shapes i:nth-child(3)) { animation-play-state: running; }
+            .studio-art:not(.has-gsap-motion) .studio-phone { animation: studio-phone-bob 4.8s ease-in-out .9s infinite paused; }
+            .studio-art:not(.has-gsap-motion) .studio-badge { animation: studio-badge-bob 4.8s ease-in-out .9s infinite paused; }
+            .studio-art:not(.has-gsap-motion) .studio-shapes i:nth-child(3) { animation: studio-shape-drift 5.6s ease-in-out .9s infinite paused; }
+            .studio-art.is-moving:not(.has-gsap-motion) :is(.studio-phone, .studio-badge, .studio-shapes i:nth-child(3)) { animation-play-state: running; }
+            .studio-art.has-gsap-motion {
+                --studio-phone-lift: 0;
+                --studio-badge-lift: 0;
+                --studio-shape-drift: 0;
+            }
+            .has-gsap-motion .studio-phone { translate: 0 calc(var(--studio-phone-lift) * 1cqw); }
+            .has-gsap-motion .studio-badge { translate: 0 calc(var(--studio-badge-lift) * 1cqw); }
+            .has-gsap-motion .studio-shapes i:nth-child(3) {
+                translate: calc(var(--studio-shape-drift) * 1%) calc(var(--studio-shape-drift) * -1%);
+            }
         }
 
         @media (min-width: 1024px) and (max-width: 1199px) {
@@ -274,7 +283,6 @@
             .service-card, .pricing-card { padding: 1.25rem; }
             .pricing-card { min-width: 0; }
             .pricing-card .text-3xl { overflow-wrap: anywhere; }
-            #briefPreview { width: 100%; }
         }
         @media (hover: none), (prefers-reduced-motion: reduce) {
             .apple-spring:hover, .apple-card-hover:hover { transform: none; }

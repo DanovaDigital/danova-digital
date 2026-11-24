@@ -14,46 +14,12 @@
     <title>@yield('title', 'Danova — Kreasi Tanpa Batas')</title>
     <meta name="description" content="@yield('description', 'Danova — Kreasi Tanpa Batas. Premium visual-first web design & development.')" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Danova" />
-    <meta property="og:title" content="@yield('title', 'Danova — Kreasi Tanpa Batas')" />
-    <meta property="og:description" content="@yield('description', 'Danova — Kreasi Tanpa Batas. Premium visual-first web design & development.')" />
-    <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:image" content="{{ asset('images/DanovaBlue.png') }}" />
-    <meta property="og:locale" content="id_ID" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="@yield('title', 'Danova — Kreasi Tanpa Batas')" />
-    <meta name="twitter:description" content="@yield('description', 'Danova — Kreasi Tanpa Batas. Premium visual-first web design & development.')" />
-    <meta name="twitter:image" content="{{ asset('images/DanovaBlue.png') }}" />
-
-    <script type="application/ld+json">
-        @php
-        echo json_encode([
-            '@context' => 'https://schema.org',
-            '@graph' => [
-                [
-                    '@type' => 'Organization',
-                    '@id' => rtrim(config('app.url'), '/').
-                    '/#organization',
-                    'name' => 'Danova',
-                    'url' => rtrim(config('app.url'), '/'),
-                    'logo' => asset('images/DanovaFavicon.png'),
-                ],
-                [
-                    '@type' => 'WebSite',
-                    '@id' => rtrim(config('app.url'), '/').
-                    '/#website',
-                    'url' => rtrim(config('app.url'), '/'),
-                    'name' => 'Danova',
-                    'publisher' => ['@id' => rtrim(config('app.url'), '/').
-                        '/#organization'
-                    ],
-                ],
-            ],
-        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-        @endphp
-    </script>
+    @include('partials.social-meta', [
+        'socialTitle' => isset($project) ? $project['title'] . ' · Danova' : 'Danova Digital',
+        'socialDescription' => ($project['subtitle'] ?? null) ?: ($project['title'] ?? 'Studio desain dan pembuatan website bisnis'),
+        'socialImage' => $project['image'] ?? null,
+    ])
+    @include('partials.organization-schema')
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -428,7 +394,10 @@
         }
     </style>
 
-    <style>@include('partials.logo-styles')</style>
+    <style>
+        @include('partials.logo-styles')
+        @include('partials.floating-whatsapp-styles')
+    </style>
     @yield('styles')
 </head>
 
@@ -466,6 +435,7 @@
     </header>
 
     @yield('content')
+    @include('partials.floating-whatsapp', ['whatsappContext' => isset($project) ? ['context' => 'mobile_floating_work', 'project_id' => $project['id'], 'project_title' => $project['title']] : ['context' => 'mobile_floating']])
 
     <footer>
         <div class="container">
