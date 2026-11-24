@@ -57,7 +57,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -73,7 +73,7 @@
             --white: #FFFFFF;
 
             /* Typography */
-            --font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
 
             /* Font Sizes */
             --font-h1: 56px;
@@ -232,18 +232,6 @@
             transform: scale(1.05);
         }
 
-        .logo-icon {
-            width: var(--icon-size);
-            height: var(--icon-size);
-            background: linear-gradient(135deg, var(--primary), #5A8FFF);
-            border-radius: var(--icon-radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 900;
-            animation: pulse 3s ease-in-out infinite;
-        }
 
         @keyframes pulse {
 
@@ -309,26 +297,16 @@
             box-shadow: 0 8px 20px rgba(47, 111, 237, 0.35);
         }
 
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: 1px solid var(--light-gray);
-            padding: var(--space-xs);
-            border-radius: var(--radius-sm);
-            cursor: pointer;
-        }
-
         @media (max-width: 768px) {
             nav {
                 display: none;
             }
 
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .header-actions {
-                display: none;
+            .header-actions .cta-button {
+                display: inline-flex;
+                align-items: center;
+                min-height: 44px;
+                padding-inline: .85rem;
             }
         }
 
@@ -450,6 +428,7 @@
         }
     </style>
 
+    <style>@include('partials.logo-styles')</style>
     @yield('styles')
 </head>
 
@@ -469,33 +448,19 @@
         <div class="container">
             <div class="header-content">
                 <a href="/" class="logo">
-                    @if(!empty($siteSettings['header_logo']))
-                    <img src="{{ asset('storage/' . $siteSettings['header_logo']) }}" alt="Danova" style="max-height: 24px; display: block;" />
-                    @else
-                    <span>Danova</span>
-                    @endif
+                    @include('partials.danova-logo', ['customLogo' => $siteSettings['header_logo'] ?? null])
                 </a>
 
-                <nav class="nav-desktop">
-                    <a href="/#about">About</a>
-                    <a href="/#services">Services</a>
-                    <a href="/#pricing">Pricing</a>
-                    <a href="/#work">Work</a>
-                    <a href="/#testimonials">Testimonials</a>
-                    <a href="/#contact">Contact</a>
+                <nav class="nav-desktop" aria-label="Navigasi utama">
+                    <a href="/#services">Layanan</a>
+                    <a href="/#work">Portofolio</a>
+                    <a href="/#pricing">Harga</a>
+                    <a href="/#faq">FAQ</a>
                 </nav>
 
                 <div class="header-actions">
-                    <a href="/#contact" class="cta-button">Start a Project</a>
+                    <a href="/#brief" class="cta-button">Mulai brief</a>
                 </div>
-
-                <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                </button>
             </div>
         </div>
     </header>
@@ -507,8 +472,7 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <a href="/" class="footer-logo">
-                        <span class="logo-icon" aria-hidden="true">D</span>
-                        <span>Danova</span>
+                        @include('partials.danova-logo', ['customLogo' => $siteSettings['header_logo'] ?? null])
                     </a>
                     <p class="footer-desc">
                         Danova adalah creative partner untuk web & visual system premium. Detail, hierarchy, dan craftsmanship yang terasa.
@@ -516,29 +480,29 @@
                 </div>
 
                 <div>
-                    <div class="footer-heading">Quick Links</div>
+                    <div class="footer-heading">Jelajahi</div>
                     <ul class="footer-links">
-                        <li><a href="/#about">About</a></li>
-                        <li><a href="/#services">Services</a></li>
-                        <li><a href="/#pricing">Pricing</a></li>
-                        <li><a href="/#work">Work</a></li>
+                        <li><a href="/#services">Layanan</a></li>
+                        <li><a href="/#work">Portofolio</a></li>
+                        <li><a href="/#pricing">Harga</a></li>
+                        <li><a href="/#faq">FAQ</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <div class="footer-heading">Services</div>
+                    <div class="footer-heading">Layanan</div>
                     <ul class="footer-links">
-                        <li><a href="/#services">Website Design</a></li>
-                        <li><a href="/#services">Landing Pages</a></li>
-                        <li><a href="/#services">Brand Visual System</a></li>
+                        <li><a href="/#services">Website Profil Bisnis</a></li>
+                        <li><a href="/#services">Landing Page Iklan</a></li>
+                        <li><a href="/#services">Identitas Visual &amp; UI</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <div class="footer-heading">Contact</div>
+                    <div class="footer-heading">Kontak</div>
                     <ul class="footer-links">
                         <li><a href="{{ $danovaGmailHref }}" target="_blank" rel="noreferrer noopener">Email (Gmail)</a></li>
-                        <li><a href="/#contact">Start a Project</a></li>
+                        <li><a href="/#brief">Mulai brief</a></li>
                     </ul>
                 </div>
             </div>
