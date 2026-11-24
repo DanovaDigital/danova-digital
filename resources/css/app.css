@@ -9,40 +9,42 @@
     --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 
-    /* Danova brand colors - Refined Blue Triad (Non-Pastel) */
-    --color-danova-primary: #3368A0;
-    --color-danova-secondary: #619DC6;
-    --color-danova-accent: #A6C8E2;
-    --color-danova-dark: #1E293B;
-    --color-danova-deep-navy: #172A42;
-    --color-danova-surface: #F0F6FA;
+    /* Danova brand colors - Vibrant, High-Energy Studio Palette */
+    --color-danova-primary: #1E5BF6;
+    --color-danova-secondary: #00A3FF;
+    --color-danova-accent: #FF6B35;
+    --color-danova-emerald: #10B981;
+    --color-danova-dark: #0F172A;
+    --color-danova-navy: #0A1128;
+    --color-danova-surface: #F0F6FF;
 
     /* Neutrals */
     --color-danova-white: #ffffff;
     --color-danova-light-gray: #f8fafc;
     --color-danova-medium-gray: #e2e8f0;
-    --color-danova-dark-gray: #64748b;
+    --color-danova-dark-gray: #475569;
     --color-danova-charcoal: #1e293b;
-    --color-danova-black: #0f172a;
+    --color-danova-black: #090e17;
 
     /* Radius system */
     --radius-danova-sm: 8px;
     --radius-danova-md: 16px;
     --radius-danova-lg: 24px;
+    --radius-danova-xl: 32px;
 
     /* Shadow system */
-    --shadow-danova-sm: 0 1px 3px rgba(30, 41, 59, 0.05);
-    --shadow-danova-md: 0 4px 14px rgba(51, 104, 160, 0.08);
-    --shadow-danova-lg: 0 10px 30px rgba(51, 104, 160, 0.12);
-    --shadow-danova-card: 0 4px 20px rgba(51, 104, 160, 0.06);
+    --shadow-danova-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+    --shadow-danova-md: 0 4px 16px rgba(30, 91, 246, 0.10);
+    --shadow-danova-lg: 0 16px 36px -4px rgba(30, 91, 246, 0.15);
+    --shadow-danova-card: 0 4px 24px rgba(15, 23, 42, 0.06);
 }
 
 @layer base {
     :root {
         color-scheme: light;
-        --color-primary: #3368A0;
-        --color-secondary: #619DC6;
-        --color-accent: #A6C8E2;
+        --color-primary: #1E5BF6;
+        --color-secondary: #00A3FF;
+        --color-accent: #FF6B35;
     }
 
     html {

@@ -13,12 +13,12 @@
 
     <title>Danova — Studio Desain & Pembuatan Website Bisnis</title>
     <meta name="description"
-        content="Danova merancang dan membangun website bisnis berkinerja tinggi, ringan, dan fokus konversi dengan estetika visual berkelas." />
+        content="Danova merancang dan membangun website bisnis berkinerja tinggi, berkecepatan kilat, dan fokus konversi nyata dengan visual modern yang memikat." />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
     <!-- GSAP & ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -29,23 +29,24 @@
             theme: {
                 extend: {
                     colors: {
-                        // Strict Brand Blues (Non-Pastel)
+                        // High-Energy, Vibrant Studio Palette (Not Pale)
                         brand: {
-                            primary: '#3368A0',
-                            dark: '#244D77',
-                            secondary: '#619DC6',
-                            accent: '#A6C8E2',
-                            light: '#EAF2F8',
-                            surface: '#F4F8FC',
-                            navy: '#172A42',
-                            border: '#D1E2F0',
+                            primary: '#1E5BF6',     // Electric Vivid Royal Blue
+                            dark: '#1443BD',        // Deep Royal Indigo
+                            secondary: '#00A3FF',   // Radiant Cyan Blue
+                            accent: '#FF6B35',      // Solar Sunset Tangerine (Warmth & Life)
+                            emerald: '#10B981',     // Vibrant Growth Emerald
+                            light: '#EFF6FF',       // Luminous Sky Light
+                            surface: '#F4F8FF',     // Luminous Ice Surface
+                            navy: '#0A1128',        // Deep Obsidian Navy (Strong Anchor)
+                            border: '#D3E2F8',      // Crisp Confident Border
                         },
                         slate: {
-                            950: '#0F172A',
-                            900: '#1E293B',
-                            800: '#334155',
-                            700: '#475569',
-                            600: '#64748B',
+                            950: '#070C18',
+                            900: '#0F172A',
+                            800: '#1E293B',
+                            700: '#334155',
+                            600: '#475569',
                             500: '#64748B',
                             400: '#94A3B8',
                             200: '#E2E8F0',
@@ -66,10 +67,11 @@
                         'squircle-xl': '2.5rem',
                     },
                     boxShadow: {
-                        'apple-sm': '0 2px 8px rgba(51, 104, 160, 0.05)',
-                        'apple-card': '0 4px 20px -2px rgba(51, 104, 160, 0.08)',
-                        'apple-float': '0 18px 40px -6px rgba(23, 42, 66, 0.12)',
-                        'apple-glow': '0 0 40px rgba(97, 157, 198, 0.20)',
+                        'apple-sm': '0 2px 10px rgba(30, 91, 246, 0.06)',
+                        'apple-card': '0 6px 24px -2px rgba(30, 91, 246, 0.10)',
+                        'apple-float': '0 20px 48px -8px rgba(10, 17, 40, 0.18)',
+                        'vibrant-glow': '0 0 35px rgba(30, 91, 246, 0.25)',
+                        'accent-glow': '0 8px 24px rgba(255, 107, 53, 0.25)',
                     }
                 }
             }
@@ -91,19 +93,21 @@
             text-wrap: pretty;
         }
 
-        .minimal-mesh-bg {
+        /* Vibrant Luminous Background with Electric Accents */
+        .vibrant-mesh-bg {
             background-color: #FFFFFF;
             background-image: 
-                radial-gradient(at 10% 5%, rgba(166, 200, 226, 0.18) 0px, transparent 40%),
-                radial-gradient(at 90% 12%, rgba(97, 157, 198, 0.12) 0px, transparent 45%),
-                radial-gradient(at 50% 95%, rgba(51, 104, 160, 0.06) 0px, transparent 50%);
+                radial-gradient(at 12% 8%, rgba(30, 91, 246, 0.12) 0px, transparent 45%),
+                radial-gradient(at 88% 12%, rgba(0, 163, 255, 0.14) 0px, transparent 50%),
+                radial-gradient(at 50% 92%, rgba(255, 107, 53, 0.08) 0px, transparent 45%),
+                radial-gradient(at 20% 60%, rgba(16, 185, 129, 0.06) 0px, transparent 40%);
         }
 
         header.scrolled {
-            background: rgba(255, 255, 255, 0.94);
+            background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(20px);
-            box-shadow: 0 4px 20px -2px rgba(51, 104, 160, 0.06);
-            border-bottom-color: #D1E2F0;
+            box-shadow: 0 4px 24px -2px rgba(30, 91, 246, 0.09);
+            border-bottom-color: #D3E2F8;
         }
 
         /* Apple Spring Curve Physics */
@@ -128,8 +132,8 @@
 
         .apple-card-hover:hover {
             transform: translateY(-6px);
-            border-color: #619DC6;
-            box-shadow: 0 20px 42px -6px rgba(51, 104, 160, 0.14);
+            border-color: #1E5BF6;
+            box-shadow: 0 22px 48px -6px rgba(30, 91, 246, 0.18);
         }
 
         .faq-answer-inner {
@@ -155,7 +159,7 @@
     </style>
 </head>
 
-<body class="font-poppins minimal-mesh-bg text-slate-900 antialiased overflow-x-hidden selection:bg-brand-accent/30 selection:text-brand-primary">
+<body class="font-poppins vibrant-mesh-bg text-slate-900 antialiased overflow-x-hidden selection:bg-brand-primary selection:text-white">
     @php
     $setting = fn(string $key, $default = null) => optional($settings->get($key))->value ?? $default;
 
@@ -164,44 +168,44 @@
     $danovaWhatsappNumberDigits = preg_replace('/\D+/', '', (string) $danovaWhatsappNumber);
     @endphp
 
-    <!-- HEADER / NAVIGATION (CLEAN FLOATING SQUIRCLE BAR) -->
+    <!-- HEADER / NAVIGATION (CLEAN SQUIRCLE WITH VIBRANT ACCENTS) -->
     <header id="header"
-        class="fixed top-0 left-0 right-0 z-[1000] bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300 h-20 flex items-center">
+        class="fixed top-0 left-0 right-0 z-[1000] bg-white/92 backdrop-blur-md border-b border-slate-200/90 transition-all duration-300 h-20 flex items-center">
         <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center w-full">
-            <a href="/" class="flex items-center gap-3 text-2xl font-bold apple-spring">
+            <a href="/" class="flex items-center gap-3.5 text-2xl font-bold apple-spring">
                 @if ($setting('branding.header_logo'))
                 <img src="{{ asset('storage/' . $setting('branding.header_logo')) }}" alt="Danova"
                     class="h-7 lg:h-8" />
                 @else
-                <!-- Minimalist Brandmark Squircle Icon -->
-                <div class="w-10 h-10 bg-brand-primary rounded-2xl flex items-center justify-center text-white font-bold shadow-md shadow-brand-primary/20">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <!-- Vibrant Monogram Brandmark Squircle -->
+                <div class="w-11 h-11 bg-gradient-to-br from-brand-primary via-[#2563EB] to-[#1D4ED8] rounded-2xl flex items-center justify-center text-white font-bold shadow-md shadow-brand-primary/30 ring-2 ring-brand-primary/20">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
                         <path d="M4 4h7a8 8 0 018 8 8 8 0 01-8 8H4V4zm4 4v8h3a4 4 0 004-4 4 4 0 00-4-4H8z" />
                     </svg>
                 </div>
                 <div class="flex flex-col">
-                    <span class="tracking-tight text-slate-900 font-bold leading-none text-xl">Danova</span>
-                    <span class="text-[10px] text-brand-secondary font-medium tracking-wider uppercase mt-1">Digital Studio</span>
+                    <span class="tracking-tight text-slate-900 font-bold leading-none text-2xl">Danova</span>
+                    <span class="text-[11px] text-brand-primary font-semibold tracking-wider uppercase mt-1">Digital Studio</span>
                 </div>
                 @endif
             </a>
 
-            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600">
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-700">
                 <a href="#services" class="hover:text-brand-primary transition-colors py-1">Layanan</a>
+                <a href="#compare" class="hover:text-brand-primary transition-colors py-1">Keunggulan</a>
                 <a href="#work" class="hover:text-brand-primary transition-colors py-1">Portofolio</a>
                 <a href="#workflow" class="hover:text-brand-primary transition-colors py-1">Proses</a>
-                <a href="#pricing" class="hover:text-brand-primary transition-colors py-1">Biaya</a>
-                <a href="#testimonials" class="hover:text-brand-primary transition-colors py-1">Testimoni</a>
+                <a href="#pricing" class="hover:text-brand-primary transition-colors py-1">Harga</a>
                 <a href="#faq" class="hover:text-brand-primary transition-colors py-1">FAQ</a>
             </nav>
 
             <div class="hidden lg:flex items-center gap-4">
-                <div class="inline-flex items-center gap-2 bg-brand-surface px-4 py-1.5 rounded-full text-xs font-semibold text-brand-primary border border-brand-border">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>Slot Proyek Tersedia</span>
+                <div class="inline-flex items-center gap-2 bg-emerald-50 px-4 py-1.5 rounded-full text-xs font-semibold text-emerald-700 border border-emerald-200">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Slot Proyek Aktif</span>
                 </div>
                 <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}"
-                    class="apple-spring bg-brand-primary text-white px-6 py-2.5 rounded-full font-semibold text-sm flex items-center gap-2 shadow-md shadow-brand-primary/20 hover:bg-brand-dark">
+                    class="apple-spring bg-gradient-to-r from-brand-primary to-brand-secondary text-white px-6 py-2.5 rounded-full font-semibold text-sm flex items-center gap-2 shadow-md shadow-brand-primary/25 hover:shadow-lg hover:shadow-brand-primary/40">
                     <span>Konsultasi WA</span>
                 </a>
             </div>
@@ -216,171 +220,237 @@
 
     <main id="content" class="pt-20">
 
-        <!-- HERO SECTION (ROUNDED SQUIRCLE ARCHITECTURE WITH CONTEXTUAL ARTBOARD) -->
-        <section class="relative py-16 lg:py-24 overflow-hidden border-b border-slate-100">
+        <!-- HERO SECTION (VIBRANT STUDIO STORY WITH RICH INTERACTIVE ARTBOARD) -->
+        <section class="relative py-16 lg:py-24 overflow-hidden border-b border-brand-border/60">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
 
-                    <!-- Left: Studio Story & Typography Hierarchy -->
+                    <!-- Left: Studio Story & High-Energy Pitch -->
                     <div class="lg:col-span-6 text-center lg:text-left hero-text-col">
-                        <div class="hero-badge inline-flex items-center gap-2.5 bg-brand-surface border border-brand-border px-4 py-1.5 rounded-full mb-6">
-                            <span class="w-2 h-2 rounded-full bg-brand-primary"></span>
-                            <span class="text-xs font-semibold text-brand-primary tracking-wide">Web Design & Engineering Studio</span>
+                        <div class="hero-badge inline-flex items-center gap-2.5 bg-brand-surface border border-brand-primary/30 px-4 py-1.5 rounded-full mb-6 shadow-sm">
+                            <span class="w-2.5 h-2.5 rounded-full bg-brand-primary inline-block"></span>
+                            <span class="text-xs font-bold text-brand-primary tracking-wide">Web Design & Growth Studio</span>
                         </div>
 
-                        <h1 class="hero-title text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.18] mb-5 tracking-tight text-slate-900">
-                            Website Presisi untuk Bisnis yang Siap Tumbuh
+                        <h1 class="hero-title text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.18] mb-5 tracking-tight text-slate-900">
+                            Website Berkharisma untuk Bisnis yang Ingin Tumbuh Pesat
                         </h1>
 
                         <p class="hero-lead text-slate-600 text-base sm:text-lg mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                            Kami merancang dan membangun website bisnis kustom dengan kode bersih, loading kilat, dan antarmuka presisi yang memperkuat kepercayaan pelanggan.
+                            Bukan sekadar template mati. Danova merancang website bisnis kustom dengan visual hidup, kode secepat kilat, dan alur penawaran yang terbukti menghasilkan penjualan nyata.
                         </p>
 
-                        <!-- Rounded Feature Pills -->
+                        <!-- Vibrant Rounded Feature Pills -->
                         <div class="flex flex-wrap justify-center lg:justify-start gap-2.5 mb-8">
-                            <span class="px-4 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Profil Bisnis</span>
-                            <span class="px-4 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Landing Page Iklan</span>
-                            <span class="px-4 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">Katalog Pesan WA</span>
-                            <span class="px-4 py-1.5 rounded-full bg-brand-surface border border-brand-border text-xs font-medium text-brand-primary">Skor 99+ PageSpeed</span>
+                            <span class="px-4 py-1.5 rounded-full bg-white border border-brand-border text-xs font-semibold text-slate-800 shadow-apple-sm flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-brand-primary"></span>
+                                <span>Website Profil Bisnis</span>
+                            </span>
+                            <span class="px-4 py-1.5 rounded-full bg-white border border-brand-border text-xs font-semibold text-slate-800 shadow-apple-sm flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+                                <span>Landing Page Iklan</span>
+                            </span>
+                            <span class="px-4 py-1.5 rounded-full bg-white border border-brand-border text-xs font-semibold text-slate-800 shadow-apple-sm flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-brand-emerald"></span>
+                                <span>Katalog WhatsApp Instan</span>
+                            </span>
+                            <span class="px-4 py-1.5 rounded-full bg-brand-primary text-white text-xs font-semibold shadow-sm">
+                                ⚡ Skor 99+ PageSpeed
+                            </span>
                         </div>
 
-                        <div class="hero-cta flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start mb-10">
+                        <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
                             <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}?text=Halo%20Danova,%20saya%20mau%20konsultasi%20website%20bisnis%20saya"
-                                class="apple-spring bg-brand-primary text-white px-8 py-3.5 rounded-2xl font-semibold text-sm hover:bg-brand-dark shadow-md shadow-brand-primary/20 flex items-center justify-center gap-2.5">
+                                class="apple-spring bg-gradient-to-r from-brand-primary via-[#2563EB] to-brand-secondary text-white px-8 py-4 rounded-2xl font-bold text-sm hover:shadow-xl hover:shadow-brand-primary/30 shadow-apple-card flex items-center justify-center gap-2.5">
                                 <span>Mulai Konsultasi Gratis</span>
-                                <svg class="w-4 h-4 fill-none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                <svg class="w-4 h-4 fill-none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                 </svg>
                             </a>
                             <a href="#work"
-                                class="apple-spring bg-white text-slate-700 border-2 border-slate-200 px-8 py-3.5 rounded-2xl font-semibold text-sm hover:border-brand-primary hover:text-brand-primary text-center">
-                                Lihat Portofolio
+                                class="apple-spring bg-white text-slate-800 border-2 border-brand-border px-8 py-4 rounded-2xl font-semibold text-sm hover:border-brand-primary hover:text-brand-primary text-center shadow-apple-sm">
+                                Lihat Contoh Karya
                             </a>
                         </div>
 
-                        <!-- Proof Rating Stack -->
-                        <div class="flex items-center justify-center lg:justify-start gap-4 pt-4 border-t border-slate-100">
+                        <!-- Real Proof Rating Stack -->
+                        <div class="flex items-center justify-center lg:justify-start gap-4 pt-4 border-t border-brand-border/60">
                             <div class="flex text-amber-400 text-sm">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <span class="text-xs text-slate-600 font-medium">Rating 4.9/5 dari 100+ pelaku usaha di Indonesia</span>
+                            <span class="text-xs text-slate-700 font-semibold">Rating 4.9/5 dari 100+ pelaku usaha di Indonesia</span>
                         </div>
                     </div>
 
-                    <!-- Right: APPLE-STYLE SQUIRCLE STUDIO ARTBOARD & 3D PARALLAX -->
+                    <!-- Right: RICH VIBRANT CONTEXTUAL VECTOR STUDIO ARTBOARD & 3D PARALLAX -->
                     <div class="lg:col-span-6 relative hero-visual-col hero-perspective">
                         <div class="hero-canvas-wrapper relative" id="heroCanvas">
 
-                            <!-- Main Squircle Browser Artboard -->
-                            <div class="hero-artboard relative bg-white rounded-3xl shadow-apple-float border border-brand-border overflow-hidden">
+                            <!-- Ambient Vibrant Aura Glows -->
+                            <div class="absolute -top-10 -right-10 w-72 h-72 bg-gradient-to-br from-brand-primary/25 via-brand-secondary/20 to-transparent rounded-full blur-3xl -z-10 pointer-events-none"></div>
+                            <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-gradient-to-tr from-brand-accent/20 via-brand-emerald/15 to-transparent rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+                            <!-- Main Squircle Browser Artboard (Vibrant Living Website) -->
+                            <div class="hero-artboard relative bg-white rounded-3xl shadow-apple-float border-2 border-brand-border overflow-hidden">
                                 
-                                <!-- Browser Header Bar with Squircles -->
-                                <div class="bg-slate-50 px-5 py-3.5 border-b border-brand-border flex items-center justify-between">
+                                <!-- Safari Browser Header Bar -->
+                                <div class="bg-gradient-to-r from-[#F0F5FD] to-[#E9F1FC] px-5 py-3.5 border-b border-brand-border flex items-center justify-between">
                                     <div class="flex items-center gap-1.5">
-                                        <span class="w-3 h-3 rounded-full bg-rose-400 inline-block"></span>
-                                        <span class="w-3 h-3 rounded-full bg-amber-400 inline-block"></span>
-                                        <span class="w-3 h-3 rounded-full bg-emerald-400 inline-block"></span>
+                                        <span class="w-3 h-3 rounded-full bg-[#FF5F56] inline-block shadow-2xs"></span>
+                                        <span class="w-3 h-3 rounded-full bg-[#FFBD2E] inline-block shadow-2xs"></span>
+                                        <span class="w-3 h-3 rounded-full bg-[#27C93F] inline-block shadow-2xs"></span>
                                     </div>
-                                    <div class="bg-white border border-brand-border rounded-xl px-4 py-1 text-xs text-slate-600 font-mono flex items-center gap-2 shadow-2xs">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span>
-                                        <span>danova.id/preview-system</span>
+                                    <div class="bg-white border border-brand-border rounded-xl px-4 py-1 text-xs text-slate-700 font-medium flex items-center gap-2 shadow-2xs">
+                                        <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
+                                        <span class="font-bold text-slate-900">kopikencana.id</span>
+                                        <span class="text-brand-primary font-semibold text-[11px]">/katalog</span>
                                     </div>
-                                    <div class="text-[10px] text-slate-400 font-medium">Studio v2.5</div>
+                                    <div class="text-[10px] text-brand-primary font-bold tracking-wider uppercase bg-white/80 px-2 py-0.5 rounded-md border border-blue-100">
+                                        Danova Studio
+                                    </div>
                                 </div>
 
-                                <!-- Inside Context Illustration: Web Blueprint & Live System -->
-                                <div class="p-6 bg-white space-y-4">
+                                <!-- Inside Context Illustration: Vibrant Living Storefront -->
+                                <div class="p-6 bg-gradient-to-b from-[#FAFCFF] to-white space-y-4">
                                     
-                                    <!-- Context Nav Bar Mockup -->
+                                    <!-- Store Brand Header -->
                                     <div class="flex items-center justify-between pb-3.5 border-b border-slate-100">
-                                        <div class="flex items-center gap-2">
-                                            <div class="w-7 h-7 rounded-xl bg-brand-primary flex items-center justify-center text-white text-[11px] font-bold">D</div>
-                                            <div class="h-3 w-24 bg-slate-200 rounded-md"></div>
+                                        <div class="flex items-center gap-2.5">
+                                            <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-brand-primary to-brand-secondary text-white flex items-center justify-center text-xs font-bold shadow-xs">
+                                                K
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-bold text-slate-900 leading-tight">Kopi Kencana</div>
+                                                <div class="text-[10px] text-brand-emerald font-semibold">● Buka • Siap Kirim Hari Ini</div>
+                                            </div>
                                         </div>
                                         <div class="flex items-center gap-2">
-                                            <div class="h-2 w-12 bg-slate-100 rounded-full"></div>
-                                            <div class="h-2 w-12 bg-slate-100 rounded-full"></div>
-                                            <div class="h-6 px-3 rounded-full bg-brand-secondary text-white text-[10px] font-medium flex items-center">Kontak</div>
+                                            <span class="px-3 py-1 rounded-full bg-brand-surface text-brand-primary text-[11px] font-bold border border-brand-border">
+                                                Katalog Resmi
+                                            </span>
                                         </div>
                                     </div>
 
-                                    <!-- Context Hero Canvas: Wireframe transforming to High-Converting UI -->
-                                    <div class="p-5 rounded-2xl bg-brand-surface border border-brand-border relative overflow-hidden">
-                                        <div class="max-w-[65%] space-y-2.5">
-                                            <div class="inline-block px-3 py-1 rounded-full bg-white text-brand-primary text-[10px] font-semibold border border-brand-border">
-                                                Web Bisnis Kustom
-                                            </div>
-                                            <div class="h-4 w-44 bg-slate-800 rounded-md"></div>
-                                            <div class="h-2.5 w-52 bg-slate-300 rounded-md"></div>
-                                            <div class="h-2.5 w-36 bg-slate-200 rounded-md"></div>
-                                            <div class="pt-2 flex items-center gap-2">
-                                                <div class="h-7 px-3.5 bg-brand-primary rounded-xl text-white text-[10px] font-medium flex items-center">Lihat Produk</div>
-                                                <div class="h-7 px-3.5 bg-white border border-slate-200 rounded-xl text-slate-600 text-[10px] font-medium flex items-center">Detail</div>
+                                    <!-- Rich Hero Banner Illustration inside Web Artboard -->
+                                    <div class="p-5 rounded-2xl bg-gradient-to-r from-[#EFF6FF] via-[#E0EFFF] to-[#FFF4ED] border border-brand-border relative overflow-hidden">
+                                        <div class="max-w-[62%] space-y-2">
+                                            <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-primary text-white text-[10px] font-bold uppercase tracking-wider">
+                                                Produk Unggulan
+                                            </span>
+                                            <h4 class="text-base font-extrabold text-slate-900 leading-snug">
+                                                Biji Kopi Asli, Sangrai Tiap Pagi
+                                            </h4>
+                                            <p class="text-xs text-slate-600">Pesan langsung ke WhatsApp tanpa repot.</p>
+                                            <div class="pt-1">
+                                                <button class="px-3.5 py-1.5 rounded-xl bg-brand-accent text-white text-xs font-bold shadow-accent-glow flex items-center gap-1.5">
+                                                    <span>Order Cepat</span>
+                                                    <span>→</span>
+                                                </button>
                                             </div>
                                         </div>
 
-                                        <!-- Context Vector: Interactive Wireframe Grid -->
-                                        <div class="absolute right-3 top-3 w-32 h-28 pointer-events-none opacity-90">
-                                            <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <rect x="10" y="10" width="100" height="80" rx="8" fill="#FFFFFF" stroke="#619DC6" stroke-width="1.5" stroke-dasharray="3 3"/>
-                                                <rect x="20" y="22" width="40" height="20" rx="4" fill="#A6C8E2" />
-                                                <rect x="66" y="22" width="34" height="20" rx="4" fill="#EAF2F8" stroke="#3368A0" stroke-width="1"/>
-                                                <line x1="20" y1="52" x2="100" y2="52" stroke="#D1E2F0" stroke-width="1.5"/>
-                                                <circle cx="30" cy="68" r="8" fill="#3368A0" />
-                                                <circle cx="60" cy="68" r="8" fill="#619DC6" />
-                                                <circle cx="90" cy="68" r="8" fill="#A6C8E2" />
+                                        <!-- Colorful Vector Coffee Cup & Beans Illustration -->
+                                        <div class="absolute right-2 bottom-1 w-32 h-32 pointer-events-none">
+                                            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="60" cy="60" r="50" fill="#DBEAFE" />
+                                                <!-- Cup Body -->
+                                                <rect x="34" y="44" width="50" height="42" rx="10" fill="#1E5BF6" />
+                                                <!-- Coffee Inside -->
+                                                <rect x="38" y="48" width="42" height="12" rx="5" fill="#FF6B35" />
+                                                <!-- Cup Handle -->
+                                                <path d="M84 52C92 52 96 56 96 64C96 72 92 76 84 76" stroke="#1E5BF6" stroke-width="6" stroke-linecap="round" />
+                                                <!-- Steam -->
+                                                <path d="M48 26C48 32 44 36 44 40" stroke="#FF6B35" stroke-width="3" stroke-linecap="round" />
+                                                <path d="M60 22C60 29 56 33 56 38" stroke="#10B981" stroke-width="3" stroke-linecap="round" />
+                                                <!-- Saucer -->
+                                                <ellipse cx="59" cy="90" rx="36" ry="6" fill="#93C5FD" />
                                             </svg>
                                         </div>
                                     </div>
 
-                                    <!-- Responsive Micro Cards (Component Hierarchy) -->
-                                    <div class="grid grid-cols-3 gap-3">
-                                        <div class="p-3 rounded-2xl border border-brand-border bg-slate-50 flex items-center gap-2">
-                                            <div class="w-7 h-7 rounded-xl bg-brand-light text-brand-primary flex items-center justify-center text-xs font-bold">⚡</div>
+                                    <!-- Product Mini Cards with Vibrant Color Badges -->
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <div class="p-3.5 rounded-2xl bg-white border border-brand-border shadow-apple-sm flex items-center justify-between">
                                             <div>
-                                                <div class="text-[10px] font-bold text-slate-800">0.4 Detik</div>
-                                                <div class="text-[8px] text-slate-400">Loading Speed</div>
+                                                <div class="text-xs font-bold text-slate-900">Cold Brew Latte</div>
+                                                <div class="text-xs font-extrabold text-brand-primary">Rp 25.000</div>
                                             </div>
+                                            <span class="w-7 h-7 rounded-full bg-brand-surface text-brand-primary border border-brand-border flex items-center justify-center text-xs font-bold">+</span>
                                         </div>
-                                        <div class="p-3 rounded-2xl border border-brand-border bg-slate-50 flex items-center gap-2">
-                                            <div class="w-7 h-7 rounded-xl bg-brand-light text-brand-primary flex items-center justify-center text-xs font-bold">📱</div>
+                                        <div class="p-3.5 rounded-2xl bg-white border border-brand-border shadow-apple-sm flex items-center justify-between">
                                             <div>
-                                                <div class="text-[10px] font-bold text-slate-800">100% Mobile</div>
-                                                <div class="text-[8px] text-slate-400">Responsif</div>
+                                                <div class="text-xs font-bold text-slate-900">Roasted Arabica</div>
+                                                <div class="text-xs font-extrabold text-brand-primary">Rp 75.000</div>
                                             </div>
-                                        </div>
-                                        <div class="p-3 rounded-2xl border border-brand-border bg-slate-50 flex items-center gap-2">
-                                            <div class="w-7 h-7 rounded-xl bg-brand-light text-brand-primary flex items-center justify-center text-xs font-bold">🔒</div>
-                                            <div>
-                                                <div class="text-[10px] font-bold text-slate-800">SSL Aktif</div>
-                                                <div class="text-[8px] text-slate-400">Keamanan</div>
-                                            </div>
+                                            <span class="w-7 h-7 rounded-full bg-brand-surface text-brand-primary border border-brand-border flex items-center justify-center text-xs font-bold">+</span>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
 
-                            <!-- Context Badge 1: Core Web Vitals Metric (Top Right) -->
-                            <div class="floating-layer floating-speed absolute -top-4 -right-4 bg-white p-3.5 rounded-2xl shadow-apple-float border border-brand-border flex items-center gap-3 z-20">
-                                <div class="w-10 h-10 rounded-xl bg-brand-light text-brand-primary flex items-center justify-center font-bold text-base">
-                                    99
+                            <!-- Floating Badge 1: Google SEO Top 1 Sparkline (Vivid Emerald & Blue) -->
+                            <div class="floating-layer floating-google absolute -top-5 -right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-apple-float border-2 border-brand-border max-w-[220px] z-20">
+                                <div class="flex items-center gap-2.5 mb-2">
+                                    <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-brand-primary to-brand-secondary flex items-center justify-center text-white font-bold text-xs shadow-xs">
+                                        G
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-slate-900">Peringkat #1 Google</div>
+                                        <div class="text-[10px] text-emerald-600 font-extrabold">● Terindeks Otomatis</div>
+                                    </div>
+                                </div>
+                                <svg class="w-full h-9" viewBox="0 0 160 36" fill="none">
+                                    <path d="M0 30 Q 35 24, 65 16 T 115 12 T 160 4" stroke="#1E5BF6" stroke-width="3" stroke-linecap="round" />
+                                    <path d="M0 30 Q 35 24, 65 16 T 115 12 T 160 4 L 160 36 L 0 36 Z" fill="url(#blueVibrantGradient)" opacity="0.25" />
+                                    <defs>
+                                        <linearGradient id="blueVibrantGradient" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#1E5BF6" />
+                                            <stop offset="100%" stop-color="#FFFFFF" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <div class="flex justify-between items-center text-[11px] font-bold text-slate-700 mt-1">
+                                    <span>Trafik Pengunjung</span>
+                                    <span class="text-emerald-600 font-extrabold">+280% Naik</span>
+                                </div>
+                            </div>
+
+                            <!-- Floating Badge 2: WhatsApp Live Customer Order Bubble (Tangerine & Green) -->
+                            <div class="floating-layer floating-wa absolute -bottom-6 -left-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-apple-float border-2 border-brand-border max-w-[260px] z-20">
+                                <div class="flex items-center gap-2.5 mb-2">
+                                    <div class="relative">
+                                        <img src="/images/avatar-1.svg" class="w-9 h-9 rounded-full border border-slate-200">
+                                        <span class="w-3 h-3 rounded-full bg-emerald-500 border-2 border-white absolute -bottom-0.5 -right-0.5"></span>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-slate-900 leading-tight">Order Pelanggan Baru</div>
+                                        <div class="text-[10px] text-brand-primary font-semibold">Via Tombol WhatsApp Web</div>
+                                    </div>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-emerald-50 text-slate-800 text-xs leading-snug border border-emerald-200 font-medium">
+                                    "Halo Danova, mau pesan paket kopi langsung dari website ya! ☕"
+                                </div>
+                                <div class="text-right text-[10px] text-emerald-700 font-bold mt-1">09:12 • Masuk Seketika ✓✓</div>
+                            </div>
+
+                            <!-- Floating Badge 3: Speed Gauge Sticker (Vivid Emerald) -->
+                            <div class="floating-layer floating-speed absolute -top-5 -left-4 bg-white p-3 rounded-2xl shadow-apple-card border-2 border-brand-border flex items-center gap-2.5 z-20">
+                                <div class="w-9 h-9 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-extrabold text-sm shadow-sm">
+                                    ⚡ 99
                                 </div>
                                 <div>
                                     <div class="text-xs font-bold text-slate-900">Google PageSpeed</div>
-                                    <div class="text-[10px] text-emerald-600 font-semibold">● Optimal & Kilat</div>
+                                    <div class="text-[10px] text-emerald-600 font-bold">Ultra Cepat</div>
                                 </div>
                             </div>
 
-                            <!-- Context Badge 2: Live Inbound WhatsApp Lead (Bottom Left) -->
-                            <div class="floating-layer floating-wa absolute -bottom-5 -left-4 bg-white p-4 rounded-2xl shadow-apple-float border border-brand-border max-w-[250px] z-20">
-                                <div class="flex items-center gap-2 mb-2">
-                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
-                                    <span class="text-xs font-bold text-slate-900">Notifikasi Calon Pembeli</span>
-                                </div>
-                                <div class="text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                                    "Halo, saya lihat katalog website & mau order paket kopi..."
-                                </div>
+                            <!-- Floating Studio Designer Cursor (Vibrant Tangerine) -->
+                            <div class="floating-layer floating-cursor absolute top-28 -right-4 z-30 pointer-events-none hidden sm:flex items-center gap-1.5 bg-brand-accent text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-accent-glow">
+                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                                    <path d="M4 2l16 11.5-7.5 1.5-4 7-2-1 3.5-6.5-6-1.5z" />
+                                </svg>
+                                <span>Danova Studio</span>
                             </div>
 
                         </div>
@@ -390,161 +460,253 @@
             </div>
         </section>
 
-        <!-- STATS BAR (CLEAN SQUIRCLE ROW) -->
-        <section class="py-10 bg-slate-50 border-b border-slate-200">
+        <!-- STATS & TRUST RIBBON -->
+        <section class="py-12 bg-gradient-to-r from-brand-surface via-white to-brand-surface border-b border-brand-border">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    <div>
-                        <div class="text-2xl lg:text-3xl font-bold text-brand-primary">{{ $setting('stats.projects', '100+') }}</div>
-                        <p class="text-xs text-slate-500 font-medium mt-1">Website Diluncurkan</p>
+                    <div class="border-r last:border-0 border-slate-200/80 pr-4">
+                        <div class="text-3xl lg:text-4xl font-extrabold text-brand-primary mb-1">{{ $setting('stats.projects', '100+') }}</div>
+                        <p class="text-xs text-slate-600 font-semibold">Website Sukses Meluncur</p>
+                    </div>
+                    <div class="border-r last:border-0 border-slate-200/80 pr-4">
+                        <div class="text-3xl lg:text-4xl font-extrabold text-brand-accent mb-1">{{ $setting('stats.rating', '4.9') }} / 5.0</div>
+                        <p class="text-xs text-slate-600 font-semibold">Rating Kepuasan Klien</p>
+                    </div>
+                    <div class="border-r last:border-0 border-slate-200/80 pr-4">
+                        <div class="text-3xl lg:text-4xl font-extrabold text-brand-primary mb-1">{{ $setting('stats.on_time', '95%') }}</div>
+                        <p class="text-xs text-slate-600 font-semibold">Selesai Tepat Deadline</p>
                     </div>
                     <div>
-                        <div class="text-2xl lg:text-3xl font-bold text-brand-primary">{{ $setting('stats.rating', '4.9') }} / 5.0</div>
-                        <p class="text-xs text-slate-500 font-medium mt-1">Kepuasan Klien</p>
-                    </div>
-                    <div>
-                        <div class="text-2xl lg:text-3xl font-bold text-brand-primary">{{ $setting('stats.on_time', '95%') }}</div>
-                        <p class="text-xs text-slate-500 font-medium mt-1">Tepat Sesuai Target</p>
-                    </div>
-                    <div>
-                        <div class="text-2xl lg:text-3xl font-bold text-brand-primary">100%</div>
-                        <p class="text-xs text-slate-500 font-medium mt-1">Garansi Bantuan Teknis</p>
+                        <div class="text-3xl lg:text-4xl font-extrabold text-emerald-600 mb-1">100%</div>
+                        <p class="text-xs text-slate-600 font-semibold">Garansi Pendampingan Teknis</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SERVICES SECTION (SQUIRCLE CARDS & CONTEXTUAL ILLUSTRATIONS) -->
-        <section id="services" class="py-16 lg:py-24 bg-white border-b border-slate-100">
+        <!-- SERVICES SECTION (WITH RICH CONTEXTUAL VECTOR ILLUSTRATIONS) -->
+        <section id="services" class="py-20 lg:py-28 bg-white border-b border-brand-border/60">
             <div class="container mx-auto px-6 lg:px-12">
-                <div class="max-w-xl mb-12 section-header">
-                    <span class="text-xs font-semibold text-brand-primary uppercase tracking-wider block mb-2">Spesialisasi Kami</span>
-                    <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 tracking-tight">Solusi Digital Sesuai Target Usaha Anda</h2>
+                <div class="max-w-2xl mb-14 section-header">
+                    <span class="text-xs font-bold text-brand-primary uppercase tracking-wider block mb-2">Spesialisasi Kami</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">Solusi Digital Berdaya Saing Tinggi</h2>
+                    <p class="text-slate-600 text-base mt-2">Dirancang khusus untuk memikat calon pembeli dan mempermudah operasional usaha Anda.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                    <!-- Service 1: Website Profil Bisnis -->
-                    <article class="service-card p-7 lg:p-8 rounded-3xl border border-brand-border bg-white shadow-apple-card flex flex-col justify-between apple-card-hover">
+                    <!-- Service 1: Website Profil Bisnis & UMKM -->
+                    <article class="service-card p-8 rounded-3xl border-2 border-brand-border bg-white shadow-apple-card flex flex-col justify-between apple-card-hover relative overflow-hidden">
                         <div>
-                            <!-- Contextual Illustration 1: Responsive Layout Blueprint -->
-                            <div class="w-full h-36 bg-brand-surface rounded-2xl border border-brand-border flex items-center justify-center p-3 mb-6">
-                                <svg class="w-full h-full" viewBox="0 0 240 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="20" y="10" width="130" height="80" rx="8" fill="#FFFFFF" stroke="#3368A0" stroke-width="1.5"/>
-                                    <rect x="25" y="16" width="30" height="8" rx="3" fill="#3368A0"/>
-                                    <line x1="60" y1="20" x2="140" y2="20" stroke="#D1E2F0" stroke-width="2"/>
-                                    <rect x="25" y="30" width="70" height="24" rx="4" fill="#EAF2F8"/>
-                                    <rect x="100" y="30" width="45" height="24" rx="4" fill="#A6C8E2"/>
-                                    <rect x="25" y="60" width="35" height="22" rx="3" fill="#F4F8FC" stroke="#619DC6" stroke-width="1"/>
-                                    <rect x="65" y="60" width="35" height="22" rx="3" fill="#F4F8FC" stroke="#619DC6" stroke-width="1"/>
-                                    <rect x="105" y="60" width="40" height="22" rx="3" fill="#F4F8FC" stroke="#619DC6" stroke-width="1"/>
-                                    <!-- Mobile Companion -->
-                                    <rect x="165" y="20" width="50" height="70" rx="8" fill="#FFFFFF" stroke="#619DC6" stroke-width="1.5"/>
-                                    <rect x="175" y="26" width="30" height="6" rx="2" fill="#3368A0"/>
-                                    <rect x="172" y="36" width="36" height="22" rx="3" fill="#A6C8E2"/>
-                                    <rect x="172" y="62" width="36" height="18" rx="3" fill="#EAF2F8"/>
+                            <!-- Rich Contextual Illustration 1: Dual Viewport Architecture -->
+                            <div class="w-full h-44 bg-gradient-to-br from-[#EFF6FF] to-[#DBEAFE] rounded-2xl border border-brand-border flex items-center justify-center p-4 mb-7 relative overflow-hidden">
+                                <svg class="w-full h-full" viewBox="0 0 240 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Desktop Frame -->
+                                    <rect x="15" y="10" width="140" height="95" rx="10" fill="#FFFFFF" stroke="#1E5BF6" stroke-width="2"/>
+                                    <rect x="22" y="18" width="35" height="10" rx="3" fill="#1E5BF6"/>
+                                    <line x1="65" y1="23" x2="145" y2="23" stroke="#CBD5E1" stroke-width="2.5" stroke-linecap="round"/>
+                                    <!-- Hero Banner Area -->
+                                    <rect x="22" y="34" width="75" height="32" rx="5" fill="#BFDBFE"/>
+                                    <rect x="102" y="34" width="45" height="32" rx="5" fill="#FF6B35"/>
+                                    <!-- Product Grid -->
+                                    <rect x="22" y="72" width="38" height="24" rx="4" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.5"/>
+                                    <rect x="66" y="72" width="38" height="24" rx="4" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.5"/>
+                                    <rect x="110" y="72" width="38" height="24" rx="4" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.5"/>
+
+                                    <!-- Mobile Phone Companion (Overlapping) -->
+                                    <rect x="165" y="24" width="60" height="85" rx="10" fill="#FFFFFF" stroke="#10B981" stroke-width="2.5"/>
+                                    <rect x="175" y="30" width="40" height="8" rx="2" fill="#10B981"/>
+                                    <rect x="172" y="44" width="46" height="28" rx="4" fill="#BFDBFE"/>
+                                    <rect x="172" y="78" width="46" height="22" rx="4" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
                                 </svg>
                             </div>
 
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Website Profil Bisnis</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                                Memperkenalkan profil usaha, katalog produk, dan kredibilitas brand agar calon pembeli mudah menghubungi via WhatsApp.
+                            <span class="inline-block px-3 py-1 rounded-full bg-brand-surface text-brand-primary text-xs font-bold mb-3 border border-brand-border">
+                                Paling Diminati UMKM
+                            </span>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Website Profil Bisnis</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
+                                Representasi resmi brand Anda di internet. Menampilkan profil, katalog produk rapi, serta tombol pesan WhatsApp instan sekali klik.
                             </p>
                         </div>
-                        <ul class="text-xs text-slate-600 space-y-2 pt-4 border-t border-slate-100">
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold">✓</span> Mobile responsif & loading kilat</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold">✓</span> Domain resmi & SSL terpasang</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold">✓</span> Terindeks mesin pencari Google</li>
+                        <ul class="text-xs text-slate-700 font-medium space-y-2.5 pt-5 border-t border-slate-100">
+                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> 100% Mobile responsif & kilat</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Domain resmi (.com / .id) + SSL aman</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Terindeks mesin pencari Google otomatis</li>
                         </ul>
                     </article>
 
                     <!-- Service 2: Landing Page Promosi & Iklan -->
-                    <article class="service-card p-7 lg:p-8 rounded-3xl border border-brand-border bg-white shadow-apple-card flex flex-col justify-between apple-card-hover">
+                    <article class="service-card p-8 rounded-3xl border-2 border-brand-border bg-white shadow-apple-card flex flex-col justify-between apple-card-hover relative overflow-hidden">
                         <div>
-                            <!-- Contextual Illustration 2: Conversion Funnel & Analytics Curve -->
-                            <div class="w-full h-36 bg-brand-surface rounded-2xl border border-brand-border flex items-center justify-center p-3 mb-6">
-                                <svg class="w-full h-full" viewBox="0 0 240 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M30 75 Q 80 65, 120 40 T 210 20" stroke="#3368A0" stroke-width="2.5" stroke-linecap="round"/>
-                                    <path d="M30 75 Q 80 65, 120 40 T 210 20 L 210 85 L 30 85 Z" fill="#619DC6" fill-opacity="0.12"/>
-                                    <circle cx="120" cy="40" r="4" fill="#619DC6"/>
-                                    <circle cx="210" cy="20" r="5" fill="#3368A0"/>
-                                    <!-- Conversion Funnel Beacon -->
-                                    <rect x="70" y="16" width="70" height="20" rx="6" fill="#FFFFFF" stroke="#3368A0" stroke-width="1"/>
-                                    <text x="77" y="30" font-family="sans-serif" font-size="9" fill="#3368A0" font-weight="bold">+140% Konversi</text>
-                                    <line x1="30" y1="85" x2="210" y2="85" stroke="#D1E2F0" stroke-width="1"/>
+                            <!-- Rich Contextual Illustration 2: Conversion Rocket Engine -->
+                            <div class="w-full h-44 bg-gradient-to-br from-[#FFF5ED] via-[#FEEAD9] to-[#FFEDD5] rounded-2xl border border-orange-200 flex items-center justify-center p-4 mb-7 relative overflow-hidden">
+                                <svg class="w-full h-full" viewBox="0 0 240 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Conversion Trajectory Line -->
+                                    <path d="M25 95 Q 85 85, 125 50 T 215 25" stroke="#FF6B35" stroke-width="3.5" stroke-linecap="round"/>
+                                    <path d="M25 95 Q 85 85, 125 50 T 215 25 L 215 105 L 25 105 Z" fill="#FF6B35" fill-opacity="0.15"/>
+                                    <circle cx="125" cy="50" r="5" fill="#1E5BF6"/>
+                                    <circle cx="215" cy="25" r="7" fill="#FF6B35"/>
+                                    
+                                    <!-- High Conversion Multiplier Badge -->
+                                    <rect x="65" y="18" width="90" height="26" rx="6" fill="#FFFFFF" stroke="#FF6B35" stroke-width="1.5" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.06))"/>
+                                    <text x="74" y="35" font-family="sans-serif" font-size="11" fill="#FF6B35" font-weight="bold">🚀 +3.4x Konversi</text>
+                                    
+                                    <!-- Trigger Pulse Buttons -->
+                                    <rect x="35" y="65" width="45" height="18" rx="4" fill="#1E5BF6"/>
+                                    <rect x="155" y="65" width="55" height="20" rx="4" fill="#10B981"/>
+                                    <line x1="25" y1="105" x2="215" y2="105" stroke="#FED7AA" stroke-width="1.5"/>
                                 </svg>
                             </div>
 
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Landing Page Promosi</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                                Halaman fokus dengan alur penawaran khusus untuk memaksimalkan hasil iklan Meta Ads, TikTok Ads, dan Google Ads.
+                            <span class="inline-block px-3 py-1 rounded-full bg-orange-50 text-brand-accent text-xs font-bold mb-3 border border-orange-200">
+                                Tingkat Konversi Tinggi
+                            </span>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Landing Page Iklan</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
+                                Dirancang khusus untuk memicu calon pembeli langsung checkout atau chat admin. Sangat cocok untuk iklan Meta Ads, TikTok Ads, dan Google Ads.
                             </p>
                         </div>
-                        <ul class="text-xs text-slate-600 space-y-2 pt-4 border-t border-slate-100">
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold">✓</span> Copywriting fokus closing penjualan</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold">✓</span> Integrasi Meta Pixel & GA4</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold">✓</span> Tombol WhatsApp multi-admin</li>
+                        <ul class="text-xs text-slate-700 font-medium space-y-2.5 pt-5 border-t border-slate-100">
+                            <li class="flex items-center gap-2"><span class="text-brand-accent font-bold text-sm">✓</span> Copywriting fokus closing penjualan</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-accent font-bold text-sm">✓</span> Terpasang Meta Pixel, TikTok & GA4</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-accent font-bold text-sm">✓</span> Rotasi chat multi-admin WhatsApp</li>
                         </ul>
                     </article>
 
-                    <!-- Service 3: Sistem UI & Identitas Digital -->
-                    <article class="service-card p-7 lg:p-8 rounded-3xl border border-brand-border bg-white shadow-apple-card flex flex-col justify-between apple-card-hover">
+                    <!-- Service 3: Desain UI & Identitas Digital -->
+                    <article class="service-card p-8 rounded-3xl border-2 border-brand-border bg-white shadow-apple-card flex flex-col justify-between apple-card-hover relative overflow-hidden">
                         <div>
-                            <!-- Contextual Illustration 3: Design Tokens & Bezier Geometry -->
-                            <div class="w-full h-36 bg-brand-surface rounded-2xl border border-brand-border flex items-center justify-center p-3 mb-6">
-                                <svg class="w-full h-full" viewBox="0 0 240 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <!-- Color Swatch Tokens -->
-                                    <rect x="30" y="24" width="46" height="52" rx="6" fill="#FFFFFF" stroke="#D1E2F0"/>
-                                    <rect x="34" y="28" width="38" height="28" rx="4" fill="#3368A0"/>
-                                    <text x="36" y="68" font-family="monospace" font-size="7" fill="#64748B">#3368A0</text>
+                            <!-- Rich Contextual Illustration 3: Design Workshop & Tokens -->
+                            <div class="w-full h-44 bg-gradient-to-br from-[#EFF6FF] via-[#E0E7FF] to-[#EDE9FE] rounded-2xl border border-indigo-200 flex items-center justify-center p-4 mb-7 relative overflow-hidden">
+                                <svg class="w-full h-full" viewBox="0 0 240 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Palette Tokens with Real Vivid Colors -->
+                                    <rect x="25" y="28" width="46" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+                                    <rect x="30" y="33" width="36" height="32" rx="5" fill="#1E5BF6"/>
+                                    <text x="32" y="77" font-family="monospace" font-size="8" fill="#1E5BF6" font-weight="bold">#1E5BF6</text>
 
-                                    <rect x="85" y="24" width="46" height="52" rx="6" fill="#FFFFFF" stroke="#D1E2F0"/>
-                                    <rect x="89" y="28" width="38" height="28" rx="4" fill="#619DC6"/>
-                                    <text x="91" y="68" font-family="monospace" font-size="7" fill="#619DC6">#619DC6</text>
+                                    <rect x="80" y="28" width="46" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+                                    <rect x="85" y="33" width="36" height="32" rx="5" fill="#FF6B35"/>
+                                    <text x="87" y="77" font-family="monospace" font-size="8" fill="#FF6B35" font-weight="bold">#FF6B35</text>
 
-                                    <rect x="140" y="24" width="46" height="52" rx="6" fill="#FFFFFF" stroke="#D1E2F0"/>
-                                    <rect x="144" y="28" width="38" height="28" rx="4" fill="#A6C8E2"/>
-                                    <text x="146" y="68" font-family="monospace" font-size="7" fill="#64748B">#A6C8E2</text>
+                                    <rect x="135" y="28" width="46" height="58" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+                                    <rect x="140" y="33" width="36" height="32" rx="5" fill="#10B981"/>
+                                    <text x="142" y="77" font-family="monospace" font-size="8" fill="#10B981" font-weight="bold">#10B981</text>
 
-                                    <!-- Vector Pen tool handle -->
-                                    <path d="M195 70L215 30" stroke="#3368A0" stroke-width="1.5"/>
-                                    <circle cx="195" cy="70" r="3.5" fill="#619DC6"/>
-                                    <circle cx="215" cy="30" r="3.5" fill="#3368A0"/>
+                                    <!-- Vector Pen Tool Handle & Bezier Curve -->
+                                    <path d="M190 85L215 35" stroke="#1E5BF6" stroke-width="2"/>
+                                    <circle cx="190" cy="85" r="4" fill="#00A3FF"/>
+                                    <circle cx="215" cy="35" r="4" fill="#1E5BF6"/>
                                 </svg>
                             </div>
 
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">Desain & Identitas Brand</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                                Standardisasi visual, palet warna, tipografi, dan aset grafis agar bisnis Anda terlihat profesional dan konsisten.
+                            <span class="inline-block px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold mb-3 border border-indigo-200">
+                                Identitas Visual Berkelas
+                            </span>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Identitas Visual & UI</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
+                                Standardisasi visual, panduan tipografi, palet warna berkarakter, dan aset grafis agar brand Anda selalu terlihat konsisten dan berwibawa.
                             </p>
                         </div>
-                        <ul class="text-xs text-slate-600 space-y-2 pt-4 border-t border-slate-100">
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold">✓</span> Desain UI modern tanpa template generik</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold">✓</span> Panduan warna & font brand</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold">✓</span> Aset vektor resolusi tinggi</li>
+                        <ul class="text-xs text-slate-700 font-medium space-y-2.5 pt-5 border-t border-slate-100">
+                            <li class="flex items-center gap-2"><span class="text-indigo-600 font-bold text-sm">✓</span> Desain UI modern bebas template klise</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-600 font-bold text-sm">✓</span> Panduan warna & font panduan resmi</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-600 font-bold text-sm">✓</span> Format vektor SVG resolusi tajam</li>
                         </ul>
                     </article>
 
+                </div>
+            </div>
+        </section>
+
+        <!-- DISTINCTIVE COMPARISON SECTION (KENAPA DANOVA BEDA) -->
+        <section id="compare" class="py-20 lg:py-28 bg-slate-50 border-b border-brand-border/60">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center max-w-2xl mx-auto mb-16 section-header">
+                    <span class="text-xs font-bold text-brand-primary uppercase tracking-wider block mb-2">Nilai Tambah</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">Perbedaan Nyata Danova Studio</h2>
+                    <p class="text-slate-600 text-base mt-2">Mengapa pelaku bisnis beralih dari template pasaran ke karya studio Danova.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Website Biasa -->
+                    <div class="p-8 lg:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="text-slate-400 font-bold text-lg mb-6 flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center font-bold text-sm">✕</span>
+                                <span>Website Template Pasaran</span>
+                            </div>
+                            <ul class="space-y-4 text-sm text-slate-600">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-rose-500 font-bold">✕</span>
+                                    <span>Tampilan mirip dengan puluhan kompetitor, tidak berkarakter.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-rose-500 font-bold">✕</span>
+                                    <span>Loading berat karena plugin berlebihan, calon pembeli keburu keluar.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-rose-500 font-bold">✕</span>
+                                    <span>Sulit diperbarui mandiri dan biaya tersembunyi tiap kali minta revisi.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-rose-500 font-bold">✕</span>
+                                    <span>Selesai dibuat langsung ditinggal tanpa garansi atau pendampingan.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Bersama Danova -->
+                    <div class="p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-brand-primary via-[#2563EB] to-[#1D4ED8] text-white shadow-apple-float relative overflow-hidden flex flex-col justify-between">
+                        <div class="absolute -top-3 right-6 bg-brand-accent text-white text-[11px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-accent-glow">
+                            Standar Danova
+                        </div>
+                        <div>
+                            <div class="font-bold text-lg mb-6 flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-full bg-white text-brand-primary flex items-center justify-center font-bold text-sm">✓</span>
+                                <span>Website Studio Danova</span>
+                            </div>
+                            <ul class="space-y-4 text-sm text-blue-50 font-medium">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-emerald-300 font-bold">✓</span>
+                                    <span>Desain eksklusif bernuansa modern yang mengangkat derajat brand Anda.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-emerald-300 font-bold">✓</span>
+                                    <span>Struktur kode bersih & super ringan, skor Google PageSpeed 95–99+.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-emerald-300 font-bold">✓</span>
+                                    <span>Pengelolaan konten mudah secara mandiri tanpa harus paham koding.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-emerald-300 font-bold">✓</span>
+                                    <span>Didampingi penuh hingga live, plus garansi bantuan teknis jika ada kendala.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- PORTFOLIO SECTION (WITH EMPTY STATE HANDLING & SQUIRCLE IMAGE FRAMES) -->
-        <section id="work" class="py-16 lg:py-24 bg-slate-50 border-b border-slate-200">
+        <section id="work" class="py-20 lg:py-28 bg-white border-b border-brand-border/60">
             <div class="container mx-auto px-6 lg:px-12">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 section-header">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 section-header">
                     <div>
-                        <span class="text-xs font-semibold text-brand-primary uppercase tracking-wider block mb-2">Hasil Karya</span>
-                        <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 tracking-tight">Proyek Website Pilihan</h2>
+                        <span class="text-xs font-bold text-brand-primary uppercase tracking-wider block mb-2">Hasil Karya</span>
+                        <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">Proyek Website Pilihan</h2>
                     </div>
                     <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}?text=Halo%20Danova,%20mau%20lihat%20portfolio%20lainnya"
-                        class="apple-spring mt-4 md:mt-0 text-xs font-semibold text-brand-primary hover:underline flex items-center gap-1">
-                        <span>Lihat Arsip Lengkap</span>
+                        class="apple-spring mt-4 md:mt-0 text-sm font-bold text-brand-primary hover:underline flex items-center gap-1.5">
+                        <span>Lihat Arsip Lengkap Proyek</span>
                         <span>→</span>
                     </a>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     @forelse ($projects as $project)
                     @php
                     $workImage = $project->hero_image
@@ -553,63 +715,63 @@
                     $topResult = is_array($project->results) && count($project->results) > 0 ? $project->results[0] : null;
                     @endphp
                     <a href="{{ route('work.detail', $project->slug) }}"
-                        class="work-card apple-card-hover group block bg-white p-5 rounded-3xl border border-brand-border shadow-apple-card hover:border-brand-primary transition-all">
+                        class="work-card apple-card-hover group block bg-white p-5 rounded-3xl border-2 border-brand-border shadow-apple-card hover:border-brand-primary transition-all">
                         
                         <!-- Squircle Image Container with Empty State Fallback -->
-                        <div class="aspect-video bg-brand-surface rounded-2xl mb-4 overflow-hidden relative border border-slate-100 flex items-center justify-center">
+                        <div class="aspect-video bg-brand-surface rounded-2xl mb-5 overflow-hidden relative border border-slate-100 flex items-center justify-center">
                             @if (!empty($workImage))
                             <img src="{{ $workImage }}"
                                 alt="{{ $project->title }}"
-                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
                                 onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" />
                             @endif
 
                             <!-- Contextual Empty State Illustration for missing or broken image -->
-                            <div class="{{ !empty($workImage) ? 'hidden' : '' }} w-full h-full flex flex-col items-center justify-center p-6 text-center bg-brand-surface">
-                                <svg class="w-16 h-12 mb-2 text-brand-secondary" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="4" y="4" width="56" height="40" rx="6" fill="#FFFFFF" stroke="#619DC6" stroke-width="1.5"/>
-                                    <circle cx="20" cy="18" r="4" fill="#A6C8E2"/>
-                                    <path d="M10 38L24 24L36 34L46 22L54 38H10Z" fill="#3368A0" fill-opacity="0.2" stroke="#3368A0" stroke-width="1.5"/>
+                            <div class="{{ !empty($workImage) ? 'hidden' : '' }} w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#EFF6FF] to-[#DBEAFE]">
+                                <svg class="w-16 h-12 mb-2 text-brand-primary" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="4" y="4" width="56" height="40" rx="6" fill="#FFFFFF" stroke="#1E5BF6" stroke-width="2"/>
+                                    <circle cx="20" cy="18" r="4.5" fill="#FF6B35"/>
+                                    <path d="M10 38L24 24L36 34L46 22L54 38H10Z" fill="#1E5BF6" fill-opacity="0.25" stroke="#1E5BF6" stroke-width="2"/>
                                 </svg>
-                                <span class="text-xs font-semibold text-brand-primary">Pratinjau Desain</span>
-                                <span class="text-[10px] text-slate-400">Danova Digital</span>
+                                <span class="text-xs font-bold text-brand-primary">Pratinjau Desain Studio</span>
+                                <span class="text-[10px] text-slate-500 font-semibold">Danova Digital</span>
                             </div>
 
                             @if ($topResult)
-                            <div class="absolute top-3 left-3 bg-white/95 px-3 py-1 rounded-full text-[11px] font-semibold text-slate-800 shadow-sm border border-slate-200">
+                            <div class="absolute top-3 left-3 bg-white/95 px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-800 shadow-sm border border-slate-200">
                                 {{ $topResult }}
                             </div>
                             @endif
                         </div>
 
-                        <div class="px-1 pb-1">
-                            <h3 class="font-bold text-base text-slate-900 group-hover:text-brand-primary transition-colors mb-1">
+                        <div class="px-2 pb-2">
+                            <h3 class="font-bold text-lg text-slate-900 group-hover:text-brand-primary transition-colors mb-1.5">
                                 {{ $project->title }}
                             </h3>
-                            <p class="text-xs text-slate-500 line-clamp-1">
+                            <p class="text-xs text-slate-500 line-clamp-1 font-medium">
                                 {{ $project->subtitle }}
                             </p>
                         </div>
                     </a>
                     @empty
                     <!-- FULL SECTION EMPTY STATE (IF NO PROJECTS EXIST) -->
-                    <div class="col-span-3 text-center p-12 lg:p-16 bg-white border border-brand-border rounded-3xl shadow-apple-card">
+                    <div class="col-span-3 text-center p-14 lg:p-18 bg-white border-2 border-brand-border rounded-3xl shadow-apple-card">
                         <div class="w-20 h-20 mx-auto mb-4 bg-brand-surface rounded-2xl border border-brand-border flex items-center justify-center text-brand-primary">
                             <!-- Contextual Empty Illustration: Drafting Easel & Canvas -->
                             <svg class="w-10 h-10" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="8" y="8" width="32" height="24" rx="4" fill="#FFFFFF" stroke="#3368A0" stroke-width="2"/>
-                                <line x1="14" y1="16" x2="34" y2="16" stroke="#A6C8E2" stroke-width="2" stroke-linecap="round"/>
-                                <line x1="14" y1="22" x2="26" y2="22" stroke="#619DC6" stroke-width="2" stroke-linecap="round"/>
-                                <path d="M12 36L6 44M36 36L42 44" stroke="#3368A0" stroke-width="2" stroke-linecap="round"/>
-                                <line x1="24" y1="32" x2="24" y2="44" stroke="#619DC6" stroke-width="2" stroke-linecap="round"/>
+                                <rect x="8" y="8" width="32" height="24" rx="4" fill="#FFFFFF" stroke="#1E5BF6" stroke-width="2.5"/>
+                                <line x1="14" y1="16" x2="34" y2="16" stroke="#00A3FF" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="14" y1="22" x2="26" y2="22" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M12 36L6 44M36 36L42 44" stroke="#1E5BF6" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="24" y1="32" x2="24" y2="44" stroke="#1E5BF6" stroke-width="2.5" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-1">Portofolio Sedang Dikurasi</h3>
-                        <p class="text-xs text-slate-500 max-w-md mx-auto mb-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Portofolio Sedang Dikurasi</h3>
+                        <p class="text-sm text-slate-500 max-w-md mx-auto mb-6">
                             Koleksi proyek terbaru kami sedang dalam proses pembaruan. Anda dapat meminta katalog studi kasus secara langsung.
                         </p>
                         <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}?text=Halo%20Danova,%20mau%20minta%20katalog%20portofolio%20terbaru"
-                            class="apple-spring inline-flex items-center gap-2 px-6 py-3 bg-brand-primary text-white rounded-full text-xs font-semibold hover:bg-brand-dark">
+                            class="apple-spring inline-flex items-center gap-2 px-7 py-3.5 bg-brand-primary text-white rounded-full text-xs font-bold hover:bg-brand-dark shadow-apple-sm">
                             <span>Minta Katalog Portofolio via WA</span>
                         </a>
                     </div>
@@ -618,62 +780,66 @@
             </div>
         </section>
 
-        <!-- WORKFLOW SECTION (ROUNDED 3-STEP PROCESS) -->
-        <section id="workflow" class="py-16 lg:py-24 bg-white border-b border-slate-100">
+        <!-- WORKFLOW SECTION (4-STEP PRODUCTION JOURNEY) -->
+        <section id="workflow" class="py-20 lg:py-28 bg-slate-50 border-b border-brand-border/60">
             <div class="container mx-auto px-6 lg:px-12">
-                <div class="max-w-xl mx-auto text-center mb-12 section-header">
-                    <span class="text-xs font-semibold text-brand-primary uppercase tracking-wider block mb-2">Alur Kerja</span>
-                    <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 tracking-tight">Proses Praktis & Terarah</h2>
+                <div class="max-w-2xl mx-auto text-center mb-16 section-header">
+                    <span class="text-xs font-bold text-brand-primary uppercase tracking-wider block mb-2">Alur Kerja Teratur</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">Proses Praktis & Bebas Pusing</h2>
+                    <p class="text-slate-600 text-base mt-2">Dari konsultasi konsep hingga website siap diakses pelanggan, semua transparan dan teratur.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Step 1 -->
-                    <div class="p-7 rounded-3xl bg-slate-50 border border-brand-border flex flex-col justify-between apple-card-hover">
+                    <div class="p-8 rounded-3xl bg-white border-2 border-brand-border flex flex-col justify-between apple-card-hover shadow-apple-card">
                         <div>
                             <div class="flex items-center justify-between mb-5">
-                                <span class="text-xs font-bold text-brand-primary bg-brand-surface px-3.5 py-1.5 rounded-full border border-brand-border">01 / Rencana</span>
-                                <!-- Vector Context Icon: Scope & Discovery -->
-                                <svg class="w-6 h-6 text-brand-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <span class="text-xs font-bold text-brand-primary bg-brand-surface px-4 py-1.5 rounded-full border border-brand-border">
+                                    01 / Rencana
+                                </span>
+                                <svg class="w-7 h-7 text-brand-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                 </svg>
                             </div>
-                            <h3 class="text-base font-bold text-slate-900 mb-2">Konsultasi & Kebutuhan</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                                Diskusi tujuan bisnis, pemilihan halaman kunci, dan penentuan estimasi waktu serta biaya yang jelas.
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Konsultasi & Skema Kebutuhan</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                                Kami menganalisis profil bisnis Anda, menentukan halaman kunci, dan menyusun penawaran biaya yang pas dengan target Anda.
                             </p>
                         </div>
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="p-7 rounded-3xl bg-slate-50 border border-brand-border flex flex-col justify-between apple-card-hover">
+                    <div class="p-8 rounded-3xl bg-white border-2 border-brand-border flex flex-col justify-between apple-card-hover shadow-apple-card">
                         <div>
                             <div class="flex items-center justify-between mb-5">
-                                <span class="text-xs font-bold text-brand-primary bg-brand-surface px-3.5 py-1.5 rounded-full border border-brand-border">02 / Bangun</span>
-                                <!-- Vector Context Icon: Code & UI Design -->
-                                <svg class="w-6 h-6 text-brand-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <span class="text-xs font-bold text-brand-accent bg-orange-50 px-4 py-1.5 rounded-full border border-orange-200">
+                                    02 / Bangun
+                                </span>
+                                <svg class="w-7 h-7 text-brand-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                                 </svg>
                             </div>
-                            <h3 class="text-base font-bold text-slate-900 mb-2">Desain & Coding</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                                Tim kami membangun tampilan website secara langsung. Anda mendapatkan link pratinjau live untuk evaluasi.
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Desain & Live Preview</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                                Proses pengerjaan langsung dikerjakan. Anda mendapatkan link live preview untuk mencoba tampilan dan memberikan masukan revisi.
                             </p>
                         </div>
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="p-7 rounded-3xl bg-slate-50 border border-brand-border flex flex-col justify-between apple-card-hover">
+                    <div class="p-8 rounded-3xl bg-white border-2 border-brand-border flex flex-col justify-between apple-card-hover shadow-apple-card">
                         <div>
                             <div class="flex items-center justify-between mb-5">
-                                <span class="text-xs font-bold text-brand-primary bg-brand-surface px-3.5 py-1.5 rounded-full border border-brand-border">03 / Luncur</span>
-                                <!-- Vector Context Icon: Launch Rocket -->
-                                <svg class="w-6 h-6 text-brand-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-4 py-1.5 rounded-full border border-emerald-200">
+                                    03 / Luncur
+                                </span>
+                                <svg class="w-7 h-7 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                                 </svg>
                             </div>
-                            <h3 class="text-base font-bold text-slate-900 mb-2">Peluncuran & Panduan</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                                Website siap diakses di domain resmi bisnis Anda, terhubung ke Google, lengkap dengan garansi bantuan teknis.
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Peluncuran & Garansi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                                Website diaktifkan di domain resmi bisnis Anda, terhubung ke Google & WhatsApp, plus garansi pendampingan penuh dari tim teknis.
                             </p>
                         </div>
                     </div>
@@ -682,30 +848,30 @@
         </section>
 
         <!-- PRICING SECTION -->
-        <section id="pricing" class="py-16 lg:py-24 bg-slate-50 border-b border-slate-200">
+        <section id="pricing" class="py-20 lg:py-28 bg-white border-b border-brand-border/60">
             <div class="container mx-auto px-6 lg:px-12">
-                <div class="max-w-xl mx-auto text-center mb-12 section-header">
-                    <span class="text-xs font-semibold text-brand-primary uppercase tracking-wider block mb-2">Biaya Transparan</span>
-                    <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 tracking-tight">Paket Investasi Website</h2>
+                <div class="max-w-2xl mx-auto text-center mb-16 section-header">
+                    <span class="text-xs font-bold text-brand-primary uppercase tracking-wider block mb-2">Investasi Masuk Akal</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">Paket Investasi Website Bisnis</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
                     @forelse ($pricingPlans as $plan)
                     <article
-                        class="pricing-card relative flex flex-col justify-between apple-card-hover rounded-3xl p-7 lg:p-8 transition-all 
+                        class="pricing-card relative flex flex-col justify-between apple-card-hover rounded-3xl p-8 transition-all 
                         {{ $plan->is_featured
-                            ? 'bg-brand-navy text-white shadow-apple-float border-2 border-brand-primary relative z-20'
-                            : 'bg-white text-slate-900 border border-brand-border shadow-apple-card' }}">
+                            ? 'bg-gradient-to-b from-brand-navy via-[#0F1C38] to-[#122347] text-white shadow-apple-float ring-2 ring-brand-primary relative z-20'
+                            : 'bg-white text-slate-900 border-2 border-brand-border shadow-apple-card' }}">
 
                         @if ($plan->is_featured)
-                        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-[11px] font-semibold px-4 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                            Paling Populer
+                        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-primary to-brand-accent text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                            Rekomendasi Utama
                         </div>
                         @endif
 
                         <div>
                             <div class="mb-5">
-                                <h3 class="text-base font-bold mb-1 {{ $plan->is_featured ? 'text-white' : 'text-slate-900' }}">
+                                <h3 class="text-lg font-bold mb-1 {{ $plan->is_featured ? 'text-white' : 'text-slate-900' }}">
                                     {{ $plan->name }}
                                 </h3>
                                 <p class="text-xs {{ $plan->is_featured ? 'text-slate-300' : 'text-slate-500' }}">
@@ -714,12 +880,12 @@
                             </div>
 
                             <div class="mb-6 pb-5 border-b {{ $plan->is_featured ? 'border-slate-700' : 'border-slate-100' }}">
-                                <span class="text-[10px] uppercase font-semibold tracking-wider block mb-1 {{ $plan->is_featured ? 'text-brand-accent' : 'text-brand-primary' }}">
+                                <span class="text-[10px] uppercase font-bold tracking-wider block mb-1 {{ $plan->is_featured ? 'text-brand-accent' : 'text-brand-primary' }}">
                                     Mulai Dari
                                 </span>
-                                <div class="flex items-baseline gap-1">
-                                    <span class="text-base font-semibold {{ $plan->is_featured ? 'text-slate-300' : 'text-slate-600' }}">Rp</span>
-                                    <span class="text-3xl lg:text-4xl font-bold tracking-tight">
+                                <div class="flex items-baseline gap-1.5">
+                                    <span class="text-base font-bold {{ $plan->is_featured ? 'text-slate-300' : 'text-slate-600' }}">Rp</span>
+                                    <span class="text-3xl lg:text-4xl font-extrabold tracking-tight">
                                         {{ $plan->price }}
                                     </span>
                                 </div>
@@ -729,7 +895,7 @@
                                 @foreach ($plan->features ?? [] as $feature)
                                 <div class="flex items-start gap-2.5 text-xs">
                                     <span class="shrink-0 font-bold {{ $plan->is_featured ? 'text-brand-accent' : 'text-brand-primary' }}">✓</span>
-                                    <span class="{{ $plan->is_featured ? 'text-slate-200' : 'text-slate-600' }}">
+                                    <span class="{{ $plan->is_featured ? 'text-slate-200' : 'text-slate-700' }}">
                                         {{ $feature }}
                                     </span>
                                 </div>
@@ -738,25 +904,25 @@
                         </div>
 
                         <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}?text=Halo%20Danova,%20saya%20tertarik%20tanya%20Paket%20{{ urlencode($plan->name) }}"
-                            class="apple-spring block w-full py-3.5 rounded-2xl font-semibold text-center text-xs transition-all
+                            class="apple-spring block w-full py-4 rounded-2xl font-bold text-center text-xs transition-all
                             {{ $plan->is_featured
-                                ? 'bg-brand-primary text-white hover:bg-brand-dark shadow-sm'
+                                ? 'bg-gradient-to-r from-brand-primary to-brand-secondary text-white hover:shadow-lg'
                                 : 'bg-slate-900 text-white hover:bg-brand-primary' }}">
                             {{ $plan->cta_label ?? 'Pilih Paket' }}
                         </a>
                     </article>
                     @empty
                     <!-- PRICING EMPTY STATE -->
-                    <div class="col-span-3 text-center p-12 bg-white border border-brand-border rounded-3xl shadow-apple-card">
-                        <div class="w-16 h-16 mx-auto mb-3 bg-brand-surface rounded-2xl border border-brand-border flex items-center justify-center text-brand-primary">
+                    <div class="col-span-3 text-center p-14 bg-white border-2 border-brand-border rounded-3xl shadow-apple-card">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-brand-surface rounded-2xl border border-brand-border flex items-center justify-center text-brand-primary">
                             <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="2" y="5" width="20" height="14" rx="3" />
                                 <line x1="2" y1="10" x2="22" y2="10" />
                             </svg>
                         </div>
                         <h3 class="text-base font-bold text-slate-900 mb-1">Paket Kustom Tersedia</h3>
-                        <p class="text-xs text-slate-500 mb-4">Kami menyediakan paket kustom sesuai anggaran dan kebutuhan spesifik Anda.</p>
-                        <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}" class="apple-spring px-6 py-3 bg-brand-primary text-white text-xs font-semibold rounded-full inline-block">
+                        <p class="text-xs text-slate-500 mb-4">Kami menyediakan skema biaya yang disesuaikan dengan skala bisnis Anda.</p>
+                        <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}" class="apple-spring px-6 py-3 bg-brand-primary text-white text-xs font-bold rounded-full inline-block">
                             Konsultasi Anggaran via WA
                         </a>
                     </div>
@@ -765,52 +931,52 @@
             </div>
         </section>
 
-        <!-- TESTIMONIALS SECTION (WITH EMPTY STATE & MONOGRAM AVATAR FALLBACK) -->
-        <section id="testimonials" class="py-16 lg:py-24 bg-white border-b border-slate-100">
+        <!-- TESTIMONIALS SECTION -->
+        <section id="testimonials" class="py-20 lg:py-28 bg-slate-50 border-b border-brand-border/60">
             <div class="container mx-auto px-6 lg:px-12">
-                <div class="max-w-xl mx-auto text-center mb-12 section-header">
-                    <span class="text-xs font-semibold text-brand-primary uppercase tracking-wider block mb-2">Testimoni Klien</span>
-                    <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 tracking-tight">Kepuasan Klien Kami</h2>
+                <div class="max-w-2xl mx-auto text-center mb-16 section-header">
+                    <span class="text-xs font-bold text-brand-primary uppercase tracking-wider block mb-2">Cerita Nyata</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">Apa Kata Klien Kami</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     @forelse ($testimonials as $t)
-                    <div class="apple-card-hover bg-slate-50 p-7 rounded-3xl border border-brand-border flex flex-col justify-between">
+                    <div class="apple-card-hover bg-white p-8 rounded-3xl border-2 border-brand-border flex flex-col justify-between shadow-apple-card">
                         <div>
-                            <div class="flex items-center gap-1 text-amber-400 mb-4 text-xs">
+                            <div class="flex items-center gap-1 text-amber-400 mb-5 text-sm">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
-                            <p class="text-slate-700 text-xs leading-relaxed mb-6 italic">
+                            <p class="text-slate-700 text-sm leading-relaxed mb-6 italic font-medium">
                                 "{{ $t->quote }}"
                             </p>
                         </div>
-                        <div class="flex items-center gap-3 pt-3 border-t border-slate-200">
+                        <div class="flex items-center gap-3.5 pt-4 border-t border-slate-100">
                             @if (!empty($t->avatar_image) || !empty($t->avatar_url))
                             <img src="{{ !empty($t->avatar_image) ? asset('storage/' . $t->avatar_image) : $t->avatar_url }}"
-                                alt="{{ $t->name }}" class="w-10 h-10 rounded-full object-cover border border-slate-200"
+                                alt="{{ $t->name }}" class="w-11 h-11 rounded-full object-cover border-2 border-brand-border"
                                 onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
                             @endif
 
                             <!-- Monogram Empty State Avatar Fallback -->
-                            <div class="{{ (!empty($t->avatar_image) || !empty($t->avatar_url)) ? 'hidden' : '' }} w-10 h-10 rounded-full bg-brand-surface text-brand-primary border border-brand-border flex items-center justify-center font-bold text-xs">
+                            <div class="{{ (!empty($t->avatar_image) || !empty($t->avatar_url)) ? 'hidden' : '' }} w-11 h-11 rounded-full bg-gradient-to-tr from-brand-primary to-brand-secondary text-white flex items-center justify-center font-bold text-sm shadow-xs">
                                 {{ substr($t->name, 0, 1) }}
                             </div>
 
                             <div>
-                                <h4 class="font-bold text-slate-900 text-xs">{{ $t->name }}</h4>
-                                <p class="text-[10px] text-slate-500">{{ $t->title }}</p>
+                                <h4 class="font-bold text-slate-900 text-sm">{{ $t->name }}</h4>
+                                <p class="text-xs text-slate-500 font-medium">{{ $t->title }}</p>
                             </div>
                         </div>
                     </div>
                     @empty
                     <!-- TESTIMONIALS EMPTY STATE -->
-                    <div class="col-span-3 text-center p-12 bg-slate-50 border border-brand-border rounded-3xl">
-                        <div class="w-16 h-16 mx-auto mb-3 bg-white rounded-2xl border border-brand-border flex items-center justify-center text-brand-primary">
+                    <div class="col-span-3 text-center p-14 bg-white border-2 border-brand-border rounded-3xl">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-brand-surface rounded-2xl border border-brand-border flex items-center justify-center text-brand-primary">
                             <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                             </svg>
                         </div>
-                        <h3 class="text-base font-bold text-slate-900 mb-1">Ulasan Sedang Dikurasi</h3>
+                        <h3 class="text-lg font-bold text-slate-900 mb-1">Ulasan Sedang Dikurasi</h3>
                         <p class="text-xs text-slate-500">Testimoni klien sedang diverifikasi untuk ditampilkan.</p>
                     </div>
                     @endforelse
@@ -819,43 +985,43 @@
         </section>
 
         <!-- BRIEF BUILDER (INTERACTIVE 2-STEP CONSULTATION SQUIRCLE) -->
-        <section id="brief" class="py-16 lg:py-24 bg-slate-50 border-b border-slate-200">
+        <section id="brief" class="py-20 lg:py-28 bg-white border-b border-brand-border/60">
             <div class="container mx-auto px-6 lg:px-12">
-                <div class="max-w-xl mx-auto text-center mb-10 section-header">
-                    <span class="text-xs font-semibold text-brand-primary uppercase tracking-wider block mb-2">Simulasi Kebutuhan</span>
-                    <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 tracking-tight">Rencanakan Website Anda</h2>
+                <div class="max-w-2xl mx-auto text-center mb-12 section-header">
+                    <span class="text-xs font-bold text-brand-primary uppercase tracking-wider block mb-2">Simulasi Cepat</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">Rencanakan Kebutuhan Website Anda</h2>
                 </div>
 
-                <div class="max-w-2xl mx-auto bg-white rounded-3xl border border-brand-border shadow-apple-card p-7 lg:p-10"
+                <div class="max-w-3xl mx-auto bg-white rounded-3xl border-2 border-brand-border shadow-apple-card p-8 lg:p-12"
                     id="briefBuilder" data-whatsapp-url="{{ route('out.whatsapp') }}"
                     data-email-url="{{ route('out.email') }}">
 
-                    <div class="mb-6">
-                        <div class="flex justify-between items-center mb-2">
+                    <div class="mb-8">
+                        <div class="flex justify-between items-center mb-3">
                             <span id="briefStepLabel" class="text-xs font-bold text-brand-primary uppercase tracking-wider">Langkah 1 dari 2</span>
-                            <span class="text-xs text-slate-400">Estimasi 60 detik</span>
+                            <span class="text-xs text-slate-400 font-semibold">Estimasi 60 detik</span>
                         </div>
 
-                        <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
-                            <div class="h-full bg-brand-primary transition-all duration-300 rounded-full" id="briefProgressFill"
+                        <div class="h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-brand-primary to-brand-accent transition-all duration-300 rounded-full" id="briefProgressFill"
                                 style="width: 50%"></div>
                         </div>
 
-                        <div id="briefError" class="hidden mt-3 p-3 bg-red-50 text-red-600 text-xs rounded-xl border border-red-200"></div>
+                        <div id="briefError" class="hidden mt-4 p-3.5 bg-red-50 text-red-600 text-xs font-semibold rounded-xl border border-red-200"></div>
                     </div>
 
                     <form id="briefForm">
                         <!-- Step 1 -->
                         <div class="brief-step is-active" data-step="1">
-                            <h3 class="text-base font-bold mb-4 text-slate-900">Pilih jenis website yang Anda butuhkan:</h3>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                @foreach (['Website Profil Bisnis', 'Landing Page Promosi', 'Katalog WhatsApp', 'Kebutuhan Kustom Lainnya'] as $opt)
-                                <label class="apple-spring flex items-center gap-3 p-4 rounded-2xl border border-brand-border cursor-pointer hover:border-brand-primary hover:bg-brand-surface">
+                            <h3 class="text-lg font-bold mb-5 text-slate-900">Pilih jenis website yang Anda butuhkan:</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                @foreach (['Website Profil Bisnis & UMKM', 'Landing Page Promosi & Iklan', 'Katalog WhatsApp Instan', 'Kebutuhan Kustom Lainnya'] as $opt)
+                                <label class="apple-spring flex items-center gap-3.5 p-4 rounded-2xl border-2 border-brand-border cursor-pointer hover:border-brand-primary hover:bg-brand-surface">
                                     <input type="radio" name="need" value="{{ $opt }}" class="peer hidden" required>
-                                    <div class="w-4 h-4 rounded-full border border-slate-300 peer-checked:border-brand-primary peer-checked:bg-brand-primary flex items-center justify-center shrink-0">
-                                        <div class="w-1.5 h-1.5 bg-white rounded-full scale-0 peer-checked:scale-100 transition-transform"></div>
+                                    <div class="w-5 h-5 rounded-full border-2 border-slate-300 peer-checked:border-brand-primary peer-checked:bg-brand-primary flex items-center justify-center shrink-0">
+                                        <div class="w-2 h-2 bg-white rounded-full scale-0 peer-checked:scale-100 transition-transform"></div>
                                     </div>
-                                    <span class="text-xs font-medium text-slate-700 peer-checked:text-brand-primary peer-checked:font-semibold">{{ $opt }}</span>
+                                    <span class="text-sm font-semibold text-slate-700 peer-checked:text-brand-primary">{{ $opt }}</span>
                                 </label>
                                 @endforeach
                             </div>
@@ -863,45 +1029,45 @@
 
                         <!-- Step 2 -->
                         <div class="brief-step" data-step="2">
-                            <h3 class="text-base font-bold mb-4 text-slate-900">Kontak & Keterangan Singkat:</h3>
-                            <div class="space-y-4">
+                            <h3 class="text-lg font-bold mb-5 text-slate-900">Kontak & Keterangan Singkat:</h3>
+                            <div class="space-y-5">
                                 <div>
-                                    <label class="text-xs font-semibold text-slate-700 mb-1 block">Nama Usaha / Anda *</label>
-                                    <input type="text" name="brand" placeholder="Contoh: Kedai Kopi / Budi"
-                                        class="w-full p-3.5 bg-slate-50 border border-brand-border rounded-xl text-xs outline-none focus:border-brand-primary focus:bg-white transition-colors" required>
+                                    <label class="text-xs font-bold text-slate-700 mb-1.5 block">Nama Usaha / Nama Anda *</label>
+                                    <input type="text" name="brand" placeholder="Contoh: Toko Kopi Sejahtera / Budi"
+                                        class="w-full p-4 bg-slate-50 border border-brand-border rounded-xl text-sm outline-none focus:border-brand-primary focus:bg-white transition-colors" required>
                                 </div>
                                 <div>
-                                    <label class="text-xs font-semibold text-slate-700 mb-1 block">Catatan Tambahan</label>
-                                    <textarea name="notes" rows="2" placeholder="Jelaskan singkat target atau referensi website..."
-                                        class="w-full p-3.5 bg-slate-50 border border-brand-border rounded-xl text-xs outline-none focus:border-brand-primary focus:bg-white transition-colors"></textarea>
+                                    <label class="text-xs font-bold text-slate-700 mb-1.5 block">Catatan Khusus</label>
+                                    <textarea name="notes" rows="3" placeholder="Ceritakan target Anda atau lampirkan website referensi yang Anda sukai..."
+                                        class="w-full p-4 bg-slate-50 border border-brand-border rounded-xl text-sm outline-none focus:border-brand-primary focus:bg-white transition-colors"></textarea>
                                 </div>
                             </div>
                         </div>
                     </form>
 
-                    <div class="flex justify-between items-center mt-6 pt-4 border-t border-slate-100" id="briefActions">
+                    <div class="flex justify-between items-center mt-8 pt-5 border-t border-slate-100" id="briefActions">
                         <button type="button" id="briefBack"
-                            class="apple-spring text-xs font-semibold text-slate-400 hover:text-slate-800 disabled:opacity-0 transition-opacity">
+                            class="apple-spring text-sm font-bold text-slate-400 hover:text-slate-800 disabled:opacity-0 transition-opacity">
                             ← Kembali
                         </button>
                         <button type="button" id="briefNext"
-                            class="apple-spring px-6 py-3 bg-brand-primary text-white rounded-full font-semibold text-xs hover:bg-brand-dark">
+                            class="apple-spring px-8 py-3.5 bg-brand-primary text-white rounded-2xl font-bold text-sm hover:bg-brand-dark shadow-apple-sm">
                             Lanjut →
                         </button>
                     </div>
 
-                    <div id="briefResult" class="hidden mt-6 pt-6 border-t border-slate-100">
-                        <div class="bg-brand-surface rounded-2xl p-5 border border-brand-border">
-                            <div class="text-xs font-bold text-slate-900 mb-2">Ringkasan Draf Brief:</div>
-                            <pre id="briefSummary" class="text-xs text-slate-700 whitespace-pre-wrap leading-relaxed mb-4 bg-white p-3.5 rounded-xl border border-brand-border font-sans"></pre>
+                    <div id="briefResult" class="hidden mt-8 pt-6 border-t border-slate-100">
+                        <div class="bg-brand-surface rounded-2xl p-6 border-2 border-brand-border">
+                            <div class="text-sm font-bold text-slate-900 mb-2">Ringkasan Draf Brief:</div>
+                            <pre id="briefSummary" class="text-xs text-slate-700 whitespace-pre-wrap leading-relaxed mb-5 bg-white p-4 rounded-xl border border-brand-border font-sans"></pre>
 
-                            <div class="flex gap-3">
-                                <button id="briefEdit" class="apple-spring px-4 py-2.5 text-xs font-semibold text-slate-600 border border-slate-200 rounded-xl bg-white">
-                                    Edit
+                            <div class="flex flex-col sm:flex-row gap-3.5">
+                                <button id="briefEdit" class="apple-spring px-5 py-3 text-xs font-bold text-slate-600 border border-slate-200 rounded-xl bg-white">
+                                    Ubah Data
                                 </button>
                                 <a id="briefSendWhatsapp" href="#" target="_blank"
-                                    class="apple-spring px-6 py-2.5 bg-whatsapp text-white rounded-xl font-semibold text-xs flex-1 text-center hover:bg-whatsapp-dark shadow-sm">
-                                    Kirim ke WhatsApp Danova
+                                    class="apple-spring px-8 py-3 bg-whatsapp text-white rounded-xl font-bold text-sm flex-1 text-center hover:bg-whatsapp-dark shadow-sm">
+                                    Kirim Draf ke WhatsApp Danova
                                 </a>
                             </div>
                         </div>
@@ -911,30 +1077,30 @@
         </section>
 
         <!-- FAQ SECTION -->
-        <section id="faq" class="py-16 lg:py-24 bg-white border-b border-slate-100">
+        <section id="faq" class="py-20 lg:py-28 bg-slate-50 border-b border-brand-border/60">
             <div class="container mx-auto px-6 lg:px-12">
-                <div class="max-w-xl mx-auto text-center mb-12 section-header">
-                    <span class="text-xs font-semibold text-brand-primary uppercase tracking-wider block mb-2">Tanya Jawab</span>
-                    <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 tracking-tight">Pertanyaan Umum</h2>
+                <div class="max-w-2xl mx-auto text-center mb-16 section-header">
+                    <span class="text-xs font-bold text-brand-primary uppercase tracking-wider block mb-2">Tanya Jawab</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">Pertanyaan yang Sering Diajukan</h2>
                 </div>
 
-                <div class="max-w-2xl mx-auto space-y-3">
+                <div class="max-w-3xl mx-auto space-y-3.5">
                     @forelse ($faqs as $faq)
-                    <div class="faq-item bg-slate-50 border border-brand-border rounded-2xl transition-all overflow-hidden">
+                    <div class="faq-item bg-white border-2 border-brand-border rounded-2xl transition-all overflow-hidden shadow-apple-sm">
                         <button type="button"
-                            class="faq-question w-full flex justify-between items-center p-4.5 text-left font-semibold text-slate-800 text-sm focus:outline-none">
+                            class="faq-question w-full flex justify-between items-center p-5 text-left font-bold text-slate-800 text-base focus:outline-none">
                             <span class="pr-4">{{ $faq->question }}</span>
-                            <span class="faq-icon w-7 h-7 rounded-xl bg-white border border-slate-200 text-brand-primary flex items-center justify-center shrink-0 text-sm font-bold transition-transform">
+                            <span class="faq-icon w-8 h-8 rounded-xl bg-brand-surface border border-brand-border text-brand-primary flex items-center justify-center shrink-0 text-base font-bold transition-transform">
                                 +
                             </span>
                         </button>
-                        <div class="faq-answer-inner px-5 pb-5 text-slate-600 text-xs leading-relaxed border-t border-slate-200/60 pt-3">
+                        <div class="faq-answer-inner px-5 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
                             {{ $faq->answer }}
                         </div>
                     </div>
                     @empty
                     <!-- FAQ EMPTY STATE -->
-                    <div class="text-center p-8 bg-slate-50 border border-brand-border rounded-2xl">
+                    <div class="text-center p-10 bg-white border-2 border-brand-border rounded-2xl">
                         <p class="text-xs text-slate-500">FAQ sedang diperbarui. Hubungi WhatsApp kami jika ada pertanyaan spesifik.</p>
                     </div>
                     @endforelse
@@ -942,24 +1108,28 @@
             </div>
         </section>
 
-        <!-- CALL TO ACTION BANNER (SQUIRCLE & DEEP NAVY) -->
-        <section id="contact" class="py-16 lg:py-20 px-6 bg-white">
+        <!-- CALL TO ACTION BANNER (DEEP OBSIDIAN NAVY & SOLAR ACCENTS) -->
+        <section id="contact" class="py-20 lg:py-24 px-6 bg-white">
             <div class="container mx-auto">
-                <div class="cta-banner bg-brand-navy rounded-[2.5rem] p-8 lg:p-16 text-center text-white relative overflow-hidden shadow-apple-float">
-                    <div class="relative z-10 max-w-2xl mx-auto">
-                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight">
-                            Mulai Proyek Website Anda Sekarang
+                <div class="cta-banner bg-brand-navy rounded-[2.5rem] p-10 lg:p-18 text-center text-white relative overflow-hidden shadow-apple-float">
+                    <div class="relative z-10 max-w-3xl mx-auto">
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight leading-tight">
+                            Siap Membawa Bisnis Anda ke Tingkat yang Jauh Lebih Meyakinkan?
                         </h2>
-                        <p class="text-brand-accent text-sm mb-8 max-w-lg mx-auto leading-relaxed">
-                            Konsultasikan kebutuhan website bisnis Anda bersama tim Danova. Respon cepat, ramah, dan solutif.
+                        <p class="text-blue-100 text-base lg:text-lg mb-10 max-w-xl mx-auto leading-relaxed font-normal">
+                            Konsultasikan rencana website Anda bersama tim Danova sekarang. Respon cepat, ramah, dan solutif.
                         </p>
-                        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
                             <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}"
-                                class="apple-spring bg-brand-primary text-white px-8 py-3.5 rounded-full font-semibold text-sm flex items-center justify-center gap-2 hover:bg-brand-dark shadow-sm">
+                                class="apple-spring bg-gradient-to-r from-brand-primary via-[#2563EB] to-brand-accent text-white px-9 py-4 rounded-full font-bold text-base flex items-center justify-center gap-3 shadow-lg shadow-brand-primary/30">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
                                 <span>Konsultasi via WhatsApp</span>
                             </a>
                             <a href="mailto:{{ $danovaGmail }}"
-                                class="apple-spring border border-slate-600 text-slate-200 px-8 py-3.5 rounded-full font-semibold text-sm hover:bg-white/10 flex items-center justify-center gap-2">
+                                class="apple-spring border-2 border-slate-700 text-white px-9 py-4 rounded-full font-bold text-base hover:bg-white/10 flex items-center justify-center gap-2">
                                 <span>Kirim Email</span>
                             </a>
                         </div>
@@ -970,18 +1140,19 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="py-10 border-t border-slate-200 bg-white">
+    <footer class="py-12 border-t border-brand-border bg-white">
         <div class="container mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-brand-primary rounded-xl flex items-center justify-center text-white font-bold text-xs">D</div>
-                <span class="text-sm font-bold text-slate-800">Danova Digital Studio</span>
-                <span class="text-xs text-slate-400">© {{ date('Y') }}</span>
+                <div class="w-9 h-9 bg-brand-primary rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-xs">D</div>
+                <span class="text-base font-bold text-slate-900">Danova Digital Studio</span>
+                <span class="text-xs text-slate-400 font-semibold">© {{ date('Y') }}</span>
             </div>
-            <div class="flex flex-wrap gap-6 text-xs text-slate-500 font-medium">
+            <div class="flex flex-wrap gap-7 text-xs text-slate-600 font-semibold">
                 <a href="#services" class="hover:text-brand-primary transition-colors">Layanan</a>
+                <a href="#compare" class="hover:text-brand-primary transition-colors">Keunggulan</a>
                 <a href="#work" class="hover:text-brand-primary transition-colors">Portofolio</a>
                 <a href="#workflow" class="hover:text-brand-primary transition-colors">Proses</a>
-                <a href="#pricing" class="hover:text-brand-primary transition-colors">Biaya</a>
+                <a href="#pricing" class="hover:text-brand-primary transition-colors">Harga</a>
                 <a href="#faq" class="hover:text-brand-primary transition-colors">FAQ</a>
             </div>
         </div>
@@ -1010,15 +1181,18 @@
                 .from('.floating-layer', { scale: 0.7, y: 25, opacity: 0, stagger: 0.12, duration: 0.7, ease: "back.out(2)" }, "-=0.4");
 
             // 3. Gentle floating physics on badges
-            gsap.to('.floating-speed', { y: -7, duration: 2.4, repeat: -1, yoyo: true, ease: "sine.inOut" });
-            gsap.to('.floating-wa', { y: -8, duration: 2.7, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 0.35 });
+            gsap.to('.floating-google', { y: -8, duration: 2.6, repeat: -1, yoyo: true, ease: "sine.inOut" });
+            gsap.to('.floating-wa', { y: -8, duration: 2.3, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 0.35 });
+            gsap.to('.floating-speed', { y: -6, duration: 2.0, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 0.7 });
+            gsap.to('.floating-cursor', { y: -10, x: 4, duration: 2.8, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 0.2 });
 
             // 4. Interactive 3D Mouse Parallax with Spring Inertia
             const heroCanvas = document.getElementById('heroCanvas');
             if (heroCanvas) {
                 const artboard = heroCanvas.querySelector('.hero-artboard');
-                const speedBadge = heroCanvas.querySelector('.floating-speed');
+                const googleBadge = heroCanvas.querySelector('.floating-google');
                 const waBadge = heroCanvas.querySelector('.floating-wa');
+                const speedBadge = heroCanvas.querySelector('.floating-speed');
 
                 window.addEventListener('mousemove', (e) => {
                     const rect = heroCanvas.getBoundingClientRect();
@@ -1027,8 +1201,9 @@
 
                     if (Math.abs(x) < 800 && Math.abs(y) < 600) {
                         gsap.to(artboard, { rotateY: x * 0.018, rotateX: -y * 0.018, duration: 0.6, ease: "power2.out" });
-                        gsap.to(speedBadge, { x: -x * 0.03, y: -y * 0.03, duration: 0.7, ease: "power2.out" });
+                        gsap.to(googleBadge, { x: -x * 0.03, y: -y * 0.03, duration: 0.7, ease: "power2.out" });
                         gsap.to(waBadge, { x: x * 0.035, y: y * 0.035, duration: 0.7, ease: "power2.out" });
+                        gsap.to(speedBadge, { x: -x * 0.02, y: y * 0.02, duration: 0.7, ease: "power2.out" });
                     }
                 });
             }
