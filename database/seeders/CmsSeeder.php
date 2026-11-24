@@ -221,32 +221,37 @@ class CmsSeeder extends Seeder
             [
                 'sort_order' => 3,
                 'question' => 'Bagaimana sistem pembayaran?',
-                'answer' => 'Starter: 50% DP, 50% sebelum launch. Growth: 40% DP, 40% mid-project, 20% sebelum launch. Premium: milestone-based (custom per project). Transfer bank atau e-wallet.',
+                'answer' => 'Skema pembayaran bertahap (milestone) 50% DP saat brief disepakati untuk memulai riset dan pengerjaan, lalu sisa 50% hanya dibayarkan setelah Anda menguji website di link staging preview dan menyetujui seluruh fungsinya. Kami juga menyediakan invoice resmi dan bukti transfer sah untuk pembukuan.',
             ],
             [
                 'sort_order' => 4,
                 'question' => 'Apakah termasuk domain dan hosting?',
-                'answer' => 'Tidak. Domain (~Rp150k/tahun) dan hosting (~Rp300k–1jt/tahun) dibeli sendiri atau kami bantu setup dengan biaya terpisah. Kami akan provide rekomendasi provider.',
+                'answer' => 'Ya! Setiap paket pembuatan website Danova sudah termasuk domain resmi (.com / .id) dan Cloud Hosting SSD NVMe berkecepatan tinggi gratis untuk 1 tahun pertama, lengkap dengan sertifikat keamanan SSL HTTPS dan email bisnis profesional.',
             ],
             [
                 'sort_order' => 5,
                 'question' => 'Siapa yang pegang file source code?',
-                'answer' => 'Full ownership untuk Anda. Setelah pelunasan, kami serahkan semua source code, design files (Figma), dan assets. Anda bebas modifikasi atau pindah developer.',
+                'answer' => '100% Hak Milik untuk Anda tanpa vendor lock-in. Setelah pelunasan, kami serahkan semua akses cPanel, database, file source code, dan aset desain. Anda bebas memindahkan atau mengembangkannya kapan saja tanpa ikatan biaya sewa.',
             ],
             [
                 'sort_order' => 6,
                 'question' => 'Apakah ada maintenance atau support setelah launch?',
-                'answer' => 'Semua paket dapat 14 hari post-launch support gratis untuk bug fixes dan minor adjustments. Maintenance bulanan (konten update, monitoring, backup) tersedia mulai Rp500k/bulan.',
+                'answer' => 'Tentu. Setiap proyek dilindungi garansi teknis 30–60 hari gratis untuk perbaikan jika ditemukan bug atau error. Kami juga menyediakan paket pemeliharaan berkala jika Anda membutuhkan tim teknis standby.',
             ],
             [
                 'sort_order' => 7,
-                'question' => 'Bagaimana cara komunikasi selama project?',
-                'answer' => 'WhatsApp untuk daily update dan feedback. Email untuk deliverables dan dokumentasi. Weekly sync call (optional) untuk project besar. Response time < 24 jam (hari kerja).',
+                'question' => 'Bagaimana jika saya gaptek atau belum pernah kelola website?',
+                'answer' => 'Anda tidak perlu khawatir. Kami memberikan Garansi Anti-Gaptek berupa video tutorial singkat 1–2 menit cara mengedit harga produk, menambah artikel, dan mengubah nomor WhatsApp, ditambah sesi konsultasi walkthrough 1-on-1 via video call.',
             ],
             [
                 'sort_order' => 8,
+                'question' => 'Berapa biaya perpanjangan di tahun ke-2?',
+                'answer' => 'Biaya perpanjangan sangat transparan: Anda hanya perlu memperpanjang sewa domain dan cloud hosting standar (sekitar Rp450.000 – Rp850.000 per tahun tergantung spesifikasi traffic). Tidak ada biaya lisensi sistem software tahunan.',
+            ],
+            [
+                'sort_order' => 9,
                 'question' => 'Apakah Danova handle SEO dan copywriting?',
-                'answer' => 'Basic on-page SEO (meta tags, alt text, heading structure) sudah include. Copywriting: kami polish copy yang Anda provide. Full copywriting service atau SEO ongoing tersedia dengan biaya tambahan.',
+                'answer' => 'Ya, kami membantu menyusun struktur headline persuasif, merapikan deskripsi layanan, dan mengoptimalkan on-page SEO (meta tag, Google Search Console, kecepatan muat halaman) agar website Anda langsung siap terindeks di Google.',
             ],
         ];
 
