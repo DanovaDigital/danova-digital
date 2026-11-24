@@ -767,7 +767,19 @@
 
         <div class="hero-image-wrapper" data-reveal>
             <div class="project-image">
-                <img src="{{ $project['image'] }}" alt="{{ $project['title'] }}" loading="lazy" decoding="async">
+                @if (!empty($project['image']))
+                <img src="{{ $project['image'] }}" alt="{{ $project['title'] }}" loading="lazy" decoding="async"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                @endif
+                <div class="project-image-empty-state" style="{{ !empty($project['image']) ? 'display: none;' : 'display: flex;' }} align-items: center; justify-content: center; min-height: 400px; background: #F4F8FC; border-radius: 16px; border: 1px solid #D1E2F0; flex-direction: column; text-align: center; padding: 48px;">
+                    <svg style="width: 80px; height: 60px; margin-bottom: 16px;" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="4" width="56" height="40" rx="4" fill="#FFFFFF" stroke="#619DC6" stroke-width="1.5"/>
+                        <circle cx="20" cy="18" r="4" fill="#A6C8E2"/>
+                        <path d="M10 38L24 24L36 34L46 22L54 38H10Z" fill="#3368A0" fill-opacity="0.2" stroke="#3368A0" stroke-width="1.5"/>
+                    </svg>
+                    <span style="font-size: 16px; font-weight: 600; color: #3368A0;">Pratinjau Proyek</span>
+                    <span style="font-size: 13px; color: #64748B; margin-top: 4px;">Danova Digital Studio</span>
+                </div>
             </div>
         </div>
     </section>

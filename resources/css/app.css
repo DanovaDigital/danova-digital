@@ -9,21 +9,21 @@
     --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 
-    /* Danova brand colors */
-    --color-danova-royal: #4361EE;
-    --color-danova-electric: #1e40af;
-    --color-danova-bright: #3b82f6;
-    --color-danova-soft-pink: #fee2e2;
-    --color-danova-mint: #d1fae5;
-    --color-danova-soft-yellow: #fef3c7;
+    /* Danova brand colors - Refined Blue Triad (Non-Pastel) */
+    --color-danova-primary: #3368A0;
+    --color-danova-secondary: #619DC6;
+    --color-danova-accent: #A6C8E2;
+    --color-danova-dark: #1E293B;
+    --color-danova-deep-navy: #172A42;
+    --color-danova-surface: #F0F6FA;
 
-    /* Neutrals (aligned to your palette) */
+    /* Neutrals */
     --color-danova-white: #ffffff;
-    --color-danova-light-gray: #f3f4f6;
-    --color-danova-medium-gray: #e5e7eb;
-    --color-danova-dark-gray: #6b7280;
-    --color-danova-charcoal: #1f2937;
-    --color-danova-black: #000000;
+    --color-danova-light-gray: #f8fafc;
+    --color-danova-medium-gray: #e2e8f0;
+    --color-danova-dark-gray: #64748b;
+    --color-danova-charcoal: #1e293b;
+    --color-danova-black: #0f172a;
 
     /* Radius system */
     --radius-danova-sm: 8px;
@@ -31,15 +31,18 @@
     --radius-danova-lg: 24px;
 
     /* Shadow system */
-    --shadow-danova-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-    --shadow-danova-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-    --shadow-danova-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
-    --shadow-danova-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-danova-sm: 0 1px 3px rgba(30, 41, 59, 0.05);
+    --shadow-danova-md: 0 4px 14px rgba(51, 104, 160, 0.08);
+    --shadow-danova-lg: 0 10px 30px rgba(51, 104, 160, 0.12);
+    --shadow-danova-card: 0 4px 20px rgba(51, 104, 160, 0.06);
 }
 
 @layer base {
     :root {
         color-scheme: light;
+        --color-primary: #3368A0;
+        --color-secondary: #619DC6;
+        --color-accent: #A6C8E2;
     }
 
     html {
@@ -50,7 +53,7 @@
 
     body {
         background: var(--color-danova-white);
-        color: var(--color-danova-black);
+        color: var(--color-danova-charcoal);
     }
 }
 
@@ -60,7 +63,7 @@
     }
 
     .focus-danova {
-        outline: 2px solid var(--color-danova-royal);
+        outline: 2px solid var(--color-danova-primary);
         outline-offset: 2px;
     }
 }
