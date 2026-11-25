@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let saving = false;
 
     const serviceBasePrices = {
+        'audit': 0,
         'website': 3000000,
         'landing-page': 2500000,
         'visual': 2000000,
@@ -58,7 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalMax = totalMin + (totalMin >= 10000000 ? 2000000 : 500000);
 
         let formattedRange = '';
-        if (planVal === '3' || serviceVal === 'custom') {
+        if (serviceVal === 'audit') {
+            formattedRange = 'Rp 0 (Gratis — Tanpa Komitmen DP)';
+        } else if (planVal === '3' || serviceVal === 'custom') {
             formattedRange = formatRupiah(totalMin) + ' – Sesuai Kebutuhan';
         } else {
             formattedRange = formatRupiah(totalMin) + ' – ' + formatRupiah(totalMax);
@@ -74,13 +77,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Bind event listeners for real-time cost calculation
-    fields.service?.addEventListener('change', updateCostEstimate);
+    fields.service?.addEventListener('change', () => {
+        syncModeUI();
+        updateCostEstimate();
+    });
     fields.plan?.addEventListener('change', updateCostEstimate);
     form.querySelectorAll('input[name="addons[]"]').forEach(cb => {
         cb.addEventListener('change', updateCostEstimate);
     });
 
+    const modeButtons = brief.querySelectorAll('[data-brief-mode]');
+    const addonsSection = form.querySelector('.brief-disclosure');
+
+    function syncModeUI() {
+        const isAudit = fields.service?.value === 'audit';
+        modeButtons.forEach(btn => {
+            const active = (btn.dataset.briefMode === 'audit') === isAudit;
+            btn.classList.toggle('border-brand-primary', active);
+            btn.classList.toggle('bg-brand-light', active);
+            btn.classList.toggle('text-brand-primary', active);
+            btn.classList.toggle('border-brand-border', !active);
+            btn.classList.toggle('bg-white', !active);
+            btn.classList.toggle('text-slate-700', !active);
+        });
+        if (addonsSection) addonsSection.hidden = isAudit;
+        if (previewBtn) {
+            previewBtn.innerHTML = isAudit
+                ? 'Kirim Permintaan Audit Gratis <span aria-hidden="true">→</span>'
+                : 'Tinjau ringkasan brief <span aria-hidden="true">→</span>';
+        }
+    }
+
+    modeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (btn.dataset.briefMode === 'audit') {
+                fields.service.value = 'audit';
+                if (fields.plan) fields.plan.value = '';
+            } else if (fields.service.value === 'audit' || !fields.service.value) {
+                fields.service.value = 'website';
+            }
+            syncModeUI();
+            updateCostEstimate();
+        });
+    });
+
     // Run initial calculation
+    syncModeUI();
     updateCostEstimate();
 
     function showForm() {
@@ -101,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 fields.plan.value = link.dataset.briefPlan;
                 if (!fields.service.value) fields.service.value = 'unsure';
             }
+            syncModeUI();
             updateCostEstimate();
             showForm();
             document.getElementById('briefHeading')?.focus({ preventScroll: true });

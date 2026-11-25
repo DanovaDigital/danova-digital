@@ -5,7 +5,7 @@
                 <div class="faq-art" aria-hidden="true"><span>?</span></div>
                 <div class="faq-intro-copy">
                     <h2 id="faq-title">Pertanyaan sebelum mulai</h2>
-                    <p>Cari tahu cara kerja Danova sebelum menyiapkan proyek Anda.</p>
+                    <p>Jawaban jujur soal kenapa bermitra dengan Danova dibanding bikin sendiri pakai AI atau template.</p>
                     <a href="{{ route('out.whatsapp', ['context' => 'faq']) }}">
                         Tanya tim Danova <span aria-hidden="true">↗</span>
                     </a>

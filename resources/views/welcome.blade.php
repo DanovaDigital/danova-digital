@@ -12,8 +12,8 @@
     <meta name="robots" content="index,follow" />
 
     @php
-        $pageTitle = 'Danova — Studio Desain & Pembuatan Website Bisnis';
-        $pageDescription = 'Danova merancang dan membangun website bisnis berkinerja tinggi, berkecepatan kilat, dan fokus konversi nyata dengan visual modern yang memikat.';
+        $pageTitle = 'Danova — Partner Konversi & Infrastruktur Website Bisnis';
+        $pageDescription = 'AI bisa membuat website dalam 5 menit, tapi tidak bisa membuat pengunjung membeli. Danova membangun website bisnis siap iklan, terukur, dan terintegrasi WhatsApp.';
     @endphp
     <title>{{ $pageTitle }}</title>
     <meta name="description" content="{{ $pageDescription }}" />
@@ -94,7 +94,7 @@
         #header nav a:hover { color: var(--danova-blue); }
         #content > section { scroll-margin-top: 76px; }
         #content > section:not(:first-child) { padding-top: clamp(4rem, 8vw, 7rem); padding-bottom: clamp(4rem, 8vw, 7rem); }
-        .hero-title { max-width: 12ch; font-size: clamp(2.65rem, 5vw, 4.7rem); line-height: 1.04; letter-spacing: -.055em; color: var(--danova-ink); }
+        .hero-title { max-width: 16ch; font-size: clamp(2.25rem, 4.1vw, 3.85rem); line-height: 1.08; letter-spacing: -.045em; color: var(--danova-ink); }
         .hero-lead { max-width: 34rem; font-size: clamp(1rem, 1.25vw, 1.15rem); line-height: 1.75; }
         .hero-badge { border-color: #DBE8F8; background: #EAF3FF; box-shadow: none; }
         .hero-cta a { min-height: 52px; border-radius: 14px; }
@@ -123,7 +123,7 @@
             #content > section:not(:first-child) { padding-top: 3.75rem; padding-bottom: 3.75rem; }
             .hero-text-col { text-align: left; }
             .hero-badge { margin-bottom: 1.25rem; }
-            .hero-title { max-width: 12ch; font-size: clamp(2.45rem, 12vw, 3.5rem); }
+            .hero-title { max-width: 16ch; font-size: clamp(2rem, 9.5vw, 2.85rem); }
             .hero-lead { margin-left: 0; margin-right: 0; }
             .hero-text-col > .flex.flex-wrap { justify-content: flex-start; gap: .5rem; }
             .hero-cta { align-items: stretch; margin-bottom: 1.5rem; }
@@ -183,9 +183,9 @@
                     <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
                     <span>Slot Proyek Aktif</span>
                 </div>
-                <a href="#brief" data-brief-start
+                <a href="#brief" data-brief-service="audit"
                     class="apple-spring bg-gradient-to-r from-brand-primary to-brand-secondary text-white px-6 py-2.5 rounded-full font-semibold text-sm flex items-center gap-2 shadow-md shadow-brand-primary/25 hover:shadow-lg hover:shadow-brand-primary/40">
-                    <span>Mulai Brief</span>
+                    <span>Audit Web Gratis</span>
                 </a>
             </div>
 
@@ -203,7 +203,7 @@
                 <a href="#workflow">Proses</a>
                 <a href="#pricing">Harga</a>
                 <a href="#faq">FAQ</a>
-                <a href="#brief" data-brief-start class="mt-2 justify-center bg-brand-primary text-white">Mulai Brief Proyek</a>
+                <a href="#brief" data-brief-service="audit" class="mt-2 justify-center bg-brand-primary text-white">Klaim Audit Gratis (Rp 0)</a>
             </nav>
         </div>
     </header>
@@ -215,53 +215,51 @@
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-9 lg:gap-14 items-center">
 
-                    <!-- Left: Studio Story & High-Energy Pitch -->
+                    <!-- Left: Conversion-First Positioning -->
                     <div class="lg:col-span-6 text-center lg:text-left hero-text-col">
                         <div class="hero-badge inline-flex items-center gap-2.5 bg-brand-surface border border-brand-primary/30 px-4 py-1.5 rounded-full mb-6 shadow-sm">
                             <span class="w-2.5 h-2.5 rounded-full bg-brand-primary inline-block"></span>
-                            <span class="text-sm font-bold text-brand-primary tracking-wide">Web Design & Growth Studio</span>
+                            <span class="text-sm font-bold text-brand-primary tracking-wide">Partner Konversi &amp; Website Bisnis</span>
                         </div>
 
-                        <h1 class="hero-title text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.18] mb-5 tracking-tight text-slate-900">
-                            Website untuk bisnis yang siap tumbuh.
+                        <h1 class="hero-title font-extrabold mb-5 tracking-tight text-slate-900">
+                            AI bikin desain dalam 5 menit. Kami bikin pelanggan Anda membeli.
                         </h1>
 
                         <p class="hero-lead text-slate-600 text-base sm:text-lg mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                            Danova merancang website kustom yang memudahkan pelanggan mengenal bisnis Anda dan menghubungi Anda. Cepat, mudah digunakan, dan nyaman dibuka di ponsel.
+                            Website buatan AI sering terlihat rapi tapi gagal mengubah klik iklan menjadi omzet. Danova membangun website siap iklan dengan copywriting lokal, pelacakan pixel, dan alur lead langsung ke WhatsApp Anda.
                         </p>
 
                         <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
-                            <a href="#brief" data-brief-start
+                            <a href="#brief" data-brief-service="audit"
                                 class="apple-spring bg-gradient-to-r from-brand-primary via-[#3060AD] to-brand-secondary text-white px-8 py-4 rounded-2xl font-bold text-sm hover:shadow-xl hover:shadow-brand-primary/30 shadow-apple-card flex items-center justify-center gap-2.5">
-                                <span>Mulai Brief Proyek</span>
+                                <span>Klaim Audit &amp; Konsep Gratis</span>
                                 <svg class="w-4 h-4 fill-none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                 </svg>
                             </a>
-                            <a href="#work"
+                            <a href="#brief" data-brief-start
                                 class="apple-spring bg-white text-slate-800 border-2 border-brand-border px-8 py-4 rounded-2xl font-semibold text-sm hover:border-brand-primary hover:text-brand-primary text-center shadow-apple-sm">
-                                Lihat Contoh Karya
+                                Hitung Estimasi Proyek
                             </a>
                         </div>
 
-                        <!-- Real Proof Rating Stack -->
-                        <div class="flex items-center justify-center lg:justify-start gap-4 pt-4 border-t border-brand-border/60">
-                            <div class="flex text-amber-400 text-sm">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <span class="text-sm text-slate-700 font-semibold">Rating 4.9/5 dari 100+ pelaku usaha di Indonesia</span>
+                        <!-- Verifiable Commitment Strip -->
+                        <div class="flex items-center justify-center lg:justify-start gap-3 pt-4 border-t border-brand-border/60">
+                            <span class="inline-flex w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+                            <span class="text-sm text-slate-700 font-semibold">Konsep awal gratis sebelum DP · 100% hak milik kode &amp; domain · Garansi teknis 30–60 hari</span>
                         </div>
                     </div>
 
                     <div class="lg:col-span-6 hero-visual-col">
-                        <figure id="studio-hero-preview" class="studio-art" role="img" aria-label="Ilustrasi desain website yang menyesuaikan layar desktop dan ponsel">
+                        <figure id="studio-hero-preview" class="studio-art" role="img" aria-label="Ilustrasi sistem website siap iklan di desktop dan pesan brief terstruktur di ponsel">
                             <div class="studio-browser" aria-hidden="true">
                                 <div class="studio-chrome"><i></i><i></i><i></i></div>
                                 <div class="studio-screen">
                                     <div class="studio-site-nav"><b>D</b><i></i><i></i></div>
                                     <div class="studio-site-cover">
                                         <div class="studio-site-story">
-                                            <b>Ruang untuk<br>tumbuh.</b>
+                                            <b>Siap iklan.<br>Siap closing.</b>
                                             <i></i>
                                             <span></span>
                                         </div>
@@ -275,10 +273,10 @@
                                 <div class="studio-phone-cover">
                                     <div class="studio-shapes"><i></i><i></i><i></i></div>
                                 </div>
-                                <div class="studio-phone-copy"><b>Ruang untuk tumbuh.</b><i></i><span></span></div>
+                                <div class="studio-phone-copy"><b>Brief masuk ke WA.</b><i></i><span></span></div>
                             </div>
                             <div class="studio-badge" aria-hidden="true">
-                                <span>?</span> Desain responsif
+                                <span>✓</span> Konsep awal Rp 0
                             </div>
                         </figure>
                         <div class="studio-motion-controls" hidden>
@@ -292,25 +290,25 @@
             </div>
         </section>
 
-        <!-- STATS & TRUST RIBBON -->
+        <!-- VERIFIABLE COMMITMENT RIBBON -->
         <section class="studio-stats py-12 bg-brand-surface border-b border-brand-border">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                     <div class="border-r last:border-0 border-slate-200/80 pr-4">
-                        <div class="text-3xl lg:text-4xl font-extrabold text-brand-primary mb-1">{{ $setting('stats.projects', '100+') }}</div>
-                        <p class="text-sm text-slate-600 font-semibold">Website Sukses Meluncur</p>
+                        <div class="text-3xl lg:text-4xl font-extrabold text-brand-primary mb-1">Rp 0</div>
+                        <p class="text-sm text-slate-600 font-semibold">Audit &amp; Konsep Awal Sebelum DP</p>
                     </div>
                     <div class="border-r last:border-0 border-slate-200/80 pr-4">
-                        <div class="text-3xl lg:text-4xl font-extrabold text-brand-accent mb-1">{{ $setting('stats.rating', '4.9') }} / 5.0</div>
-                        <p class="text-sm text-slate-600 font-semibold">Rating Kepuasan Klien</p>
+                        <div class="text-3xl lg:text-4xl font-extrabold text-brand-accent mb-1">100%</div>
+                        <p class="text-sm text-slate-600 font-semibold">Hak Milik Kode, Domain &amp; Data</p>
                     </div>
                     <div class="border-r last:border-0 border-slate-200/80 pr-4">
-                        <div class="text-3xl lg:text-4xl font-extrabold text-brand-primary mb-1">{{ $setting('stats.on_time', '95%') }}</div>
-                        <p class="text-sm text-slate-600 font-semibold">Selesai Tepat Deadline</p>
+                        <div class="text-3xl lg:text-4xl font-extrabold text-brand-primary mb-1">&lt; 24 Jam</div>
+                        <p class="text-sm text-slate-600 font-semibold">Respon Audit &amp; Estimasi Jelas</p>
                     </div>
                     <div>
-                        <div class="text-3xl lg:text-4xl font-extrabold text-emerald-600 mb-1">100%</div>
-                        <p class="text-sm text-slate-600 font-semibold">Garansi Pendampingan Teknis</p>
+                        <div class="text-3xl lg:text-4xl font-extrabold text-emerald-600 mb-1">30–60 Hari</div>
+                        <p class="text-sm text-slate-600 font-semibold">Garansi Teknis &amp; Pendampingan</p>
                     </div>
                 </div>
             </div>
@@ -320,9 +318,9 @@
         <section id="services" class="py-20 lg:py-28 bg-white border-b border-brand-border/60">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="max-w-2xl mb-14 section-header">
-                    <span class="text-sm font-bold text-brand-primary uppercase tracking-wider block mb-2">Spesialisasi Kami</span>
-                    <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">Pilih jasa sesuai kebutuhan Anda</h2>
-                    <p class="text-slate-600 text-base mt-2">Pilih layanan untuk mengisi jenis proyek otomatis di brief.</p>
+                    <span class="text-sm font-bold text-brand-primary uppercase tracking-wider block mb-2">Solusi Berbasis Hasil</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">Bukan sekadar website — pilih mesin pertumbuhan bisnis Anda</h2>
+                    <p class="text-slate-600 text-base mt-2">Setiap layanan dirancang agar iklan lebih hemat, prospek tersaring otomatis, dan Anda tidak pusing mengurus teknis.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -356,25 +354,25 @@
                             <!-- Timeline & Scope Badge -->
                             <div class="flex flex-wrap items-center gap-2 mb-3">
                                 <span class="inline-block px-3 py-1 rounded-full bg-brand-surface text-brand-primary text-sm font-bold border border-brand-border">
-                                    Paling Diminati UMKM
+                                    Kredibilitas B2B &amp; UMKM
                                 </span>
                                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-brand-dark text-sm font-bold border border-blue-200">
                                     <svg class="w-3.5 h-3.5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                                     7–10 Hari Kerja
                                 </span>
                             </div>
-                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Website Profil Bisnis</h3>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Website Profil &amp; Kredibilitas Bisnis</h3>
                             <p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
-                                Representasi resmi brand Anda di internet. Menampilkan profil, katalog produk rapi, serta tombol pesan WhatsApp instan sekali klik.
+                                Buktikan bisnis Anda layak dipercaya klien korporat maupun pembeli langsung. Lengkap dengan katalog rapi, penangkapan brief otomatis, dan jalur WA terukur.
                             </p>
                         </div>
                         <ul class="text-sm text-slate-700 font-medium space-y-2.5 pt-5 border-t border-slate-100">
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> 100% Mobile responsif & kilat</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Domain resmi (.com / .id) + SSL aman</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Terindeks mesin pencari Google otomatis</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Dashboard CMS kelola mandiri + video panduan</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Struktur meyakinkan untuk tender &amp; klien B2B</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Form brief tersimpan ke dashboard admin</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Domain resmi + SSL + indeks Google</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Panel CMS kelola konten mandiri tanpa coding</li>
                         </ul>
-                        <a href="#brief" data-brief-service="website" class="service-action">Diskusikan layanan <span class="sr-only">{{ $serviceOptions['website'] }}</span><span aria-hidden="true">→</span></a>
+                        <a href="#brief" data-brief-service="website" class="service-action">Pilih layanan ini <span class="sr-only">{{ $serviceOptions['website'] }}</span><span aria-hidden="true">→</span></a>
                     </article>
 
                     <!-- Service 2: Landing Page Promosi & Iklan -->
@@ -403,25 +401,25 @@
                             <!-- Timeline & Scope Badge -->
                             <div class="flex flex-wrap items-center gap-2 mb-3">
                                 <span class="inline-block px-3 py-1 rounded-full bg-brand-light text-brand-accent text-sm font-bold border border-brand-border">
-                                    Tingkat Konversi Tinggi
+                                    Fokus Closing Iklan
                                 </span>
                                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-sm font-bold border border-emerald-200">
                                     <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                                     3–5 Hari Kerja (Kilat)
                                 </span>
                             </div>
-                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Landing Page Iklan</h3>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Landing Page Siap Iklan</h3>
                             <p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
-                                Dirancang khusus untuk memicu calon pembeli langsung checkout atau chat admin. Sangat cocok untuk iklan Meta Ads, TikTok Ads, dan Google Ads.
+                                Dirancang khusus agar budget Meta Ads, TikTok Ads, dan Google Ads tidak terbuang sia-sia. Copywriting terstruktur dari masalah hingga klik WhatsApp.
                             </p>
                         </div>
                         <ul class="text-sm text-slate-700 font-medium space-y-2.5 pt-5 border-t border-slate-100">
-                            <li class="flex items-center gap-2"><span class="text-brand-accent font-bold text-sm">✓</span> Copywriting fokus closing penjualan</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-accent font-bold text-sm">✓</span> Terpasang Meta Pixel, TikTok & GA4</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-accent font-bold text-sm">✓</span> Copywriting psikologi pembeli lokal</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-accent font-bold text-sm">✓</span> Terpasang Meta Pixel, TikTok &amp; GA4</li>
                             <li class="flex items-center gap-2"><span class="text-brand-accent font-bold text-sm">✓</span> Rotasi chat multi-admin WhatsApp</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-accent font-bold text-sm">✓</span> A/B testing headline & CTA optimasi</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-accent font-bold text-sm">✓</span> Loading kilat agar biaya iklan lebih hemat</li>
                         </ul>
-                        <a href="#brief" data-brief-service="landing-page" class="service-action">Diskusikan layanan <span class="sr-only">{{ $serviceOptions['landing-page'] }}</span><span aria-hidden="true">→</span></a>
+                        <a href="#brief" data-brief-service="landing-page" class="service-action">Pilih layanan ini <span class="sr-only">{{ $serviceOptions['landing-page'] }}</span><span aria-hidden="true">→</span></a>
                     </article>
 
                     <!-- Service 3: Desain UI & Identitas Digital -->
@@ -453,25 +451,25 @@
                             <!-- Timeline & Scope Badge -->
                             <div class="flex flex-wrap items-center gap-2 mb-3">
                                 <span class="inline-block px-3 py-1 rounded-full bg-brand-light text-brand-primary text-sm font-bold border border-brand-border">
-                                    Identitas Visual Berkelas
+                                    Solusi Web Sepi Pembeli
                                 </span>
                                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm font-bold border border-indigo-200">
                                     <svg class="w-3.5 h-3.5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                    5–7 Hari Kerja
+                                    Audit Gratis &lt; 24 Jam
                                 </span>
                             </div>
-                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Identitas Visual & UI</h3>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Audit, Redesain &amp; Sistem Kustom</h3>
                             <p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
-                                Standardisasi visual, panduan tipografi, palet warna berkarakter, dan aset grafis agar brand Anda selalu terlihat konsisten dan berwibawa.
+                                Sudah punya website atau hasil generator AI tapi pengunjung cepat kabur? Kami perbaiki alur konversi, kecepatan, hingga integrasi sistem operasional bisnis Anda.
                             </p>
                         </div>
                         <ul class="text-sm text-slate-700 font-medium space-y-2.5 pt-5 border-t border-slate-100">
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Desain UI modern bebas template klise</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Panduan warna & font panduan resmi</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Format vektor SVG resolusi tajam</li>
-                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> 100% Hak cipta & file master diserahkan</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Gratis audit kebocoran konversi sebelum DP</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Perombakan UI &amp; kecepatan mobile</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Integrasi kalkulator, booking, atau CRM ringan</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Garansi teknis &amp; 100% hak milik kode</li>
                         </ul>
-                        <a href="#brief" data-brief-service="visual" class="service-action">Diskusikan layanan <span class="sr-only">{{ $serviceOptions['visual'] }}</span><span aria-hidden="true">→</span></a>
+                        <a href="#brief" data-brief-service="audit" class="service-action">Klaim audit gratis dulu <span class="sr-only">Gratis Audit Website</span><span aria-hidden="true">→</span></a>
                     </article>
 
                 </div>
@@ -482,26 +480,26 @@
         <section id="deliverables" class="border-b border-brand-border/60" aria-labelledby="deliverables-title">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="section-header mb-8">
-                    <h2 id="deliverables-title" class="font-extrabold text-slate-900">Inklusi standar di setiap proyek Danova</h2>
+                    <h2 id="deliverables-title" class="font-extrabold text-slate-900">Infrastruktur konversi siap pakai di setiap proyek</h2>
                 </div>
                 <div class="deliverable-layout">
                     <article class="deliverable-ownership">
                         <div>
                             <p class="ownership-value">100%</p>
-                            <h3>Hak milik aset dan kode</h3>
+                            <h3>Hak milik aset dan kode — tanpa dikunci vendor</h3>
                             <ul class="ownership-assets">
                                 <li><span class="asset-symbol asset-host" aria-hidden="true"></span>Akses hosting</li>
                                 <li><span class="asset-symbol asset-code" aria-hidden="true"></span>Source code</li>
                                 <li><span class="asset-symbol asset-data" aria-hidden="true"></span>Database</li>
                             </ul>
-                            <p>Bebas dikelola atau dipindahkan.</p>
+                            <p>Bebas dikelola tim Anda sendiri atau dipindahkan kapan saja, berbeda dengan platform langganan builder.</p>
                         </div>
                     </article>
                     <div class="deliverable-list">
                         @foreach ([
-                            ['Domain & cloud hosting', 'Tahun pertama, SSL, dan email bisnis.'],
-                            ['Dashboard kelola konten', 'Edit harga, foto, dan kontak sesuai paket.'],
-                            ['Bantuan penyiapan konten', 'Headline, profil bisnis, dan tampilan produk.'],
+                            ['Konversi & tracking hari pertama', 'Terpasang Meta Pixel, GA4, serta pencatatan klik WA & form brief langsung ke database admin.'],
+                            ['Domain, cloud hosting & kecepatan mobile', 'Tahun pertama, SSL aman, dan optimasi kecepatan muat agar skor iklan tetap hemat.'],
+                            ['Copywriting penawaran & pendampingan live', 'Kami bantu merapikan headline jualan Anda, plus garansi perbaikan teknis 30–60 hari setelah live.'],
                         ] as [$title, $copy])
                             <article>
                                 <span class="deliverable-check" aria-hidden="true">✓</span>
@@ -516,21 +514,21 @@
         <section id="compare" class="border-b border-brand-border/60">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="section-header mb-8">
-                    <h2 class="font-extrabold text-slate-900">Perbedaan nyata Danova Studio</h2>
-                    <p class="mt-3 text-slate-600">Pertimbangkan empat hal ini saat memilih cara membangun website bisnis Anda.</p>
+                    <h2 class="font-extrabold text-slate-900">Kenapa tidak bikin sendiri pakai AI atau template?</h2>
+                    <p class="mt-3 text-slate-600">AI bisa menghasilkan layout cepat, tetapi empat hal ini menentukan apakah website Anda menghasilkan omzet atau sekadar pajangan.</p>
                 </div>
                 <div class="comparison-sheet">
                     <dl>
                         @foreach ([
-                            ['Desain', 'Mengikuti struktur dan komponen bawaan.', 'Struktur halaman dirancang sesuai identitas dan tujuan bisnis Anda.'],
-                            ['Performa', 'Bergantung pada tema dan plugin yang digunakan.', 'Kode dan aset dioptimalkan untuk waktu muat yang cepat.'],
-                            ['Kelola konten', 'Kemudahan edit bergantung pada fitur tema.', 'Konten utama bisa diperbarui sendiri lewat panel pengelolaan.'],
-                            ['Pendampingan', 'Dukungan bergantung pada penyedia tema.', 'Tim mendampingi peluncuran dan memberi bantuan teknis sesuai paket.'],
-                        ] as [$criterion, $template, $danova])
+                            ['Copywriting & closing', 'Menghasilkan kalimat generik yang terasa seperti template dan sering diabaikan pembeli.', 'Struktur penawaran disusun sesuai psikologi pasar lokal agar pengunjung langsung klik WhatsApp.'],
+                            ['Tracking & alur lead', 'Berhenti di tampilan statis; Meta Pixel, penyimpanan brief, dan alur WA harus dirakit sendiri.', 'Terpasang Pixel/GA4, brief tersimpan otomatis ke database, dan tombol WhatsApp terukur sejak hari pertama.'],
+                            ['Waktu pemilik bisnis', 'Waktu habis untuk prompting berulang, setting domain/DNS, dan memperbaiki layout pecah di HP.', 'Anda fokus mengurus operasional & closing; seluruh teknis dari desain hingga live ditangani Danova.'],
+                            ['Tanggung jawab teknis', 'Jika website error di tengah iklan berjalan, tidak ada tim yang bisa dihubungi dan bertanggung jawab.', 'Tim nyata mendampingi peluncuran dan memberi garansi perbaikan teknis 30–60 hari.'],
+                        ] as [$criterion, $aiSelf, $danova])
                             <div class="comparison-row">
                                 <dt>{{ $criterion }}</dt>
-                                <dd><span>Template siap pakai</span>{{ $template }}</dd>
-                                <dd><span>Studio Danova</span>{{ $danova }}</dd>
+                                <dd><span>Bikin sendiri (AI / Template)</span>{{ $aiSelf }}</dd>
+                                <dd><span>Partner Danova</span>{{ $danova }}</dd>
                             </div>
                         @endforeach
                     </dl>
@@ -542,28 +540,28 @@
         <section id="transformation" class="border-b border-brand-border/60" aria-labelledby="transformation-title">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="section-header mb-8">
-                    <h2 id="transformation-title" class="font-extrabold text-slate-900">Sebelum vs sesudah memiliki website khusus</h2>
+                    <h2 id="transformation-title" class="font-extrabold text-slate-900">Dari website pajangan &amp; DM berantakan ke sistem closing</h2>
                 </div>
                 <div class="transformation-board">
                     <div class="transformation-flow">
                         <div class="flow-path flow-manual">
-                            <h3>Sebelum</h3>
-                            <div class="flow-nodes"><span>DM</span><span>Chat</span><span>Iklan</span></div>
+                            <h3>Sebelum (Web Generik / Manual)</h3>
+                            <div class="flow-nodes"><span>Iklan</span><span>Template AI</span><span>DM</span></div>
                             <span class="flow-connector" aria-hidden="true"></span>
-                            <p>Admin mengecek banyak kanal</p>
+                            <p>Pengunjung bingung, chat tidak terfilter</p>
                         </div>
                         <div class="flow-path flow-website">
-                            <h3>Sesudah</h3>
-                            <div class="flow-nodes"><span>Katalog</span><span>Profil</span><span>FAQ</span></div>
+                            <h3>Sesudah (Sistem Danova)</h3>
+                            <div class="flow-nodes"><span>Penawaran</span><span>Brief</span><span>Tracking</span></div>
                             <span class="flow-connector" aria-hidden="true"></span>
-                            <p>Pelanggan mulai dari satu website</p>
+                            <p>Prospek serius terarah langsung ke WhatsApp</p>
                         </div>
                     </div>
                     @foreach ([
-                        ['Pesanan', 'DM dan chat terpisah', 'Pesanan terformat via WhatsApp'],
-                        ['Pertanyaan', 'Jawaban diketik ulang', 'Harga dan FAQ bisa dicek sendiri'],
-                        ['Profil bisnis', 'Portofolio tersebar', 'Profil dan karya di satu domain'],
-                        ['Iklan', 'Langsung ke chat', 'Landing page dengan opsi pelacakan'],
+                        ['Iklan & traffic', 'Klik iklan mendarat di halaman umum tanpa pelacakan jelas', 'Landing page terstruktur dengan Pixel/GA4 & tombol WA terukur'],
+                        ['Kualitas prospek', 'Calon klien tanya hal dasar berulang kali di DM/WA', 'Kebutuhan, paket, & estimasi terisi otomatis sebelum masuk WA'],
+                        ['Kredibilitas brand', 'Tampilan generik mirip ribuan situs template AI lainnya', 'Identitas bisnis berkelas yang meyakinkan klien B2B & retail'],
+                        ['Kontrol & data', 'Tidak tahu halaman mana yang membuat pengunjung kabur', 'Seluruh trafik, klik CTA, & brief masuk terekam di dashboard'],
                     ] as [$task, $before, $after])
                         <article class="transformation-row">
                             <h3>{{ $task }}</h3>
@@ -580,10 +578,10 @@
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="work-heading mb-8">
                     <div class="section-header">
-                        <h2 class="font-extrabold text-slate-900">Proyek website pilihan</h2>
+                        <h2 class="font-extrabold text-slate-900">Bukti kerja, bukan sekadar janji</h2>
                     </div>
-                    <a href="{{ route('out.whatsapp', ['context' => 'work_archive', 'message' => 'Halo Danova, saya ingin meminta arsip proyek lengkap.']) }}"
-                        class="service-action">Minta arsip lengkap proyek <span aria-hidden="true">↗</span></a>
+                    <a href="{{ route('out.whatsapp', ['context' => 'work_archive', 'message' => 'Halo Danova, saya ingin lihat contoh proyek yang relevan dengan bisnis saya.']) }}"
+                        class="service-action">Minta contoh yang relevan <span aria-hidden="true">↗</span></a>
                 </div>
                 <div class="work-grid">
                     @forelse ($projects as $project)
@@ -624,25 +622,25 @@
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="studio-split">
                     <div class="section-header">
-                        <h2 class="font-extrabold text-slate-900">Dari brief hingga peluncuran</h2>
-                        <p class="mt-3 text-slate-600">Ketahui apa yang akan Anda terima di setiap tahap pengerjaan.</p>
-                        <a href="#brief" data-brief-start class="service-action">Mulai brief proyek <span aria-hidden="true">→</span></a>
+                        <h2 class="font-extrabold text-slate-900">Dari audit gratis hingga siap beriklan</h2>
+                        <p class="mt-3 text-slate-600">Anda melihat kualitas strategi kami di awal — tanpa bayar sebelum konsepnya masuk akal untuk bisnis Anda.</p>
+                        <a href="#brief" data-brief-service="audit" class="service-action">Klaim audit gratis (Rp 0) <span aria-hidden="true">→</span></a>
                     </div>
                     <ol class="studio-timeline">
                         <li>
-                            <h3>Konsultasi dan ruang lingkup</h3>
-                            <p>Kami memetakan kebutuhan bisnis, halaman utama, dan prioritas Anda.</p>
-                            <p class="timeline-output">Anda menerima ruang lingkup, perkiraan biaya, dan jadwal.</p>
+                            <h3>Audit gratis &amp; konsep awal (Rp 0)</h3>
+                            <p>Kami pelajari bisnis atau website Anda saat ini, lalu kirimkan analisis kebocoran konversi dan arahan halaman depan.</p>
+                            <p class="timeline-output">Anda menerima catatan perbaikan, ruang lingkup, dan estimasi transparan.</p>
                         </li>
                         <li>
-                            <h3>Desain, pengerjaan, dan revisi</h3>
-                            <p>Kami merancang dan membangun website, lalu membagikan pratinjau agar Anda bisa mencoba dan memberi masukan.</p>
-                            <p class="timeline-output">Anda menerima tautan pratinjau untuk ditinjau.</p>
+                            <h3>Eksekusi cepat, copywriting &amp; tracking</h3>
+                            <p>Setelah konsep disepakati, kami bangun website responsif lengkap dengan copywriting lokal, Pixel/GA4, dan form brief terintegrasi.</p>
+                            <p class="timeline-output">Anda menerima tautan pratinjau langsung untuk diuji sebelum peluncuran.</p>
                         </li>
                         <li>
-                            <h3>Peluncuran dan pendampingan</h3>
-                            <p>Setelah disetujui, website diterbitkan di domain Anda dan fitur yang disepakati diperiksa kembali.</p>
-                            <p class="timeline-output">Anda menerima akses website dan dukungan sesuai paket.</p>
+                            <h3>Peluncuran, uji alur lead &amp; garansi</h3>
+                            <p>Website terbit di domain resmi Anda dengan 100% hak milik kode dan pengujian alur pesan WhatsApp.</p>
+                            <p class="timeline-output">Anda menerima akses penuh, panduan pengelolaan, dan garansi teknis 30–60 hari.</p>
                         </li>
                     </ol>
                 </div>
@@ -653,8 +651,8 @@
         <section id="pricing" class="py-20 lg:py-28 bg-white border-b border-brand-border/60">
             <div class="container mx-auto px-6 lg:px-12">
                 <div class="max-w-2xl mx-auto text-center mb-16 section-header">
-                    <span class="text-sm font-bold text-brand-primary uppercase tracking-wider block mb-2">Investasi Masuk Akal</span>
-                    <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">Paket Investasi Website Bisnis</h2>
+                    <span class="text-sm font-bold text-brand-primary uppercase tracking-wider block mb-2">Biaya Jelas Tanpa Jebakan</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">Paket Eksekusi Siap Jalan</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
@@ -723,25 +721,25 @@
 
                 <section class="payment-panel" aria-labelledby="payment-title">
                     <div class="payment-heading">
-                        <h3 id="payment-title">Skema pembayaran bertahap &amp; jaminan ketenangan</h3>
-                        <p>Contoh skema. Ketentuan mengikuti paket dan penawaran.</p>
+                        <h3 id="payment-title">Konsep disetujui dulu, baru masuk DP 50%</h3>
+                        <p>Tidak ada biaya di awal sebelum Anda melihat arah solusi yang kami tawarkan.</p>
                     </div>
                     <ol class="payment-steps">
                         <li>
                             <span class="payment-amount">50%</span>
-                            <div><h4>Uang muka</h4><p>Setelah penawaran disepakati.</p></div>
+                            <div><h4>Uang muka</h4><p>Hanya dibayar setelah konsep awal &amp; penawaran disepakati.</p></div>
                         </li>
                         <li>
                             <span class="payment-amount">50%</span>
-                            <div><h4>Pelunasan</h4><p>Setelah pratinjau disetujui.</p></div>
+                            <div><h4>Pelunasan</h4><p>Dibayar setelah website diuji dan disetujui siap live.</p></div>
                         </li>
                     </ol>
                     <dl class="payment-support">
-                        <div><dt>Revisi desain &amp; konten</dt><dd>Sesuai lingkup proyek</dd></div>
-                        <div><dt>Garansi teknis</dt><dd>30–60 hari, sesuai paket</dd></div>
-                        <div><dt>Panduan pengelolaan</dt><dd>Video dan sesi panduan</dd></div>
+                        <div><dt>Audit &amp; konsep awal</dt><dd>Rp 0 tanpa komitmen</dd></div>
+                        <div><dt>Garansi teknis</dt><dd>30–60 hari setelah live</dd></div>
+                        <div><dt>Panduan &amp; hak milik</dt><dd>100% kode &amp; domain milik Anda</dd></div>
                     </dl>
-                    <a href="#brief" data-brief-start class="service-action">Mulai diskusi proyek <span aria-hidden="true">→</span></a>
+                    <a href="#brief" data-brief-service="audit" class="service-action">Minta audit &amp; konsep gratis dulu <span aria-hidden="true">→</span></a>
                 </section>
             </div>
         </section>
@@ -786,16 +784,16 @@
                 <div class="cta-banner rounded-[2.5rem] p-10 lg:p-16 text-center text-slate-900 relative overflow-hidden">
                     <div class="relative z-10 max-w-3xl mx-auto">
                         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 tracking-tight leading-tight">
-                            Mari bicarakan website Anda.
+                            Masih ragu? Uji kemampuan kami dulu tanpa bayar.
                         </h2>
                         <p class="text-slate-700 text-base lg:text-lg mb-10 max-w-xl mx-auto leading-relaxed font-normal">
-                            Ceritakan kebutuhan bisnis Anda kepada tim Danova. Kami bantu menentukan langkah awalnya.
+                            Kirim link website atau akun bisnis Anda lewat WhatsApp. Dalam 24 jam tim kami kirimkan catatan kebocoran konversi dan arahan perbaikan secara gratis.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="{{ route('out.whatsapp', ['context' => 'contact_cta']) }}"
+                            <a href="{{ route('out.whatsapp', ['context' => 'contact_audit', 'message' => 'Halo Danova, saya ingin klaim Audit Website & Konsep Awal Gratis. Ini link bisnis/website saya: ']) }}"
                                 class="apple-spring bg-gradient-to-r from-brand-primary via-[#3060AD] to-brand-accent text-white px-9 py-4 rounded-full font-bold text-base flex items-center justify-center gap-3 shadow-lg shadow-brand-primary/30">
                                 @include('partials.whatsapp-icon')
-                                <span>Konsultasi via WhatsApp</span>
+                                <span>Kirim Link untuk Audit Gratis</span>
                             </a>
                             <a href="{{ route('out.email', ['context' => 'contact_cta']) }}"
                                 class="apple-spring border border-brand-primary text-brand-dark px-9 py-4 rounded-full font-bold text-base hover:bg-white/10 flex items-center justify-center gap-2">

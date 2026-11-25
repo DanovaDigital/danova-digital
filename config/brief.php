@@ -2,6 +2,7 @@
 
 return [
     'services' => [
+        'audit' => 'Gratis Audit Website & Konsep Awal (Rp 0)',
         'website' => 'Website Profil Bisnis',
         'landing-page' => 'Landing Page Iklan',
         'visual' => 'Identitas Visual & UI',

@@ -1,10 +1,19 @@
 <section id="brief" class="border-b border-brand-border/60" aria-labelledby="briefHeading">
     <div class="container mx-auto px-6 lg:px-12">
         <div class="section-header mb-8">
-            <h2 id="briefHeading" tabindex="-1" class="font-extrabold text-slate-900">Hitung estimasi &amp; mulai brief Anda.</h2>
+            <h2 id="briefHeading" tabindex="-1" class="font-extrabold text-slate-900">Minta audit gratis atau hitung estimasi proyek.</h2>
+            <p class="mt-2 text-slate-600">Pilih <strong>Gratis Audit &amp; Konsep Awal</strong> jika ingin kami bedah website/bisnis Anda dulu tanpa biaya sebelum memutuskan kerja sama.</p>
         </div>
 
         <div id="briefBuilder" data-whatsapp-url="https://wa.me/{{ $danovaWhatsappNumberDigits }}">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;" role="group" aria-label="Pilih mode pengisian">
+                <button type="button" data-brief-mode="audit" class="apple-spring px-4 py-2.5 rounded-xl font-bold text-sm border-2 border-brand-primary bg-brand-light text-brand-primary cursor-pointer">
+                    Minta Audit &amp; Konsep Gratis (Rp 0)
+                </button>
+                <button type="button" data-brief-mode="project" class="apple-spring px-4 py-2.5 rounded-xl font-bold text-sm border-2 border-brand-border bg-white text-slate-700 cursor-pointer">
+                    Hitung Estimasi Pembuatan Proyek
+                </button>
+            </div>
             <form id="briefForm" class="brief-calculator" method="post" action="{{ route('brief.store', [], false) }}">
                 @csrf
                 <input type="hidden" name="draft_id" value="{{ Illuminate\Support\Str::uuid() }}">
