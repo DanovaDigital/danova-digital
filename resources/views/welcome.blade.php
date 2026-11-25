@@ -203,7 +203,7 @@
                 <a href="#workflow">Proses</a>
                 <a href="#pricing">Harga</a>
                 <a href="#faq">FAQ</a>
-                <a href="#brief" data-brief-service="audit" class="mt-2 justify-center bg-brand-primary text-white">Klaim Audit Gratis (Rp 0)</a>
+                <a href="#brief" data-brief-service="audit" class="mt-2 justify-center bg-brand-primary text-white">Minta Audit Gratis (Rp 0)</a>
             </nav>
         </div>
     </header>
@@ -469,7 +469,7 @@
                             <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Integrasi kalkulator, booking, atau CRM ringan</li>
                             <li class="flex items-center gap-2"><span class="text-brand-primary font-bold text-sm">✓</span> Garansi teknis &amp; 100% hak milik kode</li>
                         </ul>
-                        <a href="#brief" data-brief-service="audit" class="service-action">Klaim audit gratis dulu <span class="sr-only">Gratis Audit Website</span><span aria-hidden="true">→</span></a>
+                        <a href="#brief" data-brief-service="audit" class="service-action">Minta audit gratis <span class="sr-only">Gratis Audit Website</span><span aria-hidden="true">→</span></a>
                     </article>
 
                 </div>
