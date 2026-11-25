@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -76,6 +77,46 @@ class AnalyticsEvent extends Model
     public static function getLast7DaysOutboundTotal(): int
     {
         return static::where('event_type', 'outbound')->last7Days()->count();
+    }
+
+    public static function getOutboundCountsBetween(CarbonInterface $start, CarbonInterface $end): array
+    {
+        return static::select(
+            'event_name',
+            DB::raw('COUNT(*) as clicks')
+        )
+            ->where('event_type', 'outbound')
+            ->whereBetween('occurred_at', [$start, $end])
+            ->groupBy('event_name')
+            ->orderByDesc('clicks')
+            ->get()
+            ->pluck('clicks', 'event_name')
+            ->toArray();
+    }
+
+    public static function getOutboundTotalBetween(CarbonInterface $start, CarbonInterface $end): int
+    {
+        return static::where('event_type', 'outbound')
+            ->whereBetween('occurred_at', [$start, $end])
+            ->count();
+    }
+
+    public static function getTopPricingPackagesBetween(CarbonInterface $start, CarbonInterface $end, int $limit = 5): array
+    {
+        return static::select(
+            'package_name',
+            'package_price',
+            DB::raw('COUNT(*) as clicks')
+        )
+            ->where('event_type', 'outbound')
+            ->where('event_name', 'pricing')
+            ->whereNotNull('package_name')
+            ->whereBetween('occurred_at', [$start, $end])
+            ->groupBy('package_name', 'package_price')
+            ->orderByDesc('clicks')
+            ->limit($limit)
+            ->get()
+            ->toArray();
     }
 
     public static function getTopPricingPackagesLast7Days(int $limit = 5): array

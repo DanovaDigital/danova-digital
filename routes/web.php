@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\DocumentController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\LeadController as AdminLeadController;
 use App\Http\Controllers\Admin\MediaController;
@@ -61,6 +62,14 @@ Route::prefix('admin')
         Route::middleware('admin.auth')->group(function () {
             Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
             Route::get('/leads', [AdminLeadController::class, 'index'])->name('leads.index');
+            Route::get('/leads/export', [AdminLeadController::class, 'export'])->name('leads.export');
+            Route::patch('/leads/{lead}', [AdminLeadController::class, 'update'])->name('leads.update');
+
+            Route::resource('documents', DocumentController::class)->except(['show']);
+            Route::get('/documents/{document}/preview', [DocumentController::class, 'preview'])->name('documents.preview');
+            Route::get('/documents/{document}/pdf', [DocumentController::class, 'pdf'])->name('documents.pdf');
+            Route::post('/documents/{document}/convert', [DocumentController::class, 'convert'])->name('documents.convert');
+
             Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
             Route::resource('pricing-plans', PricingPlanController::class);

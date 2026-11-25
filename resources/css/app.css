@@ -6,66 +6,39 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
-    /* Danova brand colors - Vibrant, High-Energy Studio Palette */
-    --color-danova-primary: #1E5BF6;
-    --color-danova-secondary: #00A3FF;
-    --color-danova-accent: #FF6B35;
-    --color-danova-emerald: #10B981;
-    --color-danova-dark: #0F172A;
-    --color-danova-navy: #0A1128;
-    --color-danova-surface: #F0F6FF;
+    /* Brand colors */
+    --color-brand-primary: #2454A5;
+    --color-brand-dark: #193D7F;
+    --color-brand-secondary: #2E64BC;
+    --color-brand-accent: #225A85;
+    --color-brand-emerald: #21658F;
+    --color-brand-light: #EAF3FF;
+    --color-brand-surface: #F4F8FE;
+    --color-brand-navy: #152A4D;
+    --color-brand-border: #DBE8F8;
 
-    /* Neutrals */
-    --color-danova-white: #ffffff;
-    --color-danova-light-gray: #f8fafc;
-    --color-danova-medium-gray: #e2e8f0;
-    --color-danova-dark-gray: #475569;
-    --color-danova-charcoal: #1e293b;
-    --color-danova-black: #090e17;
+    --color-whatsapp: #22C55E;
+    --color-whatsapp-dark: #16A34A;
 
-    /* Radius system */
-    --radius-danova-sm: 8px;
-    --radius-danova-md: 16px;
-    --radius-danova-lg: 24px;
-    --radius-danova-xl: 32px;
+    /* Border radius */
+    --radius-squircle-sm: 1rem;
+    --radius-squircle-md: 1.5rem;
+    --radius-squircle-lg: 2rem;
+    --radius-squircle-xl: 2.5rem;
 
-    /* Shadow system */
-    --shadow-danova-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
-    --shadow-danova-md: 0 4px 16px rgba(30, 91, 246, 0.10);
-    --shadow-danova-lg: 0 16px 36px -4px rgba(30, 91, 246, 0.15);
-    --shadow-danova-card: 0 4px 24px rgba(15, 23, 42, 0.06);
+    /* Shadows */
+    --shadow-apple-sm: 0 2px 10px rgba(36, 84, 165, 0.06);
+    --shadow-apple-card: 0 6px 24px -2px rgba(36, 84, 165, 0.10);
+    --shadow-apple-float: 0 20px 48px -8px rgba(10, 17, 40, 0.18);
+    --shadow-vibrant-glow: 0 0 35px rgba(36, 84, 165, 0.25);
 }
 
 @layer base {
-    :root {
-        color-scheme: light;
-        --color-primary: #1E5BF6;
-        --color-secondary: #00A3FF;
-        --color-accent: #FF6B35;
-    }
-
     html {
         text-rendering: geometricPrecision;
         -webkit-text-size-adjust: 100%;
         scroll-behavior: smooth;
-    }
-
-    body {
-        background: var(--color-danova-white);
-        color: var(--color-danova-charcoal);
-    }
-}
-
-@layer utilities {
-    .shadow-danova-card {
-        box-shadow: var(--shadow-danova-card);
-    }
-
-    .focus-danova {
-        outline: 2px solid var(--color-danova-primary);
-        outline-offset: 2px;
     }
 }

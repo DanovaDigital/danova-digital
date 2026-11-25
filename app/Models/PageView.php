@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Builder;
@@ -141,6 +142,66 @@ class PageView extends Model
             ->last30Days()
             ->groupBy('projects.id', 'projects.title', 'projects.slug')
             ->orderByDesc('views')
+            ->limit($limit)
+            ->get()
+            ->toArray();
+    }
+
+    public static function getViewsBetween(CarbonInterface $start, CarbonInterface $end): int
+    {
+        return static::whereBetween('occurred_at', [$start, $end])->count();
+    }
+
+    public static function getUniqueVisitorsBetween(CarbonInterface $start, CarbonInterface $end): int
+    {
+        return static::whereBetween('occurred_at', [$start, $end])
+            ->distinct('visitor_token')
+            ->count('visitor_token');
+    }
+
+    public static function getDailyTrendBetween(CarbonInterface $start, CarbonInterface $end): array
+    {
+        return static::select(
+            DB::raw('DATE(occurred_at) as date'),
+            DB::raw('COUNT(*) as views'),
+            DB::raw('COUNT(DISTINCT visitor_token) as unique_visitors')
+        )
+            ->whereBetween('occurred_at', [$start, $end])
+            ->groupBy('date')
+            ->orderBy('date')
+            ->get()
+            ->toArray();
+    }
+
+    public static function getTopProjectsBetween(CarbonInterface $start, CarbonInterface $end, int $limit = 5): array
+    {
+        return static::select(
+            'projects.id',
+            'projects.title',
+            'projects.slug',
+            DB::raw('COUNT(*) as views'),
+            DB::raw('COUNT(DISTINCT visitor_token) as unique_visitors')
+        )
+            ->join('projects', 'analytics_page_views.project_id', '=', 'projects.id')
+            ->where('page_type', 'work_detail')
+            ->whereBetween('analytics_page_views.occurred_at', [$start, $end])
+            ->groupBy('projects.id', 'projects.title', 'projects.slug')
+            ->orderByDesc('views')
+            ->limit($limit)
+            ->get()
+            ->toArray();
+    }
+
+    public static function getTopReferrersBetween(CarbonInterface $start, CarbonInterface $end, int $limit = 10): array
+    {
+        return static::select(
+            'referrer_domain',
+            DB::raw('COUNT(*) as visits')
+        )
+            ->whereNotNull('referrer_domain')
+            ->whereBetween('occurred_at', [$start, $end])
+            ->groupBy('referrer_domain')
+            ->orderByDesc('visits')
             ->limit($limit)
             ->get()
             ->toArray();

@@ -20,7 +20,7 @@
     @include('partials.social-meta', ['socialTitle' => $pageTitle, 'socialDescription' => $pageDescription, 'socialImage' => null])
     @include('partials.organization-schema', ['organizationEmail' => $settings->get('contact.email')?->value])
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,57 +28,6 @@
     <!-- GSAP & ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-    <script>
-        if (window.tailwind) window.tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                                                brand: {
-                            primary: '#2454A5',
-                            dark: '#193D7F',
-                            secondary: '#2E64BC',
-                            accent: '#225A85',
-                            emerald: '#21658F',
-                            light: '#EAF3FF',
-                            surface: '#F4F8FE',
-                            navy: '#152A4D',
-                            border: '#DBE8F8',
-                        },
-                        slate: {
-                            950: '#070C18',
-                            900: '#0F172A',
-                            800: '#1E293B',
-                            700: '#334155',
-                            600: '#475569',
-                            500: '#64748B',
-                            400: '#94A3B8',
-                            200: '#E2E8F0',
-                            100: '#F1F5F9',
-                            50: '#F8FAFC',
-                        },
-                        whatsapp: '#22C55E',
-                        'whatsapp-dark': '#16A34A',
-                    },
-                    fontFamily: {
-                        sans: ['Instrument Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-                    },
-                    borderRadius: {
-                        'squircle-sm': '1rem',
-                        'squircle-md': '1.5rem',
-                        'squircle-lg': '2rem',
-                        'squircle-xl': '2.5rem',
-                    },
-                    boxShadow: {
-                        'apple-sm': '0 2px 10px rgba(36, 84, 165, 0.06)',
-                        'apple-card': '0 6px 24px -2px rgba(36, 84, 165, 0.10)',
-                        'apple-float': '0 20px 48px -8px rgba(10, 17, 40, 0.18)',
-                        'vibrant-glow': '0 0 35px rgba(36, 84, 165, 0.25)',
-                    }
-                }
-            }
-        }
-    </script>
 
     <style>
         body {
@@ -843,12 +792,12 @@
                             Ceritakan kebutuhan bisnis Anda kepada tim Danova. Kami bantu menentukan langkah awalnya.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="https://wa.me/{{ $danovaWhatsappNumberDigits }}"
+                            <a href="{{ route('out.whatsapp', ['context' => 'contact_cta']) }}"
                                 class="apple-spring bg-gradient-to-r from-brand-primary via-[#3060AD] to-brand-accent text-white px-9 py-4 rounded-full font-bold text-base flex items-center justify-center gap-3 shadow-lg shadow-brand-primary/30">
                                 @include('partials.whatsapp-icon')
                                 <span>Konsultasi via WhatsApp</span>
                             </a>
-                            <a href="mailto:{{ $danovaGmail }}"
+                            <a href="{{ route('out.email', ['context' => 'contact_cta']) }}"
                                 class="apple-spring border border-brand-primary text-brand-dark px-9 py-4 rounded-full font-bold text-base hover:bg-white/10 flex items-center justify-center gap-2">
                                 <span>Kirim Email</span>
                             </a>
