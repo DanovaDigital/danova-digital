@@ -1,8 +1,8 @@
 <section id="brief" class="border-b border-brand-border/60" aria-labelledby="briefHeading">
     <div class="container mx-auto px-6 lg:px-12">
         <div class="section-header mb-8">
-            <h2 id="briefHeading" tabindex="-1" class="font-extrabold text-slate-900">Minta audit gratis atau hitung estimasi proyek.</h2>
-            <p class="mt-2 text-slate-600">Pilih <strong>Gratis Audit &amp; Konsep Awal</strong> jika ingin kami bedah website/bisnis Anda dulu tanpa biaya sebelum memutuskan kerja sama.</p>
+            <h2 id="briefHeading" tabindex="-1" class="font-extrabold text-slate-900">Minta audit gratis atau hitung estimasi.</h2>
+            <p class="mt-2 text-slate-600">Pilih mode audit gratis untuk kami tinjau bisnis Anda dulu, atau langsung hitung perkiraan biaya proyek.</p>
         </div>
 
         <div id="briefBuilder" data-whatsapp-url="https://wa.me/{{ $danovaWhatsappNumberDigits }}">
