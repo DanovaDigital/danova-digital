@@ -34,7 +34,12 @@
             </details>
         </article>
     @empty
-        <p>Belum ada brief yang masuk.</p>
+        <div class="card">
+            @include('admin.partials.empty-state', [
+                'title' => 'Belum ada brief yang masuk',
+                'description' => 'Brief dari kalkulator proyek di halaman utama akan otomatis tercatat di sini sebelum calon klien diarahkan ke WhatsApp.',
+            ])
+        </div>
     @endforelse
     @if ($leads->hasPages())
         <nav aria-label="Halaman brief masuk" style="display: flex; flex-wrap: wrap; gap: 1rem;">

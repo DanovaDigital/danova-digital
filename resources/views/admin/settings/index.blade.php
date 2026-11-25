@@ -27,7 +27,10 @@ return optional($settings->firstWhere('key', $key))->value ?? $default;
     <!-- Hero Stats Section -->
     <div class="card" style="margin-bottom: 24px;">
         <div style="padding: 24px; border-bottom: 1px solid var(--light-gray);">
-            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">📊 Hero Statistics</h3>
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" fill="none" stroke="var(--primary)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                Hero Statistics
+            </h3>
             <p class="muted" style="font-size: 13px;">Stats yang ditampilkan di hero section</p>
         </div>
         <div style="padding: 24px; display: grid; gap: 20px;">
@@ -51,7 +54,10 @@ return optional($settings->firstWhere('key', $key))->value ?? $default;
     <!-- Hero Features Section -->
     <div class="card" style="margin-bottom: 24px;">
         <div style="padding: 24px; border-bottom: 1px solid var(--light-gray);">
-            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">✨ Hero Feature Boxes</h3>
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" fill="none" stroke="var(--primary)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                Hero Feature Boxes
+            </h3>
             <p class="muted" style="font-size: 13px;">Dua feature box di hero visual</p>
         </div>
         <div style="padding: 24px; display: grid; gap: 20px;">
@@ -212,7 +218,10 @@ return optional($settings->firstWhere('key', $key))->value ?? $default;
     <!-- Contact CTA Section -->
     <div class="card" style="margin-bottom: 24px;">
         <div style="padding: 24px; border-bottom: 1px solid var(--light-gray);">
-            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">💬 Contact CTA Buttons</h3>
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" fill="none" stroke="var(--primary)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                Contact CTA Buttons
+            </h3>
             <p class="muted" style="font-size: 13px;">Label tombol WhatsApp dan Email di contact section</p>
         </div>
         <div style="padding: 24px; display: grid; gap: 20px;">
@@ -254,7 +263,10 @@ return optional($settings->firstWhere('key', $key))->value ?? $default;
     <div class="card">
         <div style="padding: 24px; border-bottom: 1px solid var(--light-gray); display: flex; justify-content: space-between; align-items: center;">
             <div>
-                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">⚙️ Advanced Settings</h3>
+                <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+                    <svg width="18" height="18" fill="none" stroke="var(--primary)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    Advanced Settings
+                </h3>
                 <p class="muted" style="font-size: 13px;">Manage custom key-value pairs</p>
             </div>
             <a class="btn btn-sm" href="{{ route('admin.settings.create') }}">
@@ -367,14 +379,12 @@ return optional($settings->firstWhere('key', $key))->value ?? $default;
     .upload-zone:hover {
         border-color: #2563eb;
         background: #f0f4ff;
-        box-shadow: 0 4px 20px rgba(37, 99, 235, 0.08);
     }
 
     .upload-zone.dragover {
         border-color: #2563eb;
         background: #e0edff;
         transform: scale(1.02);
-        box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
     }
 
     .upload-placeholder {
@@ -427,7 +437,6 @@ return optional($settings->firstWhere('key', $key))->value ?? $default;
         margin: 0 auto;
         border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     .upload-preview.upload-preview-small {
@@ -474,7 +483,6 @@ return optional($settings->firstWhere('key', $key))->value ?? $default;
     .upload-remove:hover {
         background: #dc2626;
         transform: scale(1.1);
-        box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
     }
 </style>
 

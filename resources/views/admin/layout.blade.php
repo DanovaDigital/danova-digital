@@ -12,21 +12,26 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        @include('partials.logo-styles')
+
         :root {
-            --primary: #2F6FED;
-            --primary-hover: #1F5FDD;
-            --black: #1A1A1A;
-            --dark-gray: #2A2A2A;
-            --medium-gray: #6B6B6B;
-            --light-gray: #E8E8E8;
-            --bg-gray: #F5F5F5;
+            --primary: #2454A5;
+            --primary-hover: #193D7F;
+            --primary-light: #EAF3FF;
+            --surface: #F4F8FE;
+            --black: #142746;
+            --dark-gray: #334155;
+            --medium-gray: #475569;
+            --light-gray: #DBE8F8;
+            --bg-gray: #F7FAFF;
             --white: #FFFFFF;
             --sidebar-width: 260px;
-            --header-height: 64px;
-            --radius: 12px;
+            --header-height: 72px;
+            --radius: 20px;
+            --radius-sm: 12px;
         }
 
         * {
@@ -36,10 +41,19 @@
         }
 
         body {
-            font-family: 'Lexend', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background: var(--bg-gray);
             color: var(--black);
             line-height: 1.6;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, .card-title, .brand-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            color: var(--black);
         }
 
         /* Layout */
@@ -124,22 +138,22 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 10px 12px;
-            border-radius: 8px;
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
             text-decoration: none;
             color: var(--dark-gray);
             font-size: 14px;
             font-weight: 500;
-            transition: all 0.15s ease;
+            transition: background-color 0.15s ease, color 0.15s ease;
         }
 
         .nav-link:hover {
-            background: rgba(47, 111, 237, 0.08);
+            background: var(--surface);
             color: var(--primary);
         }
 
         .nav-link.active {
-            background: rgba(47, 111, 237, 0.12);
+            background: var(--primary-light);
             color: var(--primary);
             font-weight: 600;
         }
@@ -166,15 +180,50 @@
         /* Header */
         .header {
             height: var(--header-height);
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--light-gray);
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 16px;
             padding: 0 32px;
             position: sticky;
             top: 0;
             z-index: 50;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .mobile-sidebar-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid var(--light-gray);
+            background: var(--white);
+            color: var(--black);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .sidebar-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(20, 39, 70, 0.35);
+            z-index: 90;
+        }
+
+        .sidebar-backdrop.is-open {
+            display: block;
         }
 
         .header-title h1 {
@@ -209,8 +258,7 @@
             border: 1px solid var(--light-gray);
             border-radius: var(--radius);
             padding: 0;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
-            overflow: hidden;
+            overflow-x: auto;
             width: 100%;
         }
 
@@ -254,7 +302,7 @@
             justify-content: center;
             gap: 8px;
             padding: 10px 16px;
-            border-radius: 8px;
+            border-radius: var(--radius-sm);
             border: 1px solid var(--light-gray);
             background: var(--white);
             color: var(--dark-gray);
@@ -262,13 +310,14 @@
             font-weight: 600;
             font-size: 14px;
             cursor: pointer;
-            transition: all 0.15s ease;
+            transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
             white-space: nowrap;
         }
 
         .btn:hover {
-            background: var(--bg-gray);
-            border-color: #D1D5DB;
+            background: var(--surface);
+            border-color: #BBD4F2;
+            transform: translateY(-1px);
         }
 
         .btn-primary {
@@ -325,12 +374,12 @@
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--medium-gray);
-            background: var(--bg-gray);
+            background: var(--surface);
             padding: 12px 24px;
         }
 
         tbody tr:hover td {
-            background: #FAFAFA;
+            background: var(--bg-gray);
         }
 
         tbody tr:last-child td {
@@ -371,11 +420,12 @@
             width: 100%;
             padding: 10px 14px;
             border: 1px solid var(--light-gray);
-            border-radius: 8px;
+            border-radius: var(--radius-sm);
             font-family: inherit;
             font-size: 14px;
+            color: var(--black);
             background: var(--white);
-            transition: all 0.15s ease;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
         }
 
         input:focus,
@@ -383,7 +433,7 @@
         select:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(47, 111, 237, 0.1);
+            box-shadow: 0 0 0 3px rgba(36, 84, 165, 0.12);
         }
 
         textarea {
@@ -421,22 +471,79 @@
             border-radius: 999px;
             font-size: 12px;
             font-weight: 600;
-            background: rgba(47, 111, 237, 0.1);
+            background: var(--primary-light);
             color: var(--primary);
+        }
+
+        /* Empty State */
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 48px 24px;
+        }
+
+        .empty-state-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .empty-state-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 6px;
+        }
+
+        .empty-state-desc {
+            font-size: 14px;
+            color: var(--medium-gray);
+            max-width: 38ch;
+            line-height: 1.55;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .sidebar {
                 transform: translateX(-100%);
+                transition: transform 0.25s ease;
+            }
+
+            .sidebar.is-open {
+                transform: translateX(0);
+            }
+
+            .mobile-sidebar-toggle {
+                display: inline-flex;
             }
 
             .main-content {
                 margin-left: 0;
+                min-width: 0;
             }
 
             .content {
-                padding: 20px;
+                padding: 16px;
+            }
+
+            .card-header,
+            .card > *:not(table) {
+                padding: 16px;
+            }
+
+            th,
+            td {
+                padding: 12px 14px;
             }
 
             .form-grid {
@@ -444,23 +551,32 @@
             }
 
             .header {
-                padding: 0 20px;
+                height: auto;
+                min-height: 64px;
+                padding: 12px 16px;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .header-title h1 {
+                font-size: 17px;
+            }
+
+            .header-actions {
+                flex-wrap: wrap;
             }
         }
     </style>
 </head>
 
 <body>
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
     <div class="admin-layout">
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="adminSidebar">
             <div class="sidebar-header">
                 <a class="brand" href="{{ route('admin.dashboard') }}">
-                    @if($siteSettings['header_logo'])
-                    <img src="{{ asset('storage/' . $siteSettings['header_logo']) }}" alt="Danova Logo" style="height: 24px; width: auto; max-width: 160px; object-fit: contain;">
-                    @else
-                    <span class="brand-text">Danova</span>
-                    @endif
+                    @include('partials.danova-logo', ['customLogo' => $siteSettings['header_logo'] ?? null])
                 </a>
             </div>
 
@@ -474,7 +590,12 @@
                             </svg>
                             Dashboard
                         </a>
-                        <a href="{{ route('admin.leads.index') }}" class="nav-link {{ request()->routeIs('admin.leads.index') ? 'active' : '' }}">Brief masuk</a>
+                        <a href="{{ route('admin.leads.index') }}" class="nav-link {{ request()->routeIs('admin.leads.index') ? 'active' : '' }}">
+                            <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
+                            </svg>
+                            Brief masuk
+                        </a>
                     </div>
                 </div>
 
@@ -544,11 +665,18 @@
         <!-- Main Content -->
         <main class="main-content">
             <header class="header">
-                <div class="header-title">
-                    <h1>@yield('header-title', 'Dashboard')</h1>
-                    @hasSection('header-subtitle')
-                    <div class="header-subtitle">@yield('header-subtitle')</div>
-                    @endif
+                <div class="header-left">
+                    <button type="button" class="mobile-sidebar-toggle" id="sidebarToggle" aria-label="Buka menu admin" aria-expanded="false" aria-controls="adminSidebar">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                    <div class="header-title">
+                        <h1>@yield('header-title', 'Dashboard')</h1>
+                        @hasSection('header-subtitle')
+                        <div class="header-subtitle">@yield('header-subtitle')</div>
+                        @endif
+                    </div>
                 </div>
                 <div class="header-actions">
                     @yield('header-actions')
@@ -560,6 +688,33 @@
             </div>
         </main>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var toggle = document.getElementById('sidebarToggle');
+            var sidebar = document.getElementById('adminSidebar');
+            var backdrop = document.getElementById('sidebarBackdrop');
+            if (!toggle || !sidebar || !backdrop) return;
+
+            function setOpen(open) {
+                sidebar.classList.toggle('is-open', open);
+                backdrop.classList.toggle('is-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+            }
+
+            toggle.addEventListener('click', function () {
+                setOpen(!sidebar.classList.contains('is-open'));
+            });
+
+            backdrop.addEventListener('click', function () {
+                setOpen(false);
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') setOpen(false);
+            });
+        });
+    </script>
 </body>
 
 </html>

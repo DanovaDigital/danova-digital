@@ -155,14 +155,12 @@
     .upload-zone:hover {
         border-color: #2563eb;
         background: #f0f4ff;
-        box-shadow: 0 4px 20px rgba(37, 99, 235, 0.08);
     }
 
     .upload-zone.dragover {
         border-color: #2563eb;
         background: #e0edff;
         transform: scale(1.02);
-        box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
     }
 
     .upload-placeholder {
@@ -208,7 +206,6 @@
         margin: 0 auto;
         border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     .upload-preview img {
@@ -242,7 +239,6 @@
     .upload-remove:hover {
         background: #dc2626;
         transform: scale(1.1);
-        box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
     }
 </style>
 

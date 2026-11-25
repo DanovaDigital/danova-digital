@@ -12,22 +12,24 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        @include('partials.logo-styles')
+
         :root {
-            --primary: #2F6FED;
-            --primary-hover: #1F5FDD;
-            --black: #1A1A1A;
-            --dark-gray: #2A2A2A;
-            --medium-gray: #6B6B6B;
-            --light-gray: #E8E8E8;
-            --bg-gray: #F5F5F5;
+            --primary: #2454A5;
+            --primary-hover: #193D7F;
+            --black: #142746;
+            --dark-gray: #334155;
+            --medium-gray: #475569;
+            --light-gray: #DBE8F8;
+            --bg-gray: #F7FAFF;
             --white: #FFFFFF;
             --error-bg: #FEF2F2;
             --error-border: #FECACA;
             --error-text: #991B1B;
-            --radius: 16px;
+            --radius: 24px;
             --radius-sm: 12px;
         }
 
@@ -38,8 +40,8 @@
         }
 
         body {
-            font-family: 'Lexend', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: linear-gradient(135deg, #f0f4ff 0%, var(--bg-gray) 100%);
+            font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg-gray);
             color: var(--black);
             min-height: 100vh;
             display: flex;
@@ -47,6 +49,14 @@
             justify-content: center;
             padding: 24px;
             line-height: 1.6;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.025em;
         }
 
         .card {
@@ -56,47 +66,18 @@
             border: 1px solid var(--light-gray);
             border-radius: var(--radius);
             padding: 40px 32px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
 
         .brand {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
             gap: 12px;
-            margin-bottom: 32px;
-        }
-
-        .logo {
-            width: 48px;
-            height: 48px;
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--primary) 0%, #5A8FFF 100%);
-            color: var(--white);
-            font-weight: 900;
-            font-size: 24px;
-            flex-shrink: 0;
-            overflow: hidden;
-        }
-
-        .logo.has-image {
-            background: var(--white);
-            border: 1px solid var(--light-gray);
-            color: var(--black);
-        }
-
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 8px;
-            display: block;
+            margin-bottom: 28px;
         }
 
         .brand-text h1 {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--black);
             margin-bottom: 4px;
@@ -167,7 +148,6 @@
         .btn:hover:not(:disabled) {
             background: var(--primary-hover);
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(47, 111, 237, 0.3);
         }
 
         .btn:active:not(:disabled) {
@@ -217,13 +197,7 @@
 <body>
     <div class="card">
         <div class="brand">
-            <div class="logo {{ !empty($siteSettings['header_logo']) ? 'has-image' : '' }}">
-                @if(!empty($siteSettings['header_logo']))
-                <img src="{{ asset('storage/' . $siteSettings['header_logo']) }}" alt="Danova" />
-                @else
-                D
-                @endif
-            </div>
+            @include('partials.danova-logo', ['customLogo' => $siteSettings['header_logo'] ?? null])
             <div class="brand-text">
                 <h1>Danova Admin</h1>
                 <div class="muted">Login untuk mengelola konten landing page</div>

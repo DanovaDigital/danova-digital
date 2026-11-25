@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\AnalyticsEvent;
+use App\Models\Lead;
 use App\Models\PageView;
 use App\Models\Project;
 use App\Models\Testimonial;
@@ -28,11 +29,14 @@ class DashboardController extends Controller
         $topProjects = PageView::getTopProjects(5);
         $topReferrers = PageView::getTopReferrers(10);
 
-        // CMS stats
+        // CMS & Lead stats
         $totalProjects = Project::count();
         $publishedProjects = Project::where('is_published', true)->count();
         $totalTestimonials = Testimonial::count();
         $totalPricingPlans = PricingPlan::count();
+        $totalLeads = Lead::count();
+        $last7DaysLeads = Lead::where('created_at', '>=', now()->subDays(7))->count();
+        $recentLeads = Lead::latest('updated_at')->limit(5)->get();
 
         // Outbound / CTA events
         $last7DaysOutboundTotal = AnalyticsEvent::getLast7DaysOutboundTotal();
@@ -56,6 +60,9 @@ class DashboardController extends Controller
             'publishedProjects',
             'totalTestimonials',
             'totalPricingPlans',
+            'totalLeads',
+            'last7DaysLeads',
+            'recentLeads',
             'last7DaysOutboundTotal',
             'last7DaysWhatsAppClicks',
             'last7DaysEmailClicks',
